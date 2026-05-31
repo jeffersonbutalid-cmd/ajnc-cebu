@@ -180,6 +180,21 @@
       links.classList.remove('nav-open');
       burger.setAttribute('aria-expanded', 'false');
     }));
+    // Dropdown toggles
+    const ddItems = links.querySelectorAll('.nav-item.has-dd');
+    ddItems.forEach(item => {
+      const toggle = item.querySelector('.dd-toggle');
+      if (!toggle) return;
+      toggle.addEventListener('click', e => {
+        e.preventDefault();
+        const open = item.classList.contains('open');
+        ddItems.forEach(i => { i.classList.remove('open'); const t = i.querySelector('.dd-toggle'); if (t) t.setAttribute('aria-expanded', 'false'); });
+        if (!open) { item.classList.add('open'); toggle.setAttribute('aria-expanded', 'true'); }
+      });
+    });
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.nav-item.has-dd')) ddItems.forEach(i => i.classList.remove('open'));
+    });
   }
 
   async function start() {

@@ -977,6 +977,24 @@ em{font-style:italic;color:var(--red);font-weight:inherit}
   .strip-inner{flex-direction:column;align-items:flex-start;gap:10px}
 }
 </style>
+<style>
+/* nav dropdown (microsite) */
+.nav-links .nav-link{font:500 14px/1 var(--body);color:var(--ink);opacity:.78;background:none;border:0;cursor:pointer;text-decoration:none;white-space:nowrap;display:inline-flex;align-items:center;gap:5px;padding:0;transition:opacity .15s ease,color .15s ease}
+.nav-links .nav-link:hover{opacity:1;color:var(--garnet)}
+.nav-item{position:relative;display:inline-flex}
+.nav-item .dd-chev{width:13px;height:13px;transition:transform .2s ease}
+.nav-item.open .dd-chev{transform:rotate(180deg)}
+.nav-dd{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(-6px);min-width:200px;background:var(--bone);border:1px solid rgba(14,43,79,.1);border-radius:14px;box-shadow:0 18px 40px -16px rgba(14,43,79,.35);padding:8px;display:flex;flex-direction:column;gap:2px;opacity:0;visibility:hidden;transition:opacity .18s ease,transform .18s ease,visibility .18s ease;z-index:60}
+.nav-item:hover .nav-dd,.nav-item.open .nav-dd{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.nav-dd a{padding:10px 14px;border-radius:10px;text-decoration:none;color:var(--ink);opacity:.85;font-size:14px;white-space:nowrap}
+.nav-dd a:hover{background:rgba(14,43,79,.06);opacity:1;color:var(--garnet)}
+@media (max-width:1024px){
+  .nav-item{display:block;width:100%}
+  .nav-links .nav-link{width:100%;justify-content:space-between;padding:12px 4px;opacity:.85}
+  .nav-dd{position:static;transform:none;opacity:1;visibility:visible;box-shadow:none;border:0;background:rgba(14,43,79,.03);padding:4px 4px 4px 14px;min-width:0;display:none}
+  .nav-item.open .nav-dd{display:flex}
+}
+</style>
 </head>
 <body>
 
@@ -1013,12 +1031,19 @@ em{font-style:italic;color:var(--red);font-weight:inherit}
       <span class="wordmark">AJNC <em>Cebu</em></span>
     </a>
     <nav class="nav-links" aria-label="Primary">
-      <a href="#visit">Visit</a>
-      <a href="#welcome">New here</a>
-      <a href="#about">About</a>
-      <a href="#believe">Believe</a>
-      <a href="#find">Find us</a>
-      <a href="#connect">Connect</a>
+      <div class="nav-item has-dd">
+        <button type="button" class="nav-link dd-toggle" aria-haspopup="true" aria-expanded="false">About
+          <svg class="dd-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="nav-dd">
+          <a href="#believe">What We Believe</a>
+          <a href="#about">Pastors</a>
+        </div>
+      </div>
+      <a class="nav-link" href="#welcome">New Here</a>
+      <a class="nav-link" href="../blog/">Blog</a>
+      <a class="nav-link" href="#connect">Connect</a>
+      <a class="nav-link" href="#find">Contact Us</a>
     </nav>
     <a class="nav-cta btn btn-red" href="#visit">Plan your visit</a>
     <button class="nav-burger" id="ms-nav-burger" aria-label="Open menu" aria-expanded="false">
