@@ -143,5 +143,47 @@
     suggestions.querySelectorAll('.ajnc-chip').forEach(chip => chip.addEventListener('click', () => send(chip.textContent)));
   }
 
+  /* ---- Gentle proactive nudge ----
+     Shows a small, dismissible greeting bubble (NOT the full panel) once per
+     session after the visitor scrolls a bit or lingers. Skipped on small
+     screens and for reduced-motion is non-animated. Set data-nudge="off" on
+     #ajnc-chat to disable. */
+  (function proactiveNudge(){
+    if (root.dataset.nudge === 'off') return;
+    if (window.matchMedia && window.matchMedia('(max-width:600px)').matches) return;
+    try { if (sessionStorage.getItem('ajnc-grace-nudge')) return; } catch (_) {}
+
+    let fired = false;
+    function cleanup(){ window.removeEventListener('scroll', onScroll); clearTimeout(timer); }
+    function flag(){ try { sessionStorage.setItem('ajnc-grace-nudge', '1'); } catch (_) {} }
+
+    function show(){
+      if (fired || root.dataset.open === 'true') return;
+      fired = true; cleanup(); flag();
+
+      const n = el('ajnc-nudge');
+      const ava = launcher.querySelector('.ajnc-ava').cloneNode(true);
+      ava.classList.remove('ajnc-ava--launch');
+      const body = el('ajnc-nudge__body',
+        "<strong>Hi, I'm Grace</strong><span>Questions about your first visit, baptism, or what we believe? Tap to chat.</span>");
+      const x = document.createElement('button');
+      x.className = 'ajnc-nudge__x'; x.setAttribute('aria-label', 'Dismiss'); x.innerHTML = '&times;';
+      n.appendChild(ava); n.appendChild(body); n.appendChild(x);
+      root.appendChild(n);
+      requestAnimationFrame(() => n.classList.add('show'));
+
+      const open = () => { n.remove(); setOpen(true); };
+      ava.addEventListener('click', open);
+      body.addEventListener('click', open);
+      x.addEventListener('click', e => { e.stopPropagation(); n.classList.remove('show'); setTimeout(() => n.remove(), 300); });
+      // retire quietly if ignored
+      setTimeout(() => { if (n.isConnected){ n.classList.remove('show'); setTimeout(() => n.remove(), 300); } }, 14000);
+    }
+
+    function onScroll(){ if (window.scrollY > 700) show(); }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    const timer = setTimeout(show, 22000); // fallback if they barely scroll
+  })();
+
   applyLang();
 })();

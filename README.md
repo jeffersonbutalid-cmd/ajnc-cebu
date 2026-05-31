@@ -1,179 +1,83 @@
-# AJNC Cebu Website
+# AJNC — Apostolic Jesus Name Church (Cebu)
 
-The website for **Apostolic Jesus Name Church — Cebu** (AJNC), a Oneness
-Pentecostal church family in Mandaue City, Cebu, Philippines.
-
-A static HTML/CSS/JS site, plus a Netlify Function for the AI assistant and a
-Supabase database for shared church data. Implemented from the Claude Design
-handoff.
+Website, per-church microsite, and blog for AJNC, a Oneness Pentecostal church
+family in Mandaue, Cebu, Philippines. Static HTML/CSS/JS + a Netlify Function
+for the AI assistant + optional Supabase for shared church data.
 
 ## Structure
 
 ```
-index.html                  Main one-page site (hero, plan, about, believe,
-                            sermons, find-a-church, ministries, events,
-                            leaders, stories, giving, prayer, contact,
-                            newsletter, AI assistant, footer)
+index.html              Main site (nav w/ dropdowns, hero, plan, about+photos,
+                        believe, sermons (featured + 3), find-a-church, ministries,
+                        events, leaders, stories, giving, prayer, contact, footer)
+microsite/index.html    Per-church landing page (hydrated by ?church=<slug>)
+microsite/configs/      Per-subdomain config template
+blog/                   "The Word" blog (index + sample article)
 assets/
-  site.css                  Site styles
-  chat.css                  AI assistant widget styles
-  config.js                 Runtime config (Supabase / Formspree / chat endpoint)
-  data.js                   Supabase data layer (churches + placeholders)
-  site.js                   Nav, reveal, Find-a-Church (Leaflet), forms
-  microsite.js              Per-church microsite hydration + single map
-  chat.js                   AI assistant widget logic
-  halo3d.js                 Hero halo (Three.js, lazy / desktop only)
-  *.png / *.jpg             Logo, seal, pastor portraits, photography
-microsite/
-  index.html                Lean per-church ad-landing page (one template,
-                            every city — hydrated from Supabase by slug)
-blog/                       "The Word" blog (index + sample article)
+  site.css / site.js    Main-site styles + interactions (nav, finder, forms)
+  chat.css / chat.js     "Grace" AI assistant widget
+  microsite.js           Microsite hydration (nav, player, map, forms)
+  config.js              Runtime config (Supabase / Formspree / chat / YouTube)
+  data.js                Supabase read layer (churches + placeholders)
+  churches.fallback.js   Built-in church data (used when Supabase is off)
+  *.jpg / *.png          Logo, seal, Grace avatar, pastor + About photos
 netlify/functions/
-  chat.mjs                  Serverless endpoint → Claude, grounded in the KB
-data/
-  upci-knowledge.md         AI assistant knowledge base (apostolic / UPCI)
-supabase/
-  schema.sql                Tables + RLS + seed for churches & placeholders
-netlify.toml                Build, functions, and /api/chat redirect
-.env.example                Required environment variables
+  chat.mjs               Claude-backed assistant endpoint
+  _knowledge.mjs         Embedded UPCI knowledge base (edit data/upci-knowledge.md too)
+data/upci-knowledge.md   Human-editable knowledge base source
+robots.txt sitemap.xml llms.txt   SEO / AEO / GEO
+netlify.toml             Build + functions config
 ```
 
-## External dependencies (CDN)
-
-- [Leaflet 1.9.4](https://leafletjs.com/) — Find a Church map
-- [Three.js 0.160](https://threejs.org/) — hero halo (progressively enhanced)
-- Google Fonts: Bricolage Grotesque (display) + Figtree (body)
-
-## Running locally
-
-The static pages work with any static server:
+## Run locally
 
 ```bash
-python3 -m http.server 8000   # http://localhost:8000/
+python3 -m http.server 8000        # static preview at http://localhost:8000/
+# AI assistant locally:
+npm i -g netlify-cli && netlify dev
 ```
 
-To run the AI assistant locally, use the Netlify CLI (loads the function and
-your `ANTHROPIC_API_KEY`):
+## Features at a glance
 
-```bash
-npm i -g netlify-cli
-netlify dev
-```
+- **Navigation** — dropdowns (About ▸ Who We Are/What We Believe/Pastors;
+  Resources ▸ Sermons/Blog) + Ministries, Giving, Prayer Request, Church
+  Locator, Contact. Mobile shows only the seal + hamburger; "Plan your visit"
+  lives inside the menu.
+- **Grace AI assistant** — floating chat → Netlify Function → Claude, grounded
+  in the UPCI knowledge base. Language toggle ENG / TAG / CEB (Tagalog &
+  Cebuano use a stronger model for fluency), typewriter replies, no em-dashes,
+  American-English on EN, photo avatar, minimize + close.
+- **Sermons** — featured sermon on top + three videos below (real YouTube
+  thumbnails).
+- **Find a Church / microsites** — locator cards open `microsite/?church=<slug>`;
+  the microsite hydrates per city from Supabase (or built-in fallback data).
+- **Forms** — prayer + newsletter via Formspree.
+- **SEO/AEO/GEO** — JSON-LD (Church, FAQ, Event, VideoObject, WebSite,
+  speakable WebPage), robots.txt (welcomes AI crawlers), sitemap.xml, llms.txt.
 
 ---
 
-## 1 · AI church assistant (Claude)
+## Go-live checklist
 
-A floating "Ask us anything" widget (`assets/chat.js` + `chat.css`) posts the
-conversation to **`/.netlify/functions/chat`** (`netlify/functions/chat.mjs`),
-which calls the **Claude API** grounded in **`data/upci-knowledge.md`**. The
-knowledge base is sent as a *cached* system prompt (prompt caching) so repeat
-questions are cheaper and faster.
+1. **Deploy** — drag the build (or connect the repo to Netlify for auto-deploy;
+   a GitHub Action is included at `.github/workflows/netlify-deploy.yml`).
+2. **AI assistant** — set `ANTHROPIC_API_KEY` in Netlify → Environment
+   variables. (Optional: `CLAUDE_MODEL`, `CLAUDE_MODEL_INTL`.)
+3. **Forms** — Formspree IDs are wired (`xkoeaajp` prayer, `xvzynnkd`
+   newsletter); confirm the form on first submission.
+4. **Supabase (optional)** — run `supabase/schema.sql`, then set `supabaseUrl`
+   + `supabaseAnonKey` in `assets/config.js` to make church data editable live.
+5. **Domain** — canonicals/sitemap/robots/llms currently use `https://ajnc.ph`.
+   If your production domain differs, tell the maintainer to update them.
+6. **Submit** `sitemap.xml` in Google Search Console + Bing Webmaster Tools.
 
-**Setup**
-1. In Netlify → Site configuration → Environment variables, add
-   `ANTHROPIC_API_KEY`. Optionally set `CLAUDE_MODEL`
-   (default `claude-haiku-4-5-20251001`; use `claude-sonnet-4-6` for richer
-   answers).
-2. Deploy. The widget works automatically; with no key set it shows a friendly
-   "email us" fallback instead of failing.
+### Still to provide / tidy
+- **Sermon video titles** — the three cards below the featured one use neutral
+  labels; send the real titles to set them exactly.
+- **Image sizes** — `lunch.jpg` (~10 MB) and the other About photos are large;
+  resize to ~1600 px / ~300 KB each for faster loads and better Core Web Vitals.
 
-**Knowledge base** — edit `data/upci-knowledge.md` to refine answers or paste in
-more content from upci.org. It was compiled from UPCI's Articles of Faith and the
-live "Our Beliefs" / "Oneness Pentecostalism" pages (verified May 2026; sources
-listed at the end of the file). Direct crawling is blocked by the network policy,
-so expand it by pasting page text under the matching headings. The doctrinal
-guardrails (Oneness, not Trinitarian; baptism in Jesus' name; Holy Ghost with
-tongues) live in both the KB and the function's system prompt.
-
-## 2 · Forms (Formspree)
-
-The prayer-request and newsletter forms submit to **Formspree**. Put your form
-IDs (the part after `https://formspree.io/f/`) in `assets/config.js`:
-
-```js
-formspree: { prayer: 'xayzwqlb', newsletter: 'mzbjkrpo' }
-```
-
-Until real IDs are set, the forms show an optimistic success message (demo mode)
-and post nowhere. Once set, submissions go straight to your Formspree inbox.
-
-## 3 · Shared data (Supabase)
-
-Church locations and per-church placeholders live in Supabase so the main site
-**and every microsite** read the same source and reflect edits **without a
-redeploy**.
-
-**Setup**
-1. Create a Supabase project, open the SQL editor, and run `supabase/schema.sql`
-   (creates `churches` + `site_config`, enables read-only RLS, seeds the 8
-   churches).
-2. Put your project URL and **anon** key in `assets/config.js`
-   (`supabaseUrl`, `supabaseAnonKey`). The anon key is public by design; writes
-   are blocked by RLS — edit data from the Supabase dashboard.
-3. Set `churchSlug` per site (`'cebu'` for the main site; each microsite its
-   own slug).
-
-**How it flows**
-- **Find a Church** (`data.js` → `site.js`) loads `churches` at runtime. With no
-  Supabase configured, it falls back to the built-in list, so the page always
-  works.
-- **Placeholders** — any element with `data-ajnc-bind="key"` is filled from the
-  `site_config` value for this church. Giving details are wired this way:
-  ```html
-  <span data-ajnc-bind="gcash_number">0917 555 4673</span>
-  <a data-ajnc-bind="youtube_url" data-ajnc-bind-attr="href">…</a>
-  ```
-  Add rows to `site_config` and bind more fields as needed (service times, bank
-  numbers, socials). Edit a row → it updates on every site that reads it.
-
-## 4 · Microsite (one template, every city)
-
-`microsite/index.html` is a lean, conversion-focused ad-landing page for a single
-local church (hero, what's-next, plan-your-visit, we-believe, sermons, giving,
-contact + single-church map, AI assistant). It reuses the shared styles, the
-Claude assistant, Formspree, and the Supabase data layer — **no separate
-codebase**.
-
-**How it picks a church** (`assets/microsite.js`):
-`?church=<slug>` (preview) → `AJNC_CONFIG.churchSlug` → `"cebu"`. It loads that
-church (Supabase when configured, otherwise the built-in dataset in
-`assets/churches.fallback.js`) and hydrates every `data-church="…"` field (name,
-city, pastor, address, service times, coordinates/map, YouTube), plus the
-`data-ajnc-bind` placeholders (GCash/Maya/BPI, email, phone).
-
-**Preview per city now** — open `microsite/?church=davao`, `?church=manila`,
-`?church=cebu`, etc. This works offline against `churches.fallback.js`, so you can
-see each city hydrate before Supabase is connected. When Supabase is set, live
-rows take precedence.
-
-**Deploying one per city**
-- A config template lives at `microsite/configs/cebu.js`. Host `microsite/` on a
-  subdomain (e.g. `davao.ajnc.ph`), copy the template to `assets/config.js`, and
-  set `churchSlug` (+ Supabase keys). Edit the church's row in Supabase and the
-  live microsite updates — no redeploy.
-- The page carries Cebu values as static SEO defaults and updates `<title>`,
-  meta description, and JSON-LD client-side per church. For the strongest
-  per-city SEO, also set those static defaults per subdomain build.
-
-Each church keeps its own pastor and details via its row — the microsite never
-hard-codes another church's pastor.
-
-## Brand notes
-
-- **Colors** — Bone Cream `#FAF7F1` (surface), Ink Navy `#0E2B4F` (text),
-  Gospel Red `#C8262E` (accent), Mission Gold `#E8B53C` (salt only).
-- **Type** — Bricolage Grotesque for display/scripture, Figtree for body.
-- **Tagline** — "Together we carry the gospel to the whole world."
-
-## Configured
-
-- YouTube channel `UC2S7h4HtT5jO6GdJbTTGpKQ` and featured sermon `USfbRXdo2sM`
-  are wired into the sermon player.
-
-## Still to provide
-
-- `ANTHROPIC_API_KEY` (Netlify env) — turns on the AI assistant.
-- Formspree form IDs — turn on real form delivery.
-- Supabase URL + anon key — turn on live, shared church data.
-- Self-host the Google Fonts for production performance/privacy.
+## Brand
+Bone `#FAF7F1` · Ink Navy `#0E2B4F` · Gospel Red `#C8262E` · Mission Gold
+`#E8B53C`. Display: Bricolage Grotesque. Body: Figtree.
+Tagline: "Together we carry the gospel to the whole world."
