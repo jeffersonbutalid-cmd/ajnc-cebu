@@ -995,7 +995,11 @@ em{font-style:italic;color:var(--red);font-weight:inherit}
   .nav-links .nav-link{width:100%;justify-content:space-between;padding:12px 4px;opacity:.85}
   .nav-dd{position:static;transform:none;opacity:1;visibility:visible;box-shadow:none;border:0;background:rgba(14,43,79,.03);padding:4px 4px 4px 14px;min-width:0;display:none}
   .nav-item.open .nav-dd{display:flex}
+  .nav-cta{display:none !important}
+  .nav-cta-mobile{display:inline-flex !important;justify-content:center;background:var(--red);color:var(--bone);border-radius:999px;padding:13px 18px;margin-top:12px;opacity:1;font-weight:600}
+  .nav-cta-mobile:hover{color:var(--bone)}
 }
+.nav-cta-mobile{display:none}
 </style>
 </head>
 <body>
@@ -1047,6 +1051,7 @@ em{font-style:italic;color:var(--red);font-weight:inherit}
       <a class="nav-link" href="#prayer">Prayer Request</a>
       <a class="nav-link" href="#connect">Connect</a>
       <a class="nav-link" href="#find">Contact Us</a>
+      <a class="nav-link nav-cta-mobile" href="#visit">Plan your visit →</a>
     </nav>
     <a class="nav-cta btn btn-red" href="#visit">Plan your visit</a>
     <button class="nav-burger" id="ms-nav-burger" aria-label="Open menu" aria-expanded="false">
