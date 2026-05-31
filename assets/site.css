@@ -670,13 +670,14 @@ button{font-family:inherit;cursor:pointer}
 }
 
 /* ===== Mobile nav: only seal + burger; CTA inside the menu ===== */
-.nav-cta-mobile{display:none}
+/* Higher specificity (.nav-links .nav-cta-mobile) so it beats .nav-links .nav-link. */
+.nav-links .nav-cta-mobile{display:none}
 @media (max-width:980px){
   .nav-cta{display:none}
-  .nav-cta-mobile{
+  .nav-links .nav-cta-mobile{
     display:inline-flex;justify-content:center;align-items:center;
     background:var(--red);color:var(--bone);opacity:1;
     border-radius:999px;padding:14px 18px;margin-top:12px;font-weight:600;
   }
-  .nav-cta-mobile:hover{background:var(--red-deep);color:var(--bone)}
+  .nav-links .nav-cta-mobile:hover{background:var(--red-deep);color:var(--bone)}
 }
