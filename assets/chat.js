@@ -25,7 +25,7 @@
     en: {
       greeting: "Hi, I'm Grace from AJNC. Ask me anything about our church, what we believe, baptism, or planning your first visit.",
       placeholder: "Type your message",
-      chips: ["Why baptise in Jesus' name?", "What is the Holy Ghost?", "When are your services?"]
+      chips: ["Why baptize in Jesus' name?", "What is the Holy Ghost?", "When are your services?"]
     },
     tl: {
       greeting: "Kumusta! Ako si Grace ng AJNC. Itanong mo lang ang tungkol sa aming simbahan, sa pananampalataya, sa bautismo, o sa unang pagdalaw mo.",

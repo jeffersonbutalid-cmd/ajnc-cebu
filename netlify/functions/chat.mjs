@@ -17,7 +17,7 @@ const MODEL = process.env.CLAUDE_MODEL || 'claude-haiku-4-5-20251001';
 const ANTHROPIC_URL = 'https://api.anthropic.com/v1/messages';
 
 const LANGS = {
-  en:  'Reply in warm, natural English.',
+  en:  'Reply in warm, natural American English. Use US spelling and idiom (for example: baptize, honor, neighbor, favorite), never British spelling.',
   tl:  'Reply in warm, natural Tagalog (conversational Filipino, the way a friendly church kuya or ate would talk).',
   ceb: 'Reply in warm, natural Cebuano / Bisaya (the everyday Cebuano spoken in Mandaue and Cebu).'
 };
