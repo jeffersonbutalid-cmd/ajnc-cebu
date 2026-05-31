@@ -148,10 +148,9 @@ see each city hydrate before Supabase is connected. When Supabase is set, live
 rows take precedence.
 
 **Deploying one per city**
-- Ready-made configs live in `microsite/configs/` (`cebu.js`, `davao.js`,
-  `manila.js`). Host `microsite/` on each subdomain (e.g. `davao.ajnc.ph`) and
-  copy the matching file to `assets/config.js` (set `churchSlug`,
-  `youtubeChannelId`, Supabase keys). Edit the church's row in Supabase and the
+- A config template lives at `microsite/configs/cebu.js`. Host `microsite/` on a
+  subdomain (e.g. `davao.ajnc.ph`), copy the template to `assets/config.js`, and
+  set `churchSlug` (+ Supabase keys). Edit the church's row in Supabase and the
   live microsite updates — no redeploy.
 - The page carries Cebu values as static SEO defaults and updates `<title>`,
   meta description, and JSON-LD client-side per church. For the strongest

@@ -24,7 +24,7 @@ window.AJNC_CONFIG = {
 
   // --- Formspree form IDs (the part after https://formspree.io/f/) ---
   formspree: {
-    prayer: 'PRAYER_FORM_ID',
-    newsletter: 'NEWSLETTER_FORM_ID'
+    prayer: 'xkoeaajp',
+    newsletter: 'xvzynnkd'
   }
 };
