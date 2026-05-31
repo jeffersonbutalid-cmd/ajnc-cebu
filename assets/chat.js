@@ -30,12 +30,12 @@
     tl: {
       greeting: "Kumusta! Ako si Grace ng AJNC. Itanong mo lang ang tungkol sa aming simbahan, sa pananampalataya, sa bautismo, o sa unang pagdalaw mo.",
       placeholder: "I-type ang iyong mensahe",
-      chips: ["Bakit nagbabautismo sa pangalan ni Jesus?", "Ano ang Espiritu Santo?", "Kailan ang serbisyo?"]
+      chips: ["Bakit nagbabautismo sa pangalan ni Jesus?", "Ano ang Espiritu Santo?", "Kailan ang inyong oras ng inyong pagtitipon?"]
     },
     ceb: {
       greeting: "Kumusta! Ako si Grace sa AJNC. Pangutana lang bahin sa among simbahan, sa pagtuo, sa bautismo, o sa imong unang pagduaw.",
       placeholder: "I-type ang imong mensahe",
-      chips: ["Nganong magbawtismo sa ngalan ni Jesus?", "Unsa ang Espiritu Santo?", "Kanus-a ang serbisyo?"]
+      chips: ["Nganong magbawtismo sa ngalan ni Jesus?", "Unsa ang Espiritu Santo?", "Kanus-a ang oras sa inyong simba?"]
     }
   };
 
