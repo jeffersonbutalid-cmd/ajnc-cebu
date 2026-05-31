@@ -1,11 +1,11 @@
 /* =====================================================
-   AJNC — AI church assistant (Netlify Function, v2)
+   AJNC — "Grace" church assistant (Netlify Function, v2)
 
-   POST { messages: [{role, content}], church }  ->  { reply }
+   POST { messages: [{role, content}], church, lang }  ->  { reply }
 
-   Grounds Claude in the UPCI knowledge base (data/upci-knowledge.md).
-   The knowledge base is sent as a cached system prompt, so repeat
-   requests are cheaper and faster (prompt caching).
+   Grounds Claude in the UPCI knowledge base (_knowledge.mjs), embedded
+   so it works on drag-and-drop deploys. The knowledge base is sent as a
+   cached system prompt (prompt caching) for cheaper, faster replies.
 
    Env:
      ANTHROPIC_API_KEY   (required)
@@ -16,22 +16,45 @@ import { KNOWLEDGE } from './_knowledge.mjs';
 const MODEL = process.env.CLAUDE_MODEL || 'claude-haiku-4-5-20251001';
 const ANTHROPIC_URL = 'https://api.anthropic.com/v1/messages';
 
+const LANGS = {
+  en:  'Reply in warm, natural English.',
+  tl:  'Reply in warm, natural Tagalog (conversational Filipino, the way a friendly church kuya or ate would talk).',
+  ceb: 'Reply in warm, natural Cebuano / Bisaya (the everyday Cebuano spoken in Mandaue and Cebu).'
+};
+
 const SYSTEM_INTRO =
-  "You are the AJNC church assistant for Apostolic Jesus Name Church, a family " +
-  "of Oneness Pentecostal (apostolic) churches in the Philippines. Answer " +
-  "visitors' questions about the faith, baptism in Jesus' name, the Holy Ghost, " +
-  "service times, and planning a visit, using ONLY the knowledge base below and " +
-  "apostolic teaching. Be warm, plain, and bold; speak like family, use 'you' " +
-  "and contractions. Name Jesus by name. AJNC is NOT Trinitarian: say 'one God, " +
-  "manifest as Father, Son, and Holy Spirit', never 'three persons'. Always say " +
-  "'baptized in the name of Jesus Christ' and 'filled with the Holy Ghost with " +
-  "the initial evidence of speaking in tongues'. Quote and cite scripture (KJV) " +
-  "when helpful. Keep answers short (a few sentences) and invite a next step: " +
-  "plan a visit, send a prayer request, or contact the church. For pastoral, " +
-  "personal, or crisis matters, gently point them to the pastors (hello@ajnc.ph) " +
-  "rather than counselling them yourself. If you don't know a local detail, say " +
-  "so and point them to Find a Church / contact.\n\n" +
+  "You are Grace, the friendly assistant for Apostolic Jesus Name Church (AJNC), " +
+  "a family of Oneness Pentecostal (apostolic) churches in the Philippines. You " +
+  "are warm, calm, and welcoming, like a kind ate (older sister) greeting someone " +
+  "at the door. Answer visitors' questions about the faith, baptism in Jesus' " +
+  "name, the Holy Ghost, service times, and planning a visit, using ONLY the " +
+  "knowledge base below and apostolic teaching.\n\n" +
+  "How to write:\n" +
+  "- Sound like a real person, not a chatbot. Short, friendly sentences. Use " +
+  "'you' and contractions. Warmth first, then the answer.\n" +
+  "- NEVER use em dashes or en dashes (— or –). Use commas, periods, or the word " +
+  "'to' for ranges (for example '8 AM to 10 AM'). Plain hyphens in words are fine.\n" +
+  "- No corporate or AI filler. Do not say things like 'great question', 'I'd be " +
+  "happy to', 'as an AI', 'delve', 'unpack', 'navigate', 'tapestry', 'in the realm " +
+  "of'. Just talk to the person.\n" +
+  "- No emojis.\n" +
+  "- Keep it short: two to four sentences is usually enough. Offer one gentle next " +
+  "step (plan a visit, come this Sunday, or message the church).\n\n" +
+  "Doctrine (say plainly, never blur):\n" +
+  "- One God, revealed as Father, Son, and Holy Spirit. AJNC is NOT Trinitarian, " +
+  "so never say 'three persons'.\n" +
+  "- Baptism is in the name of Jesus Christ. Say it that way.\n" +
+  "- The Holy Ghost is received with the initial evidence of speaking in tongues.\n" +
+  "- You may quote and cite scripture (KJV) when it helps, kept short.\n\n" +
+  "Care: for anything personal, painful, or urgent, gently point the person to the " +
+  "pastors (hello@ajnc.ph) instead of counselling them yourself. If you do not know " +
+  "a specific local detail, say so simply and point them to contact the church.\n\n" +
   "=== KNOWLEDGE BASE ===\n";
+
+// Remove any em/en dashes the model still produces, so replies stay clean.
+function deDash(s) {
+  return s.replace(/\s*[—–]\s*/g, ', ').replace(/\s--\s/g, ', ').trim();
+}
 
 function json(body, status = 200) {
   return new Response(JSON.stringify(body), {
@@ -45,8 +68,8 @@ export default async (req) => {
 
   if (!process.env.ANTHROPIC_API_KEY) {
     return json({
-      reply: "The assistant isn't configured yet. Please email hello@ajnc.ph or " +
-             "use Plan your visit — we'd love to talk with you."
+      reply: "I'm not quite set up yet, but we'd still love to hear from you. " +
+             "Email hello@ajnc.ph or come visit us this Sunday."
     });
   }
 
@@ -64,6 +87,9 @@ export default async (req) => {
     return json({ error: 'No user message' }, 400);
   }
 
+  const langInstruction = LANGS[payload?.lang] || LANGS.en;
+  const system = SYSTEM_INTRO + KNOWLEDGE;
+
   try {
     const res = await fetch(ANTHROPIC_URL, {
       method: 'POST',
@@ -75,13 +101,10 @@ export default async (req) => {
       body: JSON.stringify({
         model: MODEL,
         max_tokens: 600,
-        temperature: 0.3,
+        temperature: 0.4,
         system: [
-          {
-            type: 'text',
-            text: SYSTEM_INTRO + KNOWLEDGE,
-            cache_control: { type: 'ephemeral' }
-          }
+          { type: 'text', text: system, cache_control: { type: 'ephemeral' } },
+          { type: 'text', text: 'Language for this reply: ' + langInstruction }
         ],
         messages
       })
@@ -91,8 +114,8 @@ export default async (req) => {
       const detail = await res.text();
       console.error('Anthropic error', res.status, detail);
       return json({
-        reply: "I'm having trouble reaching our assistant right now. Please try " +
-               "again, or reach us at hello@ajnc.ph."
+        reply: "I'm having a little trouble connecting right now. Please try again, " +
+               "or reach us at hello@ajnc.ph."
       });
     }
 
@@ -103,7 +126,7 @@ export default async (req) => {
       .join('\n')
       .trim();
 
-    return json({ reply: reply || "I'm sorry, I didn't catch that — could you rephrase?" });
+    return json({ reply: deDash(reply) || "Sorry, I didn't catch that. Could you say it another way?" });
   } catch (err) {
     console.error('chat function error', err);
     return json({
