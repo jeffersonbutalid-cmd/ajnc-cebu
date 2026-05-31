@@ -6,9 +6,54 @@ International (UPCI, upci.org), of which AJNC stands in the same faith. Edit or
 extend this file — paste in additional content from upci.org pages — and the
 assistant's answers update with it.
 
-> Note: UPCI blocks automated scraping, so this base was compiled from UPCI's
-> published Articles of Faith and "Our Beliefs" statements. To enrich it, copy
-> text from specific upci.org pages and add it under the relevant heading below.
+> Note: This base was compiled from UPCI's published Articles of Faith and the
+> live "Our Beliefs" and "Oneness Pentecostalism" pages on upci.org (verified
+> May 2026; see Sources at the end). Direct crawling is blocked by the network,
+> so to enrich it further, copy text from specific upci.org pages and add it
+> under the relevant heading below.
+
+---
+
+## UPCI "Our Beliefs" — core statement (upci.org, current)
+
+There is **one God**, who has revealed Himself as Father; through His Son, in
+redemption; and as the Holy Spirit, by emanation. **Jesus Christ is God
+manifested in flesh** — He is both God and man.
+
+Everyone has sinned and needs salvation. **Salvation comes by grace through
+faith** based on the atoning sacrifice of Jesus Christ. The faithful obey the
+gospel by:
+
+- **Repentance** — death to sin;
+- **Water baptism in the name of Jesus Christ** — burial;
+- **The baptism of the Holy Spirit with the initial sign of speaking in tongues**
+  as the Spirit gives the utterance — resurrection.
+
+As Christians we **love God and others, live a holy life inwardly and outwardly,
+and worship God joyfully**. The supernatural gifts of the Spirit, including
+**divine healing**, are for the church today.
+
+**Jesus Christ is coming again** to catch away His church, with the final
+resurrection and final judgment to follow — the righteous to inherit eternal
+life, the unrighteous eternal death.
+
+The **Bible is the only God-given authority** which man possesses; therefore all
+doctrine, faith, hope, and instruction for the church must be based upon, and
+harmonize with, the Bible.
+
+---
+
+## Oneness Pentecostalism (upci.org)
+
+God is absolutely and indivisibly one, with no essential distinctions in His
+eternal nature. All names and titles of the Deity — God, Jehovah, Lord, Father,
+Word, Holy Spirit — refer to one and the same being. Any plurality associated
+with God relates to His attributes, titles, roles, or manifestations in
+self-revelation to humanity, **not to a plurality of persons**. This is a
+departure from Trinitarian theology (three co-equal persons); apostolics confess
+**one God** who is Father, Son, and Holy Spirit in manifestation. The UPCI traces
+its organizational roots to **1916**, when Pentecostal ministers united around
+the oneness of God and water baptism in the name of Jesus Christ.
 
 ---
 
@@ -240,3 +285,14 @@ your visit" on the website.
 - Only answer from apostolic teaching and the facts in this knowledge base. If
   you don't know something specific to a local church, say so and point them to
   Find a Church / contact.
+
+---
+
+## Sources
+
+- UPCI — Our Beliefs: https://upci.org/our-beliefs/
+- UPCI — Oneness Pentecostalism: https://upci.org/oneness-pentecostalism/
+- UPCI — About the UPCI: https://upci.org/about-the-upci/
+- UPCI — 2023 Articles of Faith (PDF): https://dmc.upci.org/wp-content/uploads/2023/03/2023-UPCI-ARTICLES-OF-FAITH.pdf
+- UPCI — Holiness (position paper, PDF): https://upci.org/wp-content/uploads/2022/10/Holiness.pdf
+- UPCI — The True Humanity of Jesus Christ (PDF): https://upci.org/wp-content/uploads/2022/09/The_True_Humanity_of_Jesus_Christ.pdf

@@ -20,9 +20,13 @@ assets/
   config.js                 Runtime config (Supabase / Formspree / chat endpoint)
   data.js                   Supabase data layer (churches + placeholders)
   site.js                   Nav, reveal, Find-a-Church (Leaflet), forms
+  microsite.js              Per-church microsite hydration + single map
   chat.js                   AI assistant widget logic
   halo3d.js                 Hero halo (Three.js, lazy / desktop only)
   *.png / *.jpg             Logo, seal, pastor portraits, photography
+microsite/
+  index.html                Lean per-church ad-landing page (one template,
+                            every city — hydrated from Supabase by slug)
 blog/                       "The Word" blog (index + sample article)
 netlify/functions/
   chat.mjs                  Serverless endpoint → Claude, grounded in the KB
@@ -75,11 +79,12 @@ questions are cheaper and faster.
    "email us" fallback instead of failing.
 
 **Knowledge base** — edit `data/upci-knowledge.md` to refine answers or paste in
-more content from upci.org. UPCI blocks automated scraping, so the base was
-compiled from UPCI's published Articles of Faith / "Our Beliefs"; expand it by
-pasting page text under the matching headings. The doctrinal guardrails
-(Oneness, not Trinitarian; baptism in Jesus' name; Holy Ghost with tongues) live
-in both the KB and the function's system prompt.
+more content from upci.org. It was compiled from UPCI's Articles of Faith and the
+live "Our Beliefs" / "Oneness Pentecostalism" pages (verified May 2026; sources
+listed at the end of the file). Direct crawling is blocked by the network policy,
+so expand it by pasting page text under the matching headings. The doctrinal
+guardrails (Oneness, not Trinitarian; baptism in Jesus' name; Holy Ghost with
+tongues) live in both the KB and the function's system prompt.
 
 ## 2 · Forms (Formspree)
 
@@ -121,6 +126,33 @@ redeploy**.
   ```
   Add rows to `site_config` and bind more fields as needed (service times, bank
   numbers, socials). Edit a row → it updates on every site that reads it.
+
+## 4 · Microsite (one template, every city)
+
+`microsite/index.html` is a lean, conversion-focused ad-landing page for a single
+local church (hero, what's-next, plan-your-visit, we-believe, sermons, giving,
+contact + single-church map, AI assistant). It reuses the shared styles, the
+Claude assistant, Formspree, and the Supabase data layer — **no separate
+codebase**.
+
+**How it picks a church** (`assets/microsite.js`):
+`?church=<slug>` (preview) → `AJNC_CONFIG.churchSlug` → `"cebu"`. It loads that
+church from Supabase and hydrates every `data-church="…"` field (name, city,
+pastor, address, service times, coordinates/map, YouTube), plus the
+`data-ajnc-bind` placeholders (GCash/Maya/BPI, email, phone). With no Supabase
+configured it renders the built-in Cebu defaults.
+
+**Deploying one per city**
+- Quickest: host `microsite/` on each subdomain (e.g. `davao.ajnc.ph`) and ship a
+  `config.js` whose `churchSlug` (and `youtubeChannelId`) is set for that church.
+  Edit the church's row in Supabase and the live microsite updates — no redeploy.
+- Preview any city locally with `microsite/?church=davao`.
+- The page carries Cebu values as static SEO defaults and updates `<title>`,
+  meta description, and JSON-LD client-side per church. For the strongest
+  per-city SEO, also set those static defaults per subdomain build.
+
+Each church keeps its own pastor and details via its DB row — the microsite never
+hard-codes another church's pastor.
 
 ## Brand notes
 

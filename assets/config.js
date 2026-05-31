@@ -15,6 +15,10 @@ window.AJNC_CONFIG = {
   // The main site uses "cebu"; each microsite sets its own slug.
   churchSlug: 'cebu',
 
+  // YouTube channel for this church's sermons (used by the microsite player).
+  youtubeChannelId: 'UC2S7h4HtT5jO6GdJbTTGpKQ',
+  youtubeHandleUrl: 'https://www.youtube.com/@ajnccebu',
+
   // --- AI church assistant (Netlify Function calling Claude) ---
   chatEndpoint: '/.netlify/functions/chat',
 

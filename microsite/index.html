@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en-PH">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title data-church-title>AJNC Cebu | A Pentecostal Church in Mandaue — Plan Your Visit</title>
+<meta name="description" data-church-desc content="Apostolic Jesus Name Church (AJNC) Cebu — a Oneness Pentecostal family in Mandaue City. Sunday service, Bible study, and Jesus-name baptism. Come as you are." />
+<meta name="theme-color" content="#FAF7F1" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Apostolic Jesus Name Church" />
+<meta property="og:title" content="AJNC — A church that feels like home" />
+<meta property="og:description" content="A Oneness Pentecostal family. Worship with family, near you." />
+<meta property="og:locale" content="en_PH" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<!-- Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+<!-- Shared site styles + chat widget -->
+<link rel="stylesheet" href="../assets/site.css" />
+<link rel="stylesheet" href="../assets/chat.css" />
+
+<!-- Microsite-only tweaks (lean, ad-landing). Kept inline so this page is self-contained. -->
+<style>
+  .ms-brand img{height:40px;width:auto;display:block}
+  .ms-footer-seal{height:64px;width:auto;display:block;margin-bottom:18px}
+  .ms-service-chip{
+    display:inline-flex;flex-wrap:wrap;align-items:center;
+    background:rgba(233,201,182,.45);border:1px solid rgba(14,43,79,.10);
+    border-radius:6px;overflow:hidden;margin-top:18px
+  }
+  .ms-service-chip span{
+    padding:9px 14px;font-size:13px;font-weight:600;color:var(--ink);
+    border-right:1px solid rgba(14,43,79,.12)
+  }
+  .ms-service-chip span:last-child{border-right:none}
+  #ms-map{width:100%;height:100%;min-height:340px;border-radius:18px;display:block}
+  .ms-map-wrap{position:relative;min-height:340px}
+</style>
+
+<!-- JSON-LD: Church (defaults to Cebu; updated client-side per church) -->
+<script type="application/ld+json" id="ms-jsonld">
+{
+  "@context": "https://schema.org",
+  "@type": "Church",
+  "name": "Apostolic Jesus Name Church — Cebu",
+  "alternateName": "AJNC Cebu",
+  "description": "A Oneness Pentecostal church in Mandaue City, Cebu. Baptism in Jesus' name (Acts 2:38) and the infilling of the Holy Ghost.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2nd Floor Un Heng Building, Casuntingan",
+    "addressLocality": "Mandaue City",
+    "addressRegion": "Cebu",
+    "addressCountry": "PH"
+  },
+  "areaServed": "Cebu, Philippines"
+}
+</script>
+</head>
+<body class="ms-body">
+
+<!-- ============================ NAV ============================ -->
+<header class="nav" role="banner">
+  <nav class="nav-inner" aria-label="Primary">
+    <a href="#top" class="nav-brand ms-brand" aria-label="AJNC — home">
+      <img src="../assets/ajnc-seal.png" alt="AJNC seal" />
+    </a>
+    <div class="nav-links" role="navigation">
+      <a href="#plan">Visit</a>
+      <a href="#believe">Believe</a>
+      <a href="#sermons">Sermons</a>
+      <a href="#giving">Giving</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#plan" class="nav-cta">Plan your visit →</a>
+    <button class="nav-burger" aria-label="Open menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main>
+
+<!-- ============================ HERO ============================ -->
+<section class="hero" id="top" aria-labelledby="hero-h1">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <svg class="hero-halo" viewBox="-100 -100 200 200" aria-hidden="true">
+      <defs>
+        <radialGradient id="haloGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#E8B53C" stop-opacity=".22"/>
+          <stop offset="60%" stop-color="#E8B53C" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <circle cx="0" cy="0" r="90" fill="url(#haloGlow)"/>
+      <circle class="ring r5" cx="0" cy="0" r="84" fill="none" stroke="#E8B53C" stroke-width=".5"/>
+      <circle class="ring r4" cx="0" cy="0" r="68" fill="none" stroke="#B8862A" stroke-width=".7"/>
+      <circle class="ring r3" cx="0" cy="0" r="54" fill="none" stroke="#E8B53C" stroke-width=".75"/>
+      <circle class="ring r2" cx="0" cy="0" r="40" fill="none" stroke="#E8B53C" stroke-width=".9"/>
+      <circle class="ring r1" cx="0" cy="0" r="22" fill="#E8B53C"/>
+    </svg>
+
+    <span class="eyebrow gold hero-eyebrow"><span data-church="eyebrow">Apostolic Jesus Name Church · Cebu</span></span>
+    <h1 id="hero-h1">Worship with family,<br/>here in <em data-church="city">Mandaue.</em></h1>
+    <p class="lead" data-church="lead">A Oneness Pentecostal church family. We gather every week to know Jesus together. Come as you are — there's a seat at the table for you.</p>
+    <div class="hero-cta">
+      <a href="#plan" class="btn btn-red">Plan your visit <span aria-hidden="true">→</span></a>
+      <a href="#sermons" class="btn btn-ghost"><span class="live-dot" aria-hidden="true"></span>This Sunday's service</a>
+    </div>
+    <div class="ms-service-chip" data-church="services-chip" aria-label="Service times">
+      <span>Sunday 10:00 AM</span><span>Sunday 3:00 PM</span><span>Thursday 6:30 PM</span>
+    </div>
+  </div>
+  <a href="#strip" class="scroll-hint" aria-label="Scroll to next section">
+    <span>Scroll</span>
+    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+  </a>
+</section>
+
+<!-- ============================ STRIP ============================ -->
+<aside class="strip" id="strip" aria-label="Mission statement">
+  Together <span class="gold">we carry</span> the gospel to the whole world.
+</aside>
+
+<!-- ============================ WHAT'S NEXT ============================ -->
+<section class="whats-next" aria-label="What's next" style="background:#E9C9B6;padding:22px 32px;border-top:1px solid rgba(14,43,79,.06)">
+  <div class="whats-next__inner" style="max-width:1080px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+    <div style="display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;flex:1;min-width:280px">
+      <p style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#C8262E;font-weight:700;margin:0;white-space:nowrap">This Sunday · Worship</p>
+      <p style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:clamp(.95rem,2vw,1.15rem);color:#0E2B4F;margin:0">Worship, the Word, and prayer. Come as you are.</p>
+    </div>
+    <a href="#plan" style="display:inline-flex;align-items:center;gap:6px;color:#C8262E;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap">
+      Plan your visit
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ============================ PLAN YOUR VISIT ============================ -->
+<section class="plan reveal" id="plan" aria-labelledby="plan-h">
+  <div class="container">
+    <div class="section-head">
+      <span class="halo-icon" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="dot"></i></span>
+      <span class="eyebrow red">Plan your visit</span>
+      <h2 id="plan-h">Your first <em>Sunday.</em></h2>
+      <p>Three things to know before you walk in. Whatever you're carrying, there's a seat at the table.</p>
+    </div>
+    <div class="plan-grid">
+      <article class="plan-card" data-tilt>
+        <div class="num">01</div>
+        <h3>What to <em>expect.</em></h3>
+        <p>Come as you are. We worship together, hear the Word, and pray for one another. Stay for fellowship after the service. Bring the kids.</p>
+        <a href="#believe" class="more">What we believe →</a>
+      </article>
+      <article class="plan-card" data-tilt>
+        <div class="num">02</div>
+        <h3>When we <em>gather.</em></h3>
+        <p data-church="services-list"><strong style="font-family:var(--display);font-weight:700">Sunday</strong> · 10:00 AM &amp; 3:00 PM<br/><strong style="font-family:var(--display);font-weight:700">Thursday</strong> · 6:30 PM (Bible Study)</p>
+        <a href="#contact" class="more">Get directions →</a>
+      </article>
+      <article class="plan-card" data-tilt>
+        <div class="num">03</div>
+        <h3>Where to <em>find us.</em></h3>
+        <p data-church="address">2nd Floor Un Heng Building, Casuntingan, Mandaue City, Cebu 6014.</p>
+        <a href="#contact" class="more">See the map →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ WE BELIEVE ============================ -->
+<section class="believe reveal" id="believe" aria-labelledby="believe-h">
+  <div class="container">
+    <div class="section-head">
+      <span class="halo-icon" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="dot"></i></span>
+      <span class="eyebrow">What we believe</span>
+      <h2 id="believe-h">The apostolic faith,<br/><em>plain and unhidden.</em></h2>
+      <p>Six pillars we have not, and will not, compromise on.</p>
+    </div>
+    <div class="believe-grid">
+      <article class="believe-card"><div class="num">01</div><h4>One God</h4><p>There is one God who has revealed Himself as Father in creation, Son in redemption, Holy Ghost in regeneration. Deuteronomy 6:4.</p></article>
+      <article class="believe-card"><div class="num">02</div><h4>Jesus is Lord</h4><p>In Him dwells all the fullness of the Godhead bodily. He is the Almighty, the I AM, the Saviour of the world. Colossians 2:9.</p></article>
+      <article class="believe-card"><div class="num">03</div><h4>Acts 2:38</h4><p>Repent, and be baptised in the name of Jesus Christ for the remission of sins — and ye shall receive the gift of the Holy Ghost.</p></article>
+      <article class="believe-card"><div class="num">04</div><h4>The Holy Ghost</h4><p>Infilling of the Spirit, evidenced by speaking in other tongues as the Spirit gives utterance. The Pentecost experience, today.</p></article>
+      <article class="believe-card"><div class="num">05</div><h4>The Word</h4><p>The Bible is the inspired Word of God — sufficient, infallible, the standard for faith, practice, and the church we are building.</p></article>
+      <article class="believe-card"><div class="num">06</div><h4>The Family</h4><p>The church is the household of God. We walk together across generations and neighbourhoods. Nobody walks alone.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SERMONS ============================ -->
+<section class="sermons reveal" id="sermons" aria-labelledby="sermons-h">
+  <div class="container">
+    <div class="section-head">
+      <span class="halo-icon" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="dot"></i></span>
+      <span class="eyebrow">Sermons &amp; teaching</span>
+      <h2 id="sermons-h">Hear the <em>Word</em><br/>preached.</h2>
+      <p>Sunday teaching and Bible study. Listen wherever you are.</p>
+    </div>
+    <article class="sermon-player">
+      <div class="ajnc-player" id="ajnc-sermon-player">
+        <div class="ajnc-player__fallback" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+      </div>
+      <div class="meta">
+        <div class="ajnc-badge-row"><span class="ajnc-badge" id="ajnc-sermon-badge">LATEST · SUNDAY</span></div>
+        <h3>That I may know him, and the power of his resurrection and the fellowship of his sufferings.</h3>
+        <div class="scripture">Philippians 3:10</div>
+        <p class="info"><span data-church="pastor">Our Pastor</span><span>Audio &amp; Video</span></p>
+        <div class="sermon-cta-row">
+          <a href="https://www.youtube.com/@ajnccebu" target="_blank" rel="noopener" class="btn btn-red" data-church="youtube">Watch on YouTube →</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============================ GIVING ============================ -->
+<section class="giving reveal" id="giving" aria-labelledby="giving-h">
+  <div class="container giving-grid">
+    <div>
+      <span class="halo-icon sm" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="dot"></i></span>
+      <span class="eyebrow red">Giving · Partner with us</span>
+      <h2 id="giving-h">Carry the gospel <em>with us.</em></h2>
+      <p>Your tithes and offerings carry the gospel — pastors trained, the streets fed, the family kept.</p>
+      <div class="scripture">"Each one must give as he has decided in his heart — not reluctantly or under compulsion, for God loves a cheerful giver."<br/><span style="font-size:13px;letter-spacing:.18em;font-style:normal;font-weight:700;color:var(--gold-deep);text-transform:uppercase;display:block;margin-top:10px">2 Corinthians 9 : 7</span></div>
+    </div>
+    <div class="pay-grid">
+      <div class="pay-card">
+        <div class="label"><div class="logo gcash">GC</div><h4>GCash</h4></div>
+        <p class="desc">Scan or send to:</p>
+        <span class="ref" data-ajnc-bind="gcash_number">0917 555 4673</span>
+        <p class="desc" style="margin-top:8px">Account name · <span data-ajnc-bind="gcash_name">AJNC Cebu Inc.</span></p>
+      </div>
+      <div class="pay-card">
+        <div class="label"><div class="logo maya">M</div><h4>Maya</h4></div>
+        <p class="desc">Send to:</p>
+        <span class="ref" data-ajnc-bind="maya_number">0917 555 4673</span>
+        <p class="desc" style="margin-top:8px">Account name · AJNC Cebu Inc.</p>
+      </div>
+      <div class="pay-card">
+        <div class="label"><div class="logo bpi">BPI</div><h4>BPI Bank Transfer</h4></div>
+        <p class="desc">Account no.</p>
+        <span class="ref" data-ajnc-bind="bpi_account">9069-1250-66</span>
+        <p class="desc" style="margin-top:8px">AJNC Cebu Inc. · BPI Mandaue</p>
+      </div>
+      <div class="pay-card">
+        <div class="label"><div class="logo cash">₱</div><h4>In person · Sunday</h4></div>
+        <p class="desc">Drop your offering in the offering box at the sanctuary on any Sunday.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CONTACT ============================ -->
+<section class="contact reveal" id="contact" aria-labelledby="contact-h">
+  <div class="container contact-grid">
+    <div>
+      <span class="halo-icon sm" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="dot"></i></span>
+      <span class="eyebrow red">Contact &amp; visit</span>
+      <h2 id="contact-h">Visit us <em data-church="city-inline">in Mandaue.</em></h2>
+      <p style="font-size:16px;color:var(--ink);opacity:.78;margin:0 0 24px">Walk in any Sunday — no appointment needed.</p>
+      <div class="nap">
+        <div class="nap-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-7.5-7-12a7 7 0 0 1 14 0c0 4.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          <div style="text-align:left" data-church="address-block">2nd Floor Un Heng Building, Casuntingan, Mandaue City, Cebu 6014, Philippines</div>
+        </div>
+        <div class="nap-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div style="text-align:left" data-church="services-block">Sunday · 10:00 AM &amp; 3:00 PM<br/>Thursday · 6:30 PM (Bible Study)</div>
+        </div>
+        <div class="nap-row" style="text-align:left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <div><strong>Get in touch</strong><a href="tel:+639175554673" data-church="phone-link" data-ajnc-bind="contact_phone">+63 917 555 4673</a><br/><a href="mailto:hello@ajnc.ph" data-ajnc-bind="contact_email">hello@ajnc.ph</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-map ms-map-wrap">
+      <div id="ms-map" role="region" aria-label="Map of the church"></div>
+      <a class="btn btn-red directions-btn" id="ms-directions" href="#" target="_blank" rel="noopener">Get directions →</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-halo" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <img src="../assets/ajnc-seal.png" alt="AJNC seal" class="ms-footer-seal" />
+      <div class="name" data-church="name">Apostolic Jesus<br/>Name Church · Cebu</div>
+      <div class="tagline">Together <span class="gold">we carry</span> the gospel to the whole world.</div>
+      <p data-church="address">A Oneness Pentecostal family. 2nd Floor Un Heng Bldg., Casuntingan, Mandaue City, Cebu 6014.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Visit</h5>
+      <a href="#plan">Plan your visit</a>
+      <a href="#contact">Service times</a>
+      <a href="#contact">Get directions</a>
+    </div>
+    <div class="footer-col">
+      <h5>Family</h5>
+      <a href="#believe">What we believe</a>
+      <a href="#sermons">Sermons</a>
+      <a href="#giving">Giving</a>
+    </div>
+    <div class="footer-col">
+      <h5>Connect</h5>
+      <a href="mailto:hello@ajnc.ph" data-ajnc-bind="contact_email">hello@ajnc.ph</a>
+      <a href="tel:+639175554673" data-ajnc-bind="contact_phone">+63 917 555 4673</a>
+      <a href="../index.html">Main AJNC site →</a>
+    </div>
+  </div>
+  <div class="container footer-bot">
+    <div class="left">
+      <span>© 2026 Apostolic Jesus Name Church Philippines</span>
+    </div>
+    <span class="gold">Salamat. Magkahiusa.</span>
+  </div>
+</footer>
+
+<!-- ============================ AI CHURCH ASSISTANT ============================ -->
+<div class="ajnc-chat" id="ajnc-chat" data-open="false">
+  <button class="ajnc-chat__launcher" id="ajnc-chat-launcher" aria-label="Ask the church assistant" aria-expanded="false" aria-controls="ajnc-chat-panel">
+    <span class="ajnc-chat__launcher-halo" aria-hidden="true"></span>
+    <svg class="ajnc-chat__launcher-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+    <svg class="ajnc-chat__launcher-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    <span class="ajnc-chat__launcher-label">Ask us anything</span>
+  </button>
+  <section class="ajnc-chat__panel" id="ajnc-chat-panel" role="dialog" aria-modal="false" aria-label="Church assistant" hidden>
+    <header class="ajnc-chat__head">
+      <span class="ajnc-chat__head-halo" aria-hidden="true"><i></i><i></i><i></i><i class="dot"></i></span>
+      <div class="ajnc-chat__head-text">
+        <strong>Ask AJNC</strong>
+        <span>Questions about faith, baptism, or your first visit</span>
+      </div>
+      <button class="ajnc-chat__min" id="ajnc-chat-min" aria-label="Close chat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+      </button>
+    </header>
+    <div class="ajnc-chat__log" id="ajnc-chat-log" role="log" aria-live="polite">
+      <div class="ajnc-msg ajnc-msg--bot">
+        <p>Hello, and welcome. I'm the AJNC assistant. Ask me about what we believe, baptism in Jesus' name, the Holy Ghost, service times, or planning your first visit.</p>
+      </div>
+    </div>
+    <div class="ajnc-chat__suggestions" id="ajnc-chat-suggestions">
+      <button type="button" class="ajnc-chip">Why baptise in Jesus' name?</button>
+      <button type="button" class="ajnc-chip">What is the Holy Ghost baptism?</button>
+      <button type="button" class="ajnc-chip">What should I expect on my first visit?</button>
+    </div>
+    <form class="ajnc-chat__form" id="ajnc-chat-form">
+      <input id="ajnc-chat-input" type="text" autocomplete="off" placeholder="Type your question…" aria-label="Type your question" />
+      <button type="submit" aria-label="Send">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </form>
+    <p class="ajnc-chat__disclaimer">An AI assistant grounded in apostolic (UPCI) teaching. For pastoral care, <a href="#contact">contact us</a>.</p>
+  </section>
+</div>
+
+<!-- ============================ SCRIPTS ============================ -->
+<script src="https://unpkg.com/three@0.160.0/build/three.min.js" defer></script>
+<script src="../assets/halo3d.js" defer></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+
+<script src="../assets/config.js" defer></script>
+<script src="../assets/data.js" defer></script>
+<script src="../assets/microsite.js" defer></script>
+<script src="../assets/chat.js" defer></script>
+
+</body>
+</html>

@@ -57,7 +57,7 @@
   }
 
   let _churches = null;
-  let _config = null;
+  const _configBySlug = {};
 
   async function getChurches() {
     if (!hasSupabase) return null;
@@ -72,17 +72,32 @@
     }
   }
 
-  async function getConfig() {
-    if (!hasSupabase) return {};
-    if (_config) return _config;
+  // Fetch a single church by slug (for microsites). null if unavailable.
+  async function getChurch(slug) {
+    if (!hasSupabase) return null;
     try {
-      const slug = encodeURIComponent(CFG.churchSlug || 'cebu');
       const rows = await rest(
-        'site_config?select=key,value&church_slug=eq.' + slug
+        'churches?select=*&slug=eq.' + encodeURIComponent(slug) + '&limit=1'
       );
-      _config = {};
-      (rows || []).forEach(r => { _config[r.key] = r.value; });
-      return _config;
+      return rows && rows[0] ? normalizeChurch(rows[0]) : null;
+    } catch (e) {
+      console.warn('[AJNC] church fetch failed:', e.message);
+      return null;
+    }
+  }
+
+  async function getConfig(slugArg) {
+    const slug = slugArg || CFG.churchSlug || 'cebu';
+    if (!hasSupabase) return {};
+    if (_configBySlug[slug]) return _configBySlug[slug];
+    try {
+      const rows = await rest(
+        'site_config?select=key,value&church_slug=eq.' + encodeURIComponent(slug)
+      );
+      const cfg = {};
+      (rows || []).forEach(r => { cfg[r.key] = r.value; });
+      _configBySlug[slug] = cfg;
+      return cfg;
     } catch (e) {
       console.warn('[AJNC] site_config fetch failed:', e.message);
       return {};
@@ -90,10 +105,10 @@
   }
 
   // Bind [data-ajnc-bind="key"] -> site_config value (text or href).
-  async function applyBindings() {
+  async function applyBindings(slugArg) {
     const targets = document.querySelectorAll('[data-ajnc-bind]');
     if (!targets.length) return;
-    const cfg = await getConfig();
+    const cfg = await getConfig(slugArg);
     targets.forEach(el => {
       const key = el.getAttribute('data-ajnc-bind');
       const val = cfg[key];
@@ -104,7 +119,7 @@
     });
   }
 
-  window.AJNC_DATA = { getChurches, getConfig, applyBindings };
+  window.AJNC_DATA = { getChurches, getChurch, getConfig, applyBindings };
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', applyBindings);
