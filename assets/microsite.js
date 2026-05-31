@@ -148,23 +148,25 @@
     }
   }
 
-  /* ---------- Newsletter (Formspree) ---------- */
-  function initNewsletter() {
-    const form = document.getElementById('ms-newsletter');
-    if (!form) return;
-    const id = (CFG.formspree && CFG.formspree.newsletter) || '';
-    const endpoint = id && !/_FORM_ID$/.test(id) ? 'https://formspree.io/f/' + id
-      : (/_FORM_ID/.test(form.action) ? null : form.action);
-    form.addEventListener('submit', async e => {
-      e.preventDefault();
-      const btn = form.querySelector('.btn');
-      btn.textContent = 'Sending…';
-      const done = ok => { btn.textContent = ok ? 'Sent. See you Sunday.' : 'Please try again'; if (ok) form.reset(); };
-      if (!endpoint) { done(true); return; }
-      try {
-        const res = await fetch(endpoint, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form) });
-        done(res.ok);
-      } catch { done(false); }
+  /* ---------- Forms (Formspree): newsletter + prayer ---------- */
+  function initForms() {
+    document.querySelectorAll('form[data-formspree]').forEach(form => {
+      const key = form.getAttribute('data-formspree');
+      const id = (CFG.formspree && CFG.formspree[key]) || '';
+      const endpoint = id && !/_FORM_ID$/.test(id) ? 'https://formspree.io/f/' + id
+        : (/_FORM_ID/.test(form.getAttribute('action') || '') ? null : form.getAttribute('action'));
+      const success = form.id === 'ms-prayer-form' ? 'Sent. The pastors will pray.' : 'Sent. See you Sunday.';
+      form.addEventListener('submit', async e => {
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"], .btn');
+        if (btn) btn.textContent = 'Sending…';
+        const done = ok => { if (btn) btn.textContent = ok ? success : 'Please try again'; if (ok) form.reset(); };
+        if (!endpoint) { done(true); return; }
+        try {
+          const res = await fetch(endpoint, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form) });
+          done(res.ok);
+        } catch { done(false); }
+      });
     });
   }
 
@@ -200,7 +202,7 @@
   async function start() {
     initNav();
     initPlayer();
-    initNewsletter();
+    initForms();
     // Default map (Cebu) so it always renders.
     renderMap([10.3242, 123.9398], 'AJNC Cebu', '2nd floor, Un Heng Building, Casuntingan, Mandaue');
     try {

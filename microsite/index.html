@@ -1044,6 +1044,7 @@ em{font-style:italic;color:var(--red);font-weight:inherit}
       </div>
       <a class="nav-link" href="#welcome">New Here</a>
       <a class="nav-link" href="../blog/">Blog</a>
+      <a class="nav-link" href="#prayer">Prayer Request</a>
       <a class="nav-link" href="#connect">Connect</a>
       <a class="nav-link" href="#find">Contact Us</a>
     </nav>
@@ -1065,7 +1066,7 @@ em{font-style:italic;color:var(--red);font-weight:inherit}
     <p class="lead">A Oneness Pentecostal church in Mandaue, Cebu. We gather every Sunday and Wednesday to know Jesus together. Come as you are.</p>
     <div class="hero-cta">
       <a class="btn btn-red" href="#visit">Plan your visit <span aria-hidden="true">→</span></a>
-      <a class="btn btn-ghost" href="#watch">Watch this Sunday</a>
+      <a class="btn btn-ghost" href="#prayer">Request prayer</a>
     </div>
     <div class="service-times" aria-label="Service times">
       <span class="row">Sunday Morning Service
@@ -1280,6 +1281,48 @@ em{font-style:italic;color:var(--red);font-weight:inherit}
   </div>
 </section>
 
+<!-- ====================== PRAYER REQUEST ====================== -->
+<style>
+.ms-prayer{background:var(--blush);padding:clamp(64px,8vw,112px) 0}
+.ms-prayer .section-head{margin-bottom:clamp(32px,4vw,48px)}
+.ms-prayer-form{max-width:640px;margin:0 auto;background:var(--bone);border:1px solid rgba(14,43,79,.08);border-radius:var(--radius-lg);padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:14px}
+.ms-prayer-form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:560px){.ms-prayer-form .row{grid-template-columns:1fr}}
+.ms-prayer-form input,.ms-prayer-form textarea{width:100%;font-family:var(--body);font-size:15px;color:var(--ink);background:var(--paper);border:1px solid rgba(14,43,79,.16);border-radius:12px;padding:13px 16px;outline:none;transition:border-color .16s,box-shadow .16s}
+.ms-prayer-form textarea{resize:vertical;min-height:120px}
+.ms-prayer-form input:focus,.ms-prayer-form textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(232,181,60,.2)}
+.ms-prayer-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:4px}
+.ms-prayer-call{display:inline-flex;align-items:center;gap:8px;color:var(--ink);text-decoration:none;font-weight:600;font-size:15px}
+.ms-prayer-call svg{width:18px;height:18px;stroke:var(--red);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ms-prayer-call:hover{color:var(--garnet)}
+.ms-prayer-note{text-align:center;font-size:13px;color:var(--slate);margin:16px 0 0}
+</style>
+<section class="ms-prayer" id="prayer" aria-labelledby="ms-prayer-h">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow red">Prayer request</span>
+      <h2 id="ms-prayer-h">We'd love to <em>pray with you.</em></h2>
+      <p>Send us a note and our pastoral team will pray with you this week. However small, nothing is too little to bring before the Lord.</p>
+    </div>
+    <form class="ms-prayer-form" id="ms-prayer-form" method="POST" data-formspree="prayer" action="https://formspree.io/f/xkoeaajp" novalidate>
+      <input type="hidden" name="_subject" value="New prayer request — AJNC Cebu microsite" />
+      <div class="row">
+        <input name="name" type="text" placeholder="Your name (optional)" autocomplete="name" />
+        <input name="email" type="email" placeholder="Email (optional)" autocomplete="email" />
+      </div>
+      <textarea name="message" placeholder="How can we pray for you?" required></textarea>
+      <div class="ms-prayer-foot">
+        <a class="ms-prayer-call" href="tel:+63322681986">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L7.9 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></svg>
+          Or call us · +63 32 268 1986
+        </a>
+        <button type="submit" class="btn btn-red">Send to our pastors →</button>
+      </div>
+    </form>
+    <p class="ms-prayer-note">Your request is read by our pastoral team only. We do not share it or add you to any list.</p>
+  </div>
+</section>
+
 <!-- ====================== STAY CONNECTED ====================== -->
 <section class="connect" id="connect" aria-labelledby="connect-h">
   <div class="container">
@@ -1321,7 +1364,7 @@ em{font-style:italic;color:var(--red);font-weight:inherit}
         <h4>Visit</h4>
         <ul>
           <li><a href="#visit">Plan your visit</a></li>
-          <li><a href="#watch">Watch this Sunday</a></li>
+          <li><a href="#prayer">Prayer request</a></li>
           <li><a href="#find">Find us</a></li>
           <li><a href="#about">Meet the pastor</a></li>
         </ul>
