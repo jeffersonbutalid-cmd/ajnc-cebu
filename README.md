@@ -137,21 +137,27 @@ codebase**.
 
 **How it picks a church** (`assets/microsite.js`):
 `?church=<slug>` (preview) → `AJNC_CONFIG.churchSlug` → `"cebu"`. It loads that
-church from Supabase and hydrates every `data-church="…"` field (name, city,
-pastor, address, service times, coordinates/map, YouTube), plus the
-`data-ajnc-bind` placeholders (GCash/Maya/BPI, email, phone). With no Supabase
-configured it renders the built-in Cebu defaults.
+church (Supabase when configured, otherwise the built-in dataset in
+`assets/churches.fallback.js`) and hydrates every `data-church="…"` field (name,
+city, pastor, address, service times, coordinates/map, YouTube), plus the
+`data-ajnc-bind` placeholders (GCash/Maya/BPI, email, phone).
+
+**Preview per city now** — open `microsite/?church=davao`, `?church=manila`,
+`?church=cebu`, etc. This works offline against `churches.fallback.js`, so you can
+see each city hydrate before Supabase is connected. When Supabase is set, live
+rows take precedence.
 
 **Deploying one per city**
-- Quickest: host `microsite/` on each subdomain (e.g. `davao.ajnc.ph`) and ship a
-  `config.js` whose `churchSlug` (and `youtubeChannelId`) is set for that church.
-  Edit the church's row in Supabase and the live microsite updates — no redeploy.
-- Preview any city locally with `microsite/?church=davao`.
+- Ready-made configs live in `microsite/configs/` (`cebu.js`, `davao.js`,
+  `manila.js`). Host `microsite/` on each subdomain (e.g. `davao.ajnc.ph`) and
+  copy the matching file to `assets/config.js` (set `churchSlug`,
+  `youtubeChannelId`, Supabase keys). Edit the church's row in Supabase and the
+  live microsite updates — no redeploy.
 - The page carries Cebu values as static SEO defaults and updates `<title>`,
   meta description, and JSON-LD client-side per church. For the strongest
   per-city SEO, also set those static defaults per subdomain build.
 
-Each church keeps its own pastor and details via its DB row — the microsite never
+Each church keeps its own pastor and details via its row — the microsite never
 hard-codes another church's pastor.
 
 ## Brand notes

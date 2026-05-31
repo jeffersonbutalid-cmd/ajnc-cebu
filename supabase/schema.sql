@@ -59,7 +59,7 @@ create policy "public read site_config"
 -- Seed data (matches the site's built-in defaults)
 -- =====================================================
 insert into public.churches (slug, name, region, province, city, address, pastor, services, phone, website, lat, lng, sort_order) values
-  ('cebu',     'AJNC Cebu',           'visayas',  'Cebu',              'Mandaue City',   'P. Burgos St., Mandaue City, Cebu 6014', 'Pastor Reyes',     '["Sunday 8:00 AM","Sunday 5:00 PM","Wednesday 7:00 PM"]', '+63 32 000 0000', '/churches/cebu',            10.3242, 123.9398, 1),
+  ('cebu',     'AJNC Cebu',           'visayas',  'Cebu',              'Mandaue City',   '2nd Floor Un Heng Building, Casuntingan, Mandaue City, Cebu 6014', 'Bro. Mario Doromal', '["Sunday 10:00 AM","Sunday 3:00 PM","Thursday 6:30 PM"]', '+63 917 555 4673', '/churches/cebu',     10.3242, 123.9398, 1),
   ('manila',   'AJNC Manila',         'luzon',    'Metro Manila',      'Quezon City',    'Sample Street, Quezon City, Metro Manila', 'Pastor Cruz',    '["Sunday 9:00 AM","Sunday 6:00 PM"]',                     '+63 2 0000 0000', '/churches/manila',          14.6760, 121.0437, 2),
   ('davao',    'AJNC Davao',          'mindanao', 'Davao del Sur',     'Davao City',     'Sample Street, Davao City',                'Pastor Mendoza', '["Sunday 8:00 AM","Sunday 5:00 PM"]',                     '+63 82 000 0000', '/churches/davao',           7.0731,  125.6128, 3),
   ('iloilo',   'AJNC Iloilo',         'visayas',  'Iloilo',            'Iloilo City',    'Sample Street, Iloilo City',               'Pastor Santos',  '["Sunday 9:00 AM","Sunday 5:00 PM"]',                     '+63 33 000 0000', '/churches/iloilo',          10.7202, 122.5621, 4),

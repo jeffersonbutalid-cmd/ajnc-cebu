@@ -59,8 +59,13 @@
   let _churches = null;
   const _configBySlug = {};
 
+  // Built-in dataset (assets/churches.fallback.js) used when Supabase isn't set.
+  function builtins() {
+    return Array.isArray(window.AJNC_FALLBACK_CHURCHES) ? window.AJNC_FALLBACK_CHURCHES : null;
+  }
+
   async function getChurches() {
-    if (!hasSupabase) return null;
+    if (!hasSupabase) return builtins();
     if (_churches) return _churches;
     try {
       const rows = await rest('churches?select=*&order=name.asc');
@@ -68,21 +73,27 @@
       return _churches;
     } catch (e) {
       console.warn('[AJNC] churches fetch failed, using built-in defaults:', e.message);
-      return null;
+      return builtins();
     }
   }
 
-  // Fetch a single church by slug (for microsites). null if unavailable.
+  // Fetch a single church by slug (for microsites). Falls back to built-ins.
   async function getChurch(slug) {
-    if (!hasSupabase) return null;
+    if (!hasSupabase) {
+      const list = builtins();
+      return (list && list.find(c => c.slug === slug || c.id === slug)) || null;
+    }
     try {
       const rows = await rest(
         'churches?select=*&slug=eq.' + encodeURIComponent(slug) + '&limit=1'
       );
-      return rows && rows[0] ? normalizeChurch(rows[0]) : null;
+      if (rows && rows[0]) return normalizeChurch(rows[0]);
+      const list = builtins();
+      return (list && list.find(c => c.slug === slug || c.id === slug)) || null;
     } catch (e) {
       console.warn('[AJNC] church fetch failed:', e.message);
-      return null;
+      const list = builtins();
+      return (list && list.find(c => c.slug === slug || c.id === slug)) || null;
     }
   }
 
