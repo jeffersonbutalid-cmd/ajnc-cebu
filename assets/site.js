@@ -9,6 +9,34 @@
 
 (function(){
 
+  // -------- Nav dropdowns + mobile burger --------
+  const burger = document.querySelector('.nav-burger');
+  const navLinks = document.querySelector('.nav-links');
+  if (burger && navLinks){
+    burger.addEventListener('click', () => navLinks.classList.toggle('nav-open'));
+  }
+  const ddItems = document.querySelectorAll('.nav-item.has-dd');
+  ddItems.forEach(item => {
+    const toggle = item.querySelector('.dd-toggle');
+    if (!toggle) return;
+    toggle.addEventListener('click', e => {
+      e.preventDefault();
+      const isOpen = item.classList.contains('open');
+      ddItems.forEach(i => { i.classList.remove('open'); const t = i.querySelector('.dd-toggle'); if (t) t.setAttribute('aria-expanded','false'); });
+      if (!isOpen){ item.classList.add('open'); toggle.setAttribute('aria-expanded','true'); }
+    });
+  });
+  // Close menus when a link is chosen or when clicking outside.
+  document.querySelectorAll('.nav-dd a, .nav-links > .nav-link[href]').forEach(a => {
+    a.addEventListener('click', () => {
+      ddItems.forEach(i => i.classList.remove('open'));
+      if (navLinks) navLinks.classList.remove('nav-open');
+    });
+  });
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.nav-item.has-dd')) ddItems.forEach(i => i.classList.remove('open'));
+  });
+
   // -------- Nav scroll state --------
   const nav = document.querySelector('.nav');
   if (nav){
