@@ -996,7 +996,7 @@ em{font-style:italic;color:var(--red);font-weight:inherit}
     </a>
     <nav class="nav-links" aria-label="Primary">
       <a href="#visit">Visit</a>
-      <a href="#watch">Watch</a>
+      <a href="#welcome">New here</a>
       <a href="#about">About</a>
       <a href="#believe">Believe</a>
       <a href="#find">Find us</a>
@@ -1056,29 +1056,53 @@ em{font-style:italic;color:var(--red);font-weight:inherit}
 </aside>
 -->
 
-<!-- ====================== PLAYER (Live / Latest) ====================== -->
-<section class="player-section" id="watch" aria-labelledby="watch-h">
+<!-- ====================== NEW HERE / WHAT TO EXPECT ====================== -->
+<style>
+.welcome{background:var(--ink);color:var(--bone);padding:clamp(56px,7vw,96px) 0}
+.welcome .section-head h2{color:var(--bone)}
+.welcome .section-head h2 em{color:var(--gold)}
+.welcome .section-head .eyebrow.gold{color:var(--gold)}
+.welcome .section-head p{color:rgba(250,247,241,.72)}
+.welcome-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media(max-width:880px){.welcome-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.welcome-grid{grid-template-columns:1fr}}
+.welcome-card{background:rgba(250,247,241,.05);border:1px solid rgba(250,247,241,.10);border-radius:14px;padding:24px 22px}
+.welcome-ico{width:42px;height:42px;border-radius:50%;background:rgba(232,181,60,.14);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.welcome-ico svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.welcome-card h3{font-family:var(--display);font-weight:700;font-size:19px;margin:0 0 8px;color:var(--bone)}
+.welcome-card p{margin:0;font-size:14.5px;line-height:1.55;color:rgba(250,247,241,.72)}
+.welcome-cta{text-align:center;margin-top:38px}
+</style>
+<section class="welcome" id="welcome" aria-labelledby="welcome-h">
   <div class="container">
-    <div class="player-grid">
-      <div class="player-video" id="ajnc-player">
-        <div class="player-fallback" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        </div>
+    <div class="section-head">
+      <span class="eyebrow gold">New here?</span>
+      <h2 id="welcome-h">What to expect on your <em>first visit.</em></h2>
+      <p>However you come, you will be welcomed as family. Here is what your first Sunday looks like.</p>
+    </div>
+    <div class="welcome-grid">
+      <div class="welcome-card">
+        <div class="welcome-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M19 14c1.5-1.5 3-3.3 3-5.5A4.5 4.5 0 0 0 12 6 4.5 4.5 0 0 0 2 8.5c0 2.2 1.5 4 3 5.5l7 7Z"/></svg></div>
+        <h3>Come as you are</h3>
+        <p>No dress code, no pressure. Bring yourself, exactly as you are today.</p>
       </div>
-      <div class="player-meta">
-        <span class="badge latest" id="ajnc-badge">Latest · Sunday</span>
-        <h2 id="watch-h">Sunday teaching from <em>Mandaue.</em></h2>
-        <div class="scripture">Philippians 3:10</div>
-        <p class="info">
-          <span>Bro. Mario Doromal</span>
-          <span>AJNC Cebu</span>
-        </p>
-        <div class="player-cta">
-          <a class="btn btn-red" href="https://www.youtube.com/@ajnccebu" target="_blank" rel="noopener">Watch on YouTube →</a>
-          <a class="btn btn-ghost-light" href="#visit">Plan your visit</a>
-        </div>
+      <div class="welcome-card">
+        <div class="welcome-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01"/><path d="M15 9h.01"/></svg></div>
+        <h3>Bring the kids</h3>
+        <p>Children are family too. There is a safe, joyful class for them.</p>
+      </div>
+      <div class="welcome-card">
+        <div class="welcome-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>About 90 minutes</h3>
+        <p>We worship, hear the Word, and pray together. Family lunch follows.</p>
+      </div>
+      <div class="welcome-card">
+        <div class="welcome-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5Z"/></svg></div>
+        <h3>Cebuano &amp; English</h3>
+        <p>Preaching in both, so you will follow along and feel at home.</p>
       </div>
     </div>
+    <div class="welcome-cta"><a class="btn btn-red" href="#visit">Plan your visit →</a></div>
   </div>
 </section>
 
@@ -1315,6 +1339,9 @@ em{font-style:italic;color:var(--red);font-weight:inherit}
       </div>
       <button class="ajnc-chat__min" id="ajnc-chat-min" aria-label="Minimize chat" title="Minimize">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <button class="ajnc-chat__min" id="ajnc-chat-close" aria-label="Close chat" title="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
       </button>
     </header>
     <div class="ajnc-chat__log" id="ajnc-chat-log" role="log" aria-live="polite">

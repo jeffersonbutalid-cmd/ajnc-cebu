@@ -50,8 +50,10 @@
     launcher.setAttribute('aria-expanded', String(open));
     if (open) setTimeout(() => input.focus(), 60);
   }
+  const closeBtn = document.getElementById('ajnc-chat-close');
   launcher.addEventListener('click', () => setOpen(panel.hidden));
   minBtn.addEventListener('click', () => setOpen(false));
+  if (closeBtn) closeBtn.addEventListener('click', () => setOpen(false));
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && !panel.hidden) setOpen(false); });
 
   /* ---- language ---- */

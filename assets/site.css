@@ -203,7 +203,7 @@ button{font-family:inherit;cursor:pointer}
   display:flex;flex-direction:column;
 }
 .plan-card:hover{transform:translateY(-6px) rotate(-.3deg);box-shadow:var(--shadow-lg)}
-.plan-card .num{font-family:var(--display);font-style:italic;font-weight:700;color:var(--red);font-size:18px;margin-bottom:auto}
+.plan-card .num{font-family:var(--display);font-style:italic;font-weight:700;color:var(--red);font-size:18px;margin-bottom:14px}
 .plan-card h3{font-family:var(--display);font-weight:700;font-size:32px;letter-spacing:-0.02em;line-height:1.05;margin:36px 0 14px;color:var(--ink)}
 .plan-card h3 em{font-style:italic;color:var(--red)}
 .plan-card p{font-size:15.5px;line-height:1.55;color:var(--ink);opacity:.82;margin:0 0 24px}
@@ -223,7 +223,7 @@ button{font-family:inherit;cursor:pointer}
 .about-collage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:200px 200px 200px;gap:14px;height:620px}
 .about-collage .photo{border-radius:12px;background-size:cover;background-position:center;position:relative;overflow:hidden}
 .about-collage .photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%, rgba(14,43,79,.25));mix-blend-mode:multiply}
-.about-collage .photo.p1{grid-row:span 2;background:linear-gradient(140deg,#f3d7a3 0%,#d99a5e 55%,#8e4a2e 100%)}
+.about-collage .photo.p1{grid-row:span 2;background:linear-gradient(160deg,rgba(14,43,79,.12),rgba(151,28,34,.30)),url('../assets/church-family.jpg') center/cover}
 .about-collage .photo.p2{background:linear-gradient(140deg,#e9c9b6 0%,#c98763 100%)}
 .about-collage .photo.p3{background:linear-gradient(140deg,#a8b5c4 0%,#5b7591 100%)}
 .about-collage .photo.p4{grid-column:span 2;background:linear-gradient(140deg,#e8b53c 0%,#b8862a 100%)}
@@ -646,3 +646,6 @@ button{font-family:inherit;cursor:pointer}
 .sermon-mini__body h4{font-family:var(--display);font-weight:700;font-size:18px;line-height:1.2;letter-spacing:-.01em;color:var(--bone);margin:0 0 8px}
 .sermon-mini__body .scripture{font-family:var(--display);font-style:italic;color:var(--gold);font-size:14px;margin-bottom:10px}
 .sermon-mini__body .info{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12.5px;color:rgba(250,247,241,.6);margin:0}
+
+/* sermon mini real thumbnails */
+.sermon-mini__thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
