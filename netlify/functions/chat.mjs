@@ -13,13 +13,16 @@
    ===================================================== */
 import { KNOWLEDGE } from './_knowledge.mjs';
 
+// English is fine on the fast model; Tagalog/Cebuano get a stronger model
+// for far more natural, fluent translation.
 const MODEL = process.env.CLAUDE_MODEL || 'claude-haiku-4-5-20251001';
+const MODEL_INTL = process.env.CLAUDE_MODEL_INTL || 'claude-sonnet-4-6';
 const ANTHROPIC_URL = 'https://api.anthropic.com/v1/messages';
 
 const LANGS = {
-  en:  'Reply in warm, natural American English. Use US spelling and idiom (for example: baptize, honor, neighbor, favorite), never British spelling.',
-  tl:  'Reply in warm, natural Tagalog (conversational Filipino, the way a friendly church kuya or ate would talk).',
-  ceb: 'Reply in warm, natural Cebuano / Bisaya (the everyday Cebuano spoken in Mandaue and Cebu).'
+  en:  'Write in warm, natural American English (US spelling and idiom: baptize, honor, neighbor). Never British spelling.',
+  tl:  'Write your ENTIRE reply in warm, fluent, natural Tagalog, the everyday conversational Filipino a friendly church ate would actually speak. Compose directly in Tagalog; do NOT translate English word for word, and do not sound stilted or robotic. Keep the church and doctrinal terms people really use (for example: bautismo sa pangalan ni Jesus, Espiritu Santo, Panginoong Jesus, Banal na Kasulatan).',
+  ceb: 'Write your ENTIRE reply in warm, fluent, natural Cebuano (Bisaya) as actually spoken in Mandaue and Cebu. Compose directly in Cebuano; do NOT translate English word for word and do NOT mix in Tagalog. Keep the church and doctrinal terms people really use (for example: bautismo sa ngalan ni Jesus, Espiritu Santo, Ginoong Jesus, Balaang Kasulatan). Sound like a real Cebuano church member talking.'
 };
 
 const SYSTEM_INTRO =
@@ -87,7 +90,9 @@ export default async (req) => {
     return json({ error: 'No user message' }, 400);
   }
 
-  const langInstruction = LANGS[payload?.lang] || LANGS.en;
+  const lang = LANGS[payload?.lang] ? payload.lang : 'en';
+  const langInstruction = LANGS[lang];
+  const model = (lang === 'tl' || lang === 'ceb') ? MODEL_INTL : MODEL;
   const system = SYSTEM_INTRO + KNOWLEDGE;
 
   try {
@@ -99,7 +104,7 @@ export default async (req) => {
         'content-type': 'application/json'
       },
       body: JSON.stringify({
-        model: MODEL,
+        model: model,
         max_tokens: 600,
         temperature: 0.4,
         system: [
