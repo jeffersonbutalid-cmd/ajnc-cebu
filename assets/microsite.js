@@ -168,7 +168,22 @@
     });
   }
 
+  function initNav() {
+    const burger = document.getElementById('ms-nav-burger');
+    const links = document.querySelector('.nav-links');
+    if (!burger || !links) return;
+    burger.addEventListener('click', () => {
+      const open = links.classList.toggle('nav-open');
+      burger.setAttribute('aria-expanded', String(open));
+    });
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      links.classList.remove('nav-open');
+      burger.setAttribute('aria-expanded', 'false');
+    }));
+  }
+
   async function start() {
+    initNav();
     initPlayer();
     initNewsletter();
     // Default map (Cebu) so it always renders.
