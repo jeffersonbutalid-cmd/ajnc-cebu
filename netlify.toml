@@ -8,10 +8,10 @@
 [build.environment]
   NODE_VERSION = "20"
 
-# Bundle the knowledge base alongside the chat function so it can read it.
+# The knowledge base is embedded in the function (netlify/functions/_knowledge.mjs),
+# so no extra bundling config is needed — this works with drag-and-drop deploys.
 [functions]
   node_bundler = "esbuild"
-  included_files = ["data/upci-knowledge.md"]
 
 # Friendly alias: /api/chat -> the Netlify Function
 [[redirects]]

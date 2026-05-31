@@ -11,25 +11,10 @@
      ANTHROPIC_API_KEY   (required)
      CLAUDE_MODEL        (optional; default claude-haiku-4-5-20251001)
    ===================================================== */
-import { readFileSync } from 'node:fs';
-import path from 'node:path';
+import { KNOWLEDGE } from './_knowledge.mjs';
 
 const MODEL = process.env.CLAUDE_MODEL || 'claude-haiku-4-5-20251001';
 const ANTHROPIC_URL = 'https://api.anthropic.com/v1/messages';
-
-// Read the knowledge base once per cold start. Requires netlify.toml:
-//   [functions]  included_files = ["data/upci-knowledge.md"]
-let KNOWLEDGE = '';
-try {
-  KNOWLEDGE = readFileSync(path.resolve(process.cwd(), 'data/upci-knowledge.md'), 'utf8');
-} catch (e) {
-  KNOWLEDGE =
-    'AJNC is a family of Oneness Pentecostal (apostolic) churches in the ' +
-    'Philippines. Core doctrine (Acts 2:38): repentance, water baptism in the ' +
-    'name of Jesus Christ for the remission of sins, and the baptism of the ' +
-    'Holy Ghost with the initial evidence of speaking in tongues. One God, ' +
-    'manifest as Father, Son, and Holy Spirit — not three persons.';
-}
 
 const SYSTEM_INTRO =
   "You are the AJNC church assistant for Apostolic Jesus Name Church, a family " +
