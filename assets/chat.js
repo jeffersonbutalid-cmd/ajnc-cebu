@@ -48,7 +48,11 @@
     root.dataset.open = String(open);
     panel.hidden = !open;
     launcher.setAttribute('aria-expanded', String(open));
-    if (open) setTimeout(() => input.focus(), 60);
+    if (open){
+      const nudge = root.querySelector('.ajnc-nudge');
+      if (nudge) nudge.remove();
+      setTimeout(() => input.focus(), 60);
+    }
   }
   const closeBtn = document.getElementById('ajnc-chat-close');
   launcher.addEventListener('click', () => setOpen(panel.hidden));
