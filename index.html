@@ -31,7 +31,7 @@
 
 <!-- Site CSS -->
 <link rel="stylesheet" href="assets/site.css" />
-<link rel="stylesheet" href="assets/timeline.css" />
+<link rel="stylesheet" href="assets/chat.css" />
 
 <!-- JSON-LD: Church / ReligiousOrganization -->
 <script type="application/ld+json">
@@ -171,12 +171,10 @@
     </a>
     <div class="nav-links" role="navigation">
       <a href="#about">About</a>
-      <a href="#timeline">Our Story</a>
-      <a href="#plan">Plan Your Visit</a>
       <a href="#leaders">Pastors</a>
       <a href="#sermons">Sermons</a>
-      <a href="blog/">The Word</a>
       <a href="#ministries">Ministries</a>
+      <a href="blog/">The Word</a>
       <a href="#giving">Giving</a>
       <a href="#contact">Contact</a>
     </div>
@@ -472,8 +470,8 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
     </article>
 
     <article class="sermon-featured" id="sermon-featured">
-      <a class="sermon-featured__thumb" href="https://www.youtube.com/watch?v=FEATURED_SERMON_VIDEO_ID" target="_blank" rel="noopener" aria-label="Watch featured sermon on YouTube">
-        <img id="sermon-featured-img" src="https://img.youtube.com/vi/FEATURED_SERMON_VIDEO_ID/maxresdefault.jpg" alt="" loading="lazy"/>
+      <a class="sermon-featured__thumb" href="https://www.youtube.com/watch?v=USfbRXdo2sM" target="_blank" rel="noopener" aria-label="Watch featured sermon on YouTube">
+        <img id="sermon-featured-img" src="https://img.youtube.com/vi/USfbRXdo2sM/maxresdefault.jpg" alt="" loading="lazy"/>
         <span class="sermon-featured__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
       </a>
       <div class="sermon-featured__body">
@@ -481,7 +479,7 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
         <h3>The Fellowship of His Sufferings</h3>
         <div class="scripture">Philippians 3:10</div>
         <p class="info"><span>Pastor Mario Doromal</span><span>6 Apr 2026</span><span>39 min</span></p>
-        <a href="https://www.youtube.com/watch?v=FEATURED_SERMON_VIDEO_ID" target="_blank" rel="noopener" class="btn btn-red">Watch sermon →</a>
+        <a href="https://www.youtube.com/watch?v=USfbRXdo2sM" target="_blank" rel="noopener" class="btn btn-red">Watch sermon →</a>
       </div>
     </article>
 
@@ -493,7 +491,7 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
 
 <script>
 (function () {
-  var YOUTUBE_CHANNEL_ID = 'UC_REPLACE_WITH_AJNC_CEBU_CHANNEL_ID';
+  var YOUTUBE_CHANNEL_ID = 'UC2S7h4HtT5jO6GdJbTTGpKQ';
   var UPLOADS_PLAYLIST = 'UU' + YOUTUBE_CHANNEL_ID.slice(2);
   function isServiceLive() {
     var phtString = new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila' });
@@ -565,33 +563,21 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
       <span class="halo-icon" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="dot"></i></span>
       <span class="eyebrow red">Ministries</span>
       <h2 id="ministries-h">Find your <em>place</em><br/>in the family.</h2>
-      <p>Nine ways to serve and be served. Every age, every gift, every neighbourhood.</p>
+      <p>Eight ways to serve and be served. Every age, every gift, every neighbourhood.</p>
     </div>
 
     <div class="ministry-grid">
       <article class="ministry-card">
-        <div class="photo kids" role="img" aria-label="Kids ministry"></div>
-        <h3>Kids</h3>
-        <p>Bible stories, songs, and snacks. A safe and joyful Sunday class for ages 2 to 11.</p>
-        <a href="mailto:hello@ajnccebu.ph?subject=Joining%20Kids" class="more">Learn more →</a>
+        <div class="photo kids" role="img" aria-label="Sunday School ministry"></div>
+        <h3>Sunday School</h3>
+        <p>Bible stories, songs, and snacks. A safe and joyful Sunday class for the children of the family.</p>
+        <a href="mailto:hello@ajnccebu.ph?subject=Joining%20Sunday%20School" class="more">Learn more →</a>
       </article>
       <article class="ministry-card">
         <div class="photo youth" role="img" aria-label="Youth ministry"></div>
         <h3>Youth</h3>
         <p>Friday nights for teens. Worship, the Word, food, and friendship.</p>
         <a href="mailto:hello@ajnccebu.ph?subject=Joining%20Youth" class="more">Learn more →</a>
-      </article>
-      <article class="ministry-card">
-        <div class="photo prayer" role="img" aria-label="Prayer Warriors ministry"></div>
-        <h3>Prayer Warriors</h3>
-        <p>The intercessors who lift the church and the city in prayer. Wednesday nights and Saturday mornings.</p>
-        <a href="mailto:hello@ajnccebu.ph?subject=Joining%20Prayer%20Warriors" class="more">Learn more →</a>
-      </article>
-      <article class="ministry-card">
-        <div class="photo couples" role="img" aria-label="Young Couples ministry"></div>
-        <h3>Young Couples</h3>
-        <p>For married couples in their first years. Growing together in Christ, with kids in tow.</p>
-        <a href="mailto:hello@ajnccebu.ph?subject=Joining%20Young%20Couples" class="more">Learn more →</a>
       </article>
       <article class="ministry-card">
         <div class="photo sya" role="img" aria-label="SYA — Singles and Young Adults"></div>
@@ -603,25 +589,28 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
         <a href="mailto:hello@ajnccebu.ph?subject=Joining%20SYA" class="more">Learn more →</a>
       </article>
       <article class="ministry-card">
-        <div class="photo joy" role="img" aria-label="JOY — Just Older Youth"></div>
-        <div class="ministry-card__title-block">
-          <h3>JOY</h3>
-          <p class="ministry-card__subtitle">Just Older Youth</p>
-        </div>
+        <div class="photo couples" role="img" aria-label="Young Couples ministry"></div>
+        <h3>Young Couples</h3>
+        <p>For married couples in their first years. Growing together in Christ, with kids in tow.</p>
+        <a href="mailto:hello@ajnccebu.ph?subject=Joining%20Young%20Couples" class="more">Learn more →</a>
+      </article>
+      <article class="ministry-card">
+        <div class="photo joy" role="img" aria-label="Joy Fellowship ministry"></div>
+        <h3>Joy Fellowship</h3>
         <p>The titas and titos who refuse to stop growing. Bible study, fun, and faithful friendship.</p>
-        <a href="mailto:hello@ajnccebu.ph?subject=Joining%20JOY" class="more">Learn more →</a>
+        <a href="mailto:hello@ajnccebu.ph?subject=Joining%20Joy%20Fellowship" class="more">Learn more →</a>
       </article>
       <article class="ministry-card">
-        <div class="photo campus" role="img" aria-label="Campus ministry"></div>
-        <h3>Campus</h3>
-        <p>Reaching students across Cebu's universities. Discipleship that fits between classes.</p>
-        <a href="mailto:hello@ajnccebu.ph?subject=Joining%20Campus" class="more">Learn more →</a>
+        <div class="photo music" role="img" aria-label="Music ministry"></div>
+        <h3>Music</h3>
+        <p>Worship leaders, the choir, and musicians who carry the congregation into the presence of God.</p>
+        <a href="mailto:hello@ajnccebu.ph?subject=Joining%20Music" class="more">Learn more →</a>
       </article>
       <article class="ministry-card">
-        <div class="photo afterwork" role="img" aria-label="After Work ministry"></div>
-        <h3>After Work</h3>
-        <p>For working professionals. Weekday evenings, after the day winds down, in the Word together.</p>
-        <a href="mailto:hello@ajnccebu.ph?subject=Joining%20After%20Work" class="more">Learn more →</a>
+        <div class="photo pulpit" role="img" aria-label="Pulpit ministry"></div>
+        <h3>Pulpit Ministry</h3>
+        <p>Ministers and teachers who preach the Word — Sunday services, Bible study, and the training of the next.</p>
+        <a href="mailto:hello@ajnccebu.ph?subject=Joining%20Pulpit%20Ministry" class="more">Learn more →</a>
       </article>
       <article class="ministry-card">
         <div class="photo outreach" role="img" aria-label="Outreach ministry"></div>
@@ -746,53 +735,6 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
   </div>
 </section>
 
-<!-- ============================ OUR STORY (TIMELINE) ============================ -->
-<section class="timeline reveal" id="timeline" aria-labelledby="timeline-h">
-  <div class="container">
-    <div class="section-head">
-      <span class="halo-icon" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="dot"></i></span>
-      <span class="eyebrow red">Our story</span>
-      <h2 id="timeline-h">How God carried us <em>here.</em></h2>
-      <p>Every prayer, every baptism, every name written down. The family God has built in Mandaue, since 1986.</p>
-    </div>
-    <div class="timeline-controls">
-      <div class="timeline-chips" role="tablist" aria-label="Filter by era">
-        <button type="button" class="tl-chip active" data-era="all">All eras</button>
-        <button type="button" class="tl-chip" data-era="beginnings">Beginnings</button>
-        <button type="button" class="tl-chip" data-era="growth">Growth</button>
-        <button type="button" class="tl-chip" data-era="today">Today</button>
-        <button type="button" class="tl-chip" data-era="future">To come</button>
-      </div>
-      <div class="tl-progress-track" aria-hidden="true"><div class="tl-progress-fill"></div></div>
-    </div>
-    <div class="tl-rail-wrap" id="tl-rail-wrap">
-      <div class="tl-rail" aria-hidden="true"></div>
-    </div>
-    <div class="tl-foot">
-      <p class="tl-foot-mark">Together.</p>
-      <p class="tl-foot-note">Got a story we should add? Tell us at <a href="mailto:hello@ajnccebu.ph">hello@ajnccebu.ph</a>. We love hearing how God moves.</p>
-    </div>
-  </div>
-</section>
-
-<div class="tl-modal" id="tl-modal" role="dialog" aria-modal="true" aria-labelledby="tl-modal-title">
-  <div class="tl-modal-card">
-    <button type="button" class="tl-modal-close" aria-label="Close">✕</button>
-    <span class="tl-modal-eyebrow"></span>
-    <div class="tl-modal-year">2006</div>
-    <div class="tl-modal-photo" aria-hidden="true"></div>
-    <h3 id="tl-modal-title"></h3>
-    <p class="tl-modal-sub"></p>
-    <div class="tl-modal-body"></div>
-    <blockquote class="tl-modal-scripture"><cite></cite></blockquote>
-    <div class="tl-modal-chips"></div>
-    <div class="tl-modal-nav">
-      <button type="button" class="prev"><span class="nav-label">Previous</span><span class="nav-year">—</span><span class="nav-title"></span></button>
-      <button type="button" class="next"><span class="nav-label">Next</span><span class="nav-year">—</span><span class="nav-title"></span></button>
-    </div>
-  </div>
-</div>
-
 <!-- ============================ STORIES ============================ -->
 <section class="stories reveal" id="stories" aria-labelledby="stories-h">
   <div class="container">
@@ -845,19 +787,19 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
       <div class="pay-card">
         <div class="label"><div class="logo gcash">GC</div><h4>GCash</h4></div>
         <p class="desc">Scan or send to:</p>
-        <span class="ref">0917 555 4673</span>
-        <p class="desc" style="margin-top:8px">Account name · AJNC Cebu Inc.</p>
+        <span class="ref" data-ajnc-bind="gcash_number">0917 555 4673</span>
+        <p class="desc" style="margin-top:8px">Account name · <span data-ajnc-bind="gcash_name">AJNC Cebu Inc.</span></p>
       </div>
       <div class="pay-card">
         <div class="label"><div class="logo maya">M</div><h4>Maya</h4></div>
         <p class="desc">Send to:</p>
-        <span class="ref">0917 555 4673</span>
+        <span class="ref" data-ajnc-bind="maya_number">0917 555 4673</span>
         <p class="desc" style="margin-top:8px">Account name · AJNC Cebu Inc.</p>
       </div>
       <div class="pay-card">
         <div class="label"><div class="logo bpi">BPI</div><h4>BPI Bank Transfer</h4></div>
         <p class="desc">Account no.</p>
-        <span class="ref">9069-1250-66</span>
+        <span class="ref" data-ajnc-bind="bpi_account">9069-1250-66</span>
         <p class="desc" style="margin-top:8px">AJNC Cebu Inc. · BPI Mandaue</p>
       </div>
       <div class="pay-card">
@@ -877,7 +819,8 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
       <h2 id="prayer-h">We'd love to pray <em>with you.</em></h2>
       <p class="sub">Send us a note. Our pastoral team reads every request and prays through them together each week.</p>
 
-      <form id="prayer-form" class="prayer-form" novalidate>
+      <form id="prayer-form" class="prayer-form" method="POST" data-formspree="prayer" action="https://formspree.io/f/PRAYER_FORM_ID" novalidate>
+        <input type="hidden" name="_subject" value="New prayer request — AJNC Cebu" />
         <div class="row">
           <div>
             <label for="pr-name">Your name <span style="color:var(--slate);font-weight:400">(optional)</span></label>
@@ -952,8 +895,9 @@ Office hours · Mon–Fri, 9 AM – 5 PM</div>
     <span class="eyebrow" style="color:var(--gold);position:relative">A letter from family</span>
     <h2 id="news-h" style="margin-top:14px">Sermon notes, prayer updates,<br/>and <em>what God's doing</em> across the islands.</h2>
     <p class="sub">One short email every other week. No spam, no marketing — just the family.</p>
-    <form id="newsletter-form" class="newsletter-form" novalidate>
-      <input type="email" placeholder="your@email.ph" required aria-label="Email address" />
+    <form id="newsletter-form" class="newsletter-form" method="POST" data-formspree="newsletter" action="https://formspree.io/f/NEWSLETTER_FORM_ID" novalidate>
+      <input type="hidden" name="_subject" value="New newsletter signup — AJNC Cebu" />
+      <input type="email" name="email" placeholder="your@email.ph" required aria-label="Email address" />
       <button type="submit">Send me letters from AJNC</button>
     </form>
   </div>
@@ -1243,6 +1187,49 @@ window.AJNC_EVENTS = {
   </div>
 </footer>
 
+<!-- ============================ AI CHURCH ASSISTANT ============================ -->
+<div class="ajnc-chat" id="ajnc-chat" data-open="false">
+  <button class="ajnc-chat__launcher" id="ajnc-chat-launcher" aria-label="Ask the church assistant" aria-expanded="false" aria-controls="ajnc-chat-panel">
+    <span class="ajnc-chat__launcher-halo" aria-hidden="true"></span>
+    <svg class="ajnc-chat__launcher-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+    <svg class="ajnc-chat__launcher-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    <span class="ajnc-chat__launcher-label">Ask us anything</span>
+  </button>
+
+  <section class="ajnc-chat__panel" id="ajnc-chat-panel" role="dialog" aria-modal="false" aria-label="Church assistant" hidden>
+    <header class="ajnc-chat__head">
+      <span class="ajnc-chat__head-halo" aria-hidden="true"><i></i><i></i><i></i><i class="dot"></i></span>
+      <div class="ajnc-chat__head-text">
+        <strong>Ask AJNC</strong>
+        <span>Questions about faith, baptism, or your first visit</span>
+      </div>
+      <button class="ajnc-chat__min" id="ajnc-chat-min" aria-label="Close chat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+      </button>
+    </header>
+
+    <div class="ajnc-chat__log" id="ajnc-chat-log" role="log" aria-live="polite">
+      <div class="ajnc-msg ajnc-msg--bot">
+        <p>Hello, and welcome. I'm the AJNC assistant. Ask me about what we believe, baptism in Jesus' name, the Holy Ghost, service times, or planning your first visit.</p>
+      </div>
+    </div>
+
+    <div class="ajnc-chat__suggestions" id="ajnc-chat-suggestions">
+      <button type="button" class="ajnc-chip">Why baptise in Jesus' name?</button>
+      <button type="button" class="ajnc-chip">What is the Holy Ghost baptism?</button>
+      <button type="button" class="ajnc-chip">What should I expect on my first visit?</button>
+    </div>
+
+    <form class="ajnc-chat__form" id="ajnc-chat-form">
+      <input id="ajnc-chat-input" type="text" autocomplete="off" placeholder="Type your question…" aria-label="Type your question" />
+      <button type="submit" aria-label="Send">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </form>
+    <p class="ajnc-chat__disclaimer">An AI assistant grounded in apostolic (UPCI) teaching. For pastoral care, <a href="#prayer">send a prayer request</a> or <a href="#contact">contact us</a>.</p>
+  </section>
+</div>
+
 <!-- ============================ SCRIPTS ============================ -->
 <!-- Three.js for hero halo (lazy — skipped on mobile / no-WebGL) -->
 <script src="https://unpkg.com/three@0.160.0/build/three.min.js" defer></script>
@@ -1251,9 +1238,15 @@ window.AJNC_EVENTS = {
 <!-- Leaflet for Find a Church map -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
 
+<!-- Shared data (Supabase: church locations + microsite placeholders) -->
+<script src="assets/config.js" defer></script>
+<script src="assets/data.js" defer></script>
+
 <!-- Site interactions -->
 <script src="assets/site.js" defer></script>
-<script src="assets/timeline.js" defer></script>
+
+<!-- AI church assistant (UPCI-grounded) -->
+<script src="assets/chat.js" defer></script>
 
 </body>
 </html>

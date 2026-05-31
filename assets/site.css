@@ -404,6 +404,8 @@ button{font-family:inherit;cursor:pointer}
 .ministry-card .photo.campus{background:linear-gradient(135deg,#E8B53C 0%, #C8262E 100%)}
 .ministry-card .photo.afterwork{background:linear-gradient(135deg,#5C6B7A 0%, #E9C9B6 100%)}
 .ministry-card .photo.outreach{background:linear-gradient(135deg,#971C22 0%, #E8B53C 100%)}
+.ministry-card .photo.music{background:linear-gradient(135deg,#0E2B4F 0%, #5C6B7A 100%)}
+.ministry-card .photo.pulpit{background:linear-gradient(135deg,#0E2B4F 0%, #C8262E 100%)}
 .ministry-card h3{font-family:var(--display);font-weight:700;font-size:24px;letter-spacing:-0.02em;color:var(--ink);margin:0 0 10px;line-height:1.1}
 .ministry-card__title-block{margin-bottom:8px}
 .ministry-card__title-block h3{font-size:28px;margin:0 0 2px}

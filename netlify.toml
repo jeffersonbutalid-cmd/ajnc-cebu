@@ -1,0 +1,20 @@
+# Netlify configuration — AJNC Cebu website
+# Static site at the repo root + serverless functions for the AI assistant.
+
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Bundle the knowledge base alongside the chat function so it can read it.
+[functions]
+  node_bundler = "esbuild"
+  included_files = ["data/upci-knowledge.md"]
+
+# Friendly alias: /api/chat -> the Netlify Function
+[[redirects]]
+  from = "/api/chat"
+  to = "/.netlify/functions/chat"
+  status = 200
