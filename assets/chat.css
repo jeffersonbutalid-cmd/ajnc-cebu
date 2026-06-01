@@ -18,13 +18,13 @@
 .ajnc-chat__launcher{
   position:relative; display:inline-flex; align-items:center; gap:10px;
   padding:9px 18px 9px 9px; border:none; cursor:pointer;
-  background:var(--ink); color:var(--bone);
-  border-radius:999px; box-shadow:0 14px 34px -12px rgba(14,43,79,.55);
+  background:var(--gold); color:var(--ink);
+  border-radius:999px; box-shadow:0 14px 34px -12px rgba(184,134,42,.55);
   font-size:14.5px; font-weight:600; letter-spacing:.01em;
   transition:transform .18s ease, background .18s ease;
 }
-.ajnc-chat__launcher:hover{ transform:translateY(-2px); background:#0a223f; }
-.ajnc-chat__launcher .ajnc-ava{ width:34px; height:34px; }
+.ajnc-chat__launcher:hover{ transform:translateY(-2px); background:#d8a72e; }
+.ajnc-chat__launcher .ajnc-ava{ width:34px; height:34px; box-shadow:0 0 0 2px rgba(14,43,79,.18); }
 .ajnc-chat__launcher-close{ display:none; width:20px; height:20px; }
 @media (max-width:520px){ .ajnc-chat__launcher-label{ display:none; } .ajnc-chat__launcher{ padding:8px; } }
 
