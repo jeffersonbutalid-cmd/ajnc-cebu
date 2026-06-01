@@ -146,7 +146,9 @@
     CHURCHES.forEach(c => {
       if (!c.coords || isNaN(c.coords[0])) return;
       const m = L.marker(c.coords, { icon: pinIcon }).addTo(map);
-      m.bindPopup(`<strong>${c.name}</strong><span class="pop-pastor">${c.pastor || ''}</span><div class="pop-meta">${c.city}, ${c.province}<br/>${(c.services && c.services[0]) || ''}</div>`);
+      m.bindPopup(c.comingSoon
+        ? `<strong>${c.name}</strong><span class="pop-pastor">Coming soon</span><div class="pop-meta">${c.city}, ${c.province}</div>`
+        : `<strong>${c.name}</strong><span class="pop-pastor">${c.pastor || ''}</span><div class="pop-meta">${c.city}, ${c.province}<br/>${(c.services && c.services[0]) || ''}</div>`);
       m.on('click', () => selectChurch(c.id, { fromMarker: true }));
       markers[c.id] = m;
     });
@@ -181,7 +183,22 @@
         return;
       }
 
-      listEl.innerHTML = items.map(c => `
+      listEl.innerHTML = items.map(c => {
+        if (c.comingSoon){
+          return `
+        <button class="finder__card finder__card--soon" data-id="${c.id}" aria-current="${state.activeId === c.id}">
+          <div class="eyebrow red">${(c.region || '').toUpperCase()} · ${c.province}</div>
+          <h3>${c.name}</h3>
+          <div class="pastor">Coming soon</div>
+          <div class="meta">
+            <div class="meta-row">${ICONS.pin}<span>${c.city}, ${c.province}. Launching soon.</span></div>
+          </div>
+          <div class="actions">
+            <a class="finder__btn finder__btn-ghost" href="mailto:hello@ajnc.ph?subject=AJNC%20${encodeURIComponent(c.city)}" target="_blank" rel="noopener">Ask about this city</a>
+          </div>
+        </button>`;
+        }
+        return `
         <button class="finder__card" data-id="${c.id}" aria-current="${state.activeId === c.id}">
           <div class="eyebrow red">${(c.region || '').toUpperCase()} · ${c.province}</div>
           <h3>${c.name}</h3>
@@ -189,14 +206,14 @@
           <div class="meta">
             <div class="meta-row">${ICONS.pin}<span>${c.address}</span></div>
             <div class="meta-row">${ICONS.clock}<span>${(c.services || []).join(' · ')}</span></div>
-            <div class="meta-row">${ICONS.phone}<a href="tel:${(c.phone||'').replace(/\s/g,'')}">${c.phone || ''}</a></div>
+            ${c.phone ? `<div class="meta-row">${ICONS.phone}<a href="tel:${c.phone.replace(/\s/g,'')}">${c.phone}</a></div>` : ''}
           </div>
           <div class="actions">
             <a class="finder__btn finder__btn-red" href="https://www.google.com/maps/dir/?api=1&destination=${c.coords[0]},${c.coords[1]}" target="_blank" rel="noopener">Get directions →</a>
             <a class="finder__btn finder__btn-ghost" href="microsite/?church=${c.slug || c.id}">Visit Site</a>
           </div>
-        </button>
-      `).join('');
+        </button>`;
+      }).join('');
 
       listEl.querySelectorAll('.finder__card').forEach(card => {
         card.addEventListener('click', e => {
