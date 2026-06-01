@@ -996,6 +996,8 @@ em{font-style:italic;color:var(--red);font-weight:inherit}
 /* nav dropdown (microsite) */
 .nav-links .nav-link{font:500 14px/1 var(--body);color:var(--ink);opacity:.78;background:none;border:0;cursor:pointer;text-decoration:none;white-space:nowrap;display:inline-flex;align-items:center;gap:5px;padding:0;transition:opacity .15s ease,color .15s ease}
 .nav-links .nav-link:hover{opacity:1;color:var(--garnet)}
+.nav-links .nav-back{color:var(--garnet);opacity:.85}
+.nav-links .nav-back:hover{opacity:1}
 .nav-item{position:relative;display:inline-flex}
 .nav-item .dd-chev{width:13px;height:13px;transition:transform .2s ease}
 .nav-item.open .dd-chev{transform:rotate(180deg)}
@@ -1050,6 +1052,7 @@ em{font-style:italic;color:var(--red);font-weight:inherit}
       <span class="wordmark">AJNC <em>Cebu</em></span>
     </a>
     <nav class="nav-links" aria-label="Primary">
+      <a class="nav-link nav-back" href="../" aria-label="Back to the main AJNC Philippines site">&larr; AJNC Philippines</a>
       <div class="nav-item has-dd">
         <button type="button" class="nav-link dd-toggle" aria-haspopup="true" aria-expanded="false">About
           <svg class="dd-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
