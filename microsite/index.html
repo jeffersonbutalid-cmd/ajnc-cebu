@@ -13,12 +13,8 @@
 <!-- JSON-LD: FAQ (answer-engine optimization) -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "What time are the services at AJNC Cebu?", "acceptedAnswer": { "@type": "Answer", "text": "Sunday at 10:00 AM and 3:00 PM, and Thursday at 6:30 PM for Bible study, on the 2nd floor of Un Heng Building, Casuntingan, Mandaue City, Cebu." } },
-    { "@type": "Question", "name": "Why do you baptize in Jesus' name?", "acceptedAnswer": { "@type": "Answer", "text": "Acts 2:38 — Peter said, repent and be baptized every one of you in the name of Jesus Christ for the remission of sins, and you shall receive the gift of the Holy Ghost. The apostles always baptized in the name of the Lord Jesus." } },
-    { "@type": "Question", "name": "What should I expect on my first visit?", "acceptedAnswer": { "@type": "Answer", "text": "Come as you are. We worship, hear the Word, and pray together for about 90 minutes, and family lunch follows the second Sunday service. Bring the kids." } }
+  "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+    { "@type": "Question", "name": "What time are the services at AJNC Cebu?", "acceptedAnswer": { "@type": "Answer", "text": "Sunday at 10:00 AM and 3:00 PM, and Thursday at 6:30 PM for Bible study, on the 2nd floor of Un Heng Building, Casuntingan, Mandaue City, Cebu." } }, { "@type": "Question", "name": "Why do you baptize in Jesus' name?", "acceptedAnswer": { "@type": "Answer", "text": "Acts 2:38, Peter said, repent and be baptized every one of you in the name of Jesus Christ for the remission of sins, and you shall receive the gift of the Holy Ghost. The apostles always baptized in the name of the Lord Jesus." } }, { "@type": "Question", "name": "What should I expect on my first visit?", "acceptedAnswer": { "@type": "Answer", "text": "Come as you are. We worship, hear the Word, and pray together for about 90 minutes, and family lunch follows the second Sunday service. Bring the kids." } }
   ]
 }
 </script>
@@ -45,47 +41,19 @@
 <!-- Chat with Grace -->
 <link rel="stylesheet" href="../assets/chat.css" />
 
-<!-- JSON-LD: Church -->
-<script type="application/ld+json">
+<!-- JSON-LD: Church (hydrated per location by microsite.js) -->
+<script type="application/ld+json" id="ms-church-jsonld">
 {
-  "@context": "https://schema.org",
-  "@type": "Church",
-  "@id": "https://cebu.ajnc.ph/#org",
-  "name": "Apostolic Jesus Name Church Cebu",
-  "alternateName": ["AJNC Cebu", "AJNC Mandaue"],
-  "url": "https://cebu.ajnc.ph/",
-  "logo": "https://cebu.ajnc.ph/logo.png",
-  "image": "https://cebu.ajnc.ph/og.png",
-  "description": "A Oneness Pentecostal church in Mandaue, Cebu. Sunday service 10 AM and 3 PM. Thursday Bible study 6:30 PM.",
-  "telephone": "+63 32 268 1986",
-  "email": "cebu@ajnc.ph",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "2nd floor, Un Heng Building, P. Burgos St., Casuntingan",
-    "addressLocality": "Mandaue City",
-    "addressRegion": "Cebu",
-    "postalCode": "6014",
-    "addressCountry": "PH"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 10.3242,
-    "longitude": 123.9398
-  },
-  "openingHoursSpecification": [
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:00", "closes": "12:00" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "15:00", "closes": "17:00" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "18:30", "closes": "20:30" }
-  ],
-  "parentOrganization": {
-    "@type": "ReligiousOrganization",
-    "name": "Apostolic Jesus Name Church Philippines",
-    "url": "https://ajnc.ph/"
-  },
-  "sameAs": [
-    "https://www.facebook.com/ajnc.cebu",
-    "https://www.instagram.com/ajnc.cebu",
-    "https://www.youtube.com/@ajnccebu"
+  "@context": "https://schema.org", "@type": "Church", "@id": "https://cebu.ajnc.ph/#org", "name": "Apostolic Jesus Name Church Cebu", "alternateName": ["AJNC Cebu", "AJNC Mandaue"], "url": "https://cebu.ajnc.ph/", "logo": "https://cebu.ajnc.ph/logo.png", "image": "https://cebu.ajnc.ph/og.png", "description": "A Oneness Pentecostal church in Mandaue, Cebu. Sunday service 10 AM and 3 PM. Thursday Bible study 6:30 PM.", "telephone": "+63 32 268 1986", "email": "cebu@ajnc.ph", "address": {
+    "@type": "PostalAddress", "streetAddress": "2nd floor, Un Heng Building, P. Burgos St., Casuntingan", "addressLocality": "Mandaue City", "addressRegion": "Cebu", "postalCode": "6014", "addressCountry": "PH"
+  }, "geo": {
+    "@type": "GeoCoordinates", "latitude": 10.3242, "longitude": 123.9398
+  }, "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:00", "closes": "12:00" }, { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "15:00", "closes": "17:00" }, { "@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "18:30", "closes": "20:30" }
+  ], "parentOrganization": {
+    "@type": "ReligiousOrganization", "name": "Apostolic Jesus Name Church Philippines", "url": "https://ajnc.ph/"
+  }, "sameAs": [
+    "https://www.facebook.com/ajnc.cebu", "https://www.instagram.com/ajnc.cebu", "https://www.youtube.com/@ajnccebu"
   ]
 }
 </script>
@@ -173,7 +141,7 @@ em{font-style:italic;color:var(--red);font-weight:inherit}
 .halo{display:block}
 .halo .glow{fill:url(#haloGlow)}
 
-/* AJNC seal — original brand mark (cropped, do not regenerate) */
+/* AJNC seal, original brand mark (cropped, do not regenerate) */
 .seal{display:block;width:auto;height:auto;flex-shrink:0}
 .seal--nav{width:36px;height:36px}
 .seal--hero{width:96px;height:96px;margin:0 auto 18px}
@@ -506,7 +474,7 @@ em{font-style:italic;color:var(--red);font-weight:inherit}
 }
 
 /* ============================================================
-   PLAN — three cards (Bone Cream)
+   PLAN, three cards (Bone Cream)
    ============================================================ */
 .plan{
   padding:clamp(64px, 8vw, 112px) 0;
@@ -636,8 +604,7 @@ em{font-style:italic;color:var(--red);font-weight:inherit}
   position:absolute;
   inset:0;
   background:
-    radial-gradient(ellipse at 30% 30%, rgba(255,255,255,.25), transparent 55%),
-    radial-gradient(ellipse at 70% 80%, rgba(151,28,34,.35), transparent 60%);
+    radial-gradient(ellipse at 30% 30%, rgba(255,255,255,.25), transparent 55%), radial-gradient(ellipse at 70% 80%, rgba(151,28,34,.35), transparent 60%);
 }
 .pastor-ring{
   position:absolute;
@@ -1058,7 +1025,7 @@ em{font-style:italic;color:var(--red);font-weight:inherit}
     </div>
   </div>
   <div class="nav-inner">
-    <a class="nav-brand" href="#top" aria-label="AJNC Cebu — home">
+    <a class="nav-brand" href="#top" aria-label="AJNC Cebu, home">
       <img class="seal seal--nav" src="../assets/ajnc-seal.png" alt="Apostolic Jesus Name Church seal" />
       <span class="wordmark">AJNC <em>Cebu</em></span>
     </a>
@@ -1116,7 +1083,7 @@ em{font-style:italic;color:var(--red);font-weight:inherit}
 <aside class="strip" aria-label="What's next">
   <div class="strip-inner">
     <div class="strip-label">
-      <span>This Sunday</span><span class="red">·</span><span>10 AM and 3 PM</span>
+      <span>This Sunday</span><span class="red">·</span><span data-church="strip-time">10 AM and 3 PM</span>
     </div>
     <div class="strip-body">Worship, the Word, and prayer. Come as you are.</div>
     <a class="strip-cta" href="#visit">Plan your visit →</a>
@@ -1336,7 +1303,7 @@ em{font-style:italic;color:var(--red);font-weight:inherit}
       <p>Send us a note and our pastoral team will pray with you this week. However small, nothing is too little to bring before the Lord.</p>
     </div>
     <form class="ms-prayer-form" id="ms-prayer-form" method="POST" data-formspree="prayer" action="https://formspree.io/f/xkoeaajp" novalidate>
-      <input type="hidden" name="_subject" value="New prayer request — AJNC Cebu microsite" />
+      <input type="hidden" name="_subject" value="New prayer request, AJNC Cebu microsite" />
       <div class="row">
         <input name="name" type="text" placeholder="Your name (optional)" autocomplete="name" />
         <input name="email" type="email" placeholder="Email (optional)" autocomplete="email" />
@@ -1429,8 +1396,7 @@ em{font-style:italic;color:var(--red);font-weight:inherit}
 <!-- Leaflet -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-<!-- The sermon player and the map are initialised in ../assets/microsite.js,
-     which also hydrates this page from the church record (by slug) so one
+<!-- The sermon player and the map are initialised in ../assets/microsite.js, which also hydrates this page from the church record (by slug) so one
      template serves every city. -->
 
 <!-- Shared data + assistant -->
@@ -1551,16 +1517,9 @@ em{font-style:italic;color:var(--red);font-weight:inherit}
 <script>
 window.AJNC_EVENTS = window.AJNC_EVENTS || {
   'pentecost-2026': {
-    category: 'Special Service',
-    title: 'Pentecost Sunday <em>· special baptism service.</em>',
-    when: 'Sunday 17 May 2026 · 8 AM and 5 PM',
-    where: '2nd floor, Un Heng Building, P. Burgos St., Casuntingan, Mandaue',
-    body: [
-      'On the fortieth anniversary year of AJNC Cebu, we mark Pentecost Sunday with a special baptism service. The waters are open to anyone who has been considering the next step.',
-      'First service begins at 8 AM with worship and the Word. The baptism follows in the family hall. Lunch is served between services. The 5 PM service closes the day in prayer and thanksgiving.'
-    ],
-    highlights: ['Baptism service', 'Lunch in the family hall', 'All welcome'],
-    calendarUrl: 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pentecost+Sunday+at+AJNC+Cebu&dates=20260517T080000/20260517T190000&details=Special+baptism+service&location=Un+Heng+Building,+Casuntingan,+Mandaue+City'
+    category: 'Special Service', title: 'Pentecost Sunday <em>· special baptism service.</em>', when: 'Sunday 17 May 2026 · 8 AM and 5 PM', where: '2nd floor, Un Heng Building, P. Burgos St., Casuntingan, Mandaue', body: [
+      'On the fortieth anniversary year of AJNC Cebu, we mark Pentecost Sunday with a special baptism service. The waters are open to anyone who has been considering the next step.', 'First service begins at 8 AM with worship and the Word. The baptism follows in the family hall. Lunch is served between services. The 5 PM service closes the day in prayer and thanksgiving.'
+    ], highlights: ['Baptism service', 'Lunch in the family hall', 'All welcome'], calendarUrl: 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pentecost+Sunday+at+AJNC+Cebu&dates=20260517T080000/20260517T190000&details=Special+baptism+service&location=Un+Heng+Building,+Casuntingan,+Mandaue+City'
   }
 };
 

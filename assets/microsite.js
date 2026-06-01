@@ -72,6 +72,42 @@
              : '<span>' + esc(s) + '</span>';
   }
 
+  function to24(h, m, ap) {
+    h = +h;
+    if (/pm/i.test(ap) && h !== 12) h += 12;
+    if (/am/i.test(ap) && h === 12) h = 0;
+    return String(h).padStart(2, '0') + ':' + m;
+  }
+  // Rewrite the Church JSON-LD from the record so schema never drifts from the page.
+  function hydrateSchema(c, short, services) {
+    const el = document.getElementById('ms-church-jsonld');
+    if (!el) return;
+    try {
+      const d = JSON.parse(el.textContent);
+      if (c.name) { d.name = c.name.replace(/^AJNC\b/, 'Apostolic Jesus Name Church'); d.alternateName = [c.name]; }
+      if (c.phone) d.telephone = c.phone;
+      if (d.address) {
+        if (c.address) d.address.streetAddress = c.address;
+        if (c.city) d.address.addressLocality = c.city;
+        if (c.province) d.address.addressRegion = c.province;
+      }
+      if (c.coords && !isNaN(c.coords[0]) && d.geo) { d.geo.latitude = c.coords[0]; d.geo.longitude = c.coords[1]; }
+      if (Array.isArray(services) && services.length) {
+        const spec = [];
+        services.forEach(s => {
+          const m = s.match(/^(\w+)\s+(\d{1,2}):(\d{2})\s*(AM|PM)/i);
+          if (!m) return;
+          const opens = to24(m[2], m[3], m[4]);
+          let oh = +opens.slice(0, 2) + 2; if (oh > 23) oh = 23;
+          const closes = String(oh).padStart(2, '0') + ':' + opens.slice(3);
+          spec.push({ '@type': 'OpeningHoursSpecification', dayOfWeek: m[1].charAt(0).toUpperCase() + m[1].slice(1).toLowerCase(), opens, closes });
+        });
+        if (spec.length) d.openingHoursSpecification = spec;
+      }
+      el.textContent = JSON.stringify(d);
+    } catch (e) { /* leave the static schema in place */ }
+  }
+
   function hydrate(c) {
     const short = (c.city || 'Mandaue').replace(/\s+City$/i, '');
     const services = Array.isArray(c.services) ? c.services : [];
@@ -93,7 +129,13 @@
       if (tl) tl.innerHTML = services.map(serviceRow).join('');
       const ft = $('.find-times');
       if (ft) ft.innerHTML = services.map(s => '<span class="pill">' + esc(s) + '</span>').join('');
+      // What's Next strip: this Sunday's times only
+      const sundays = services.filter(s => /^sun/i.test(s)).map(s => s.replace(/^sun(day)?\s*/i, ''));
+      const stripT = document.querySelector('[data-church="strip-time"]');
+      if (stripT && sundays.length) stripT.textContent = sundays.join(' and ');
     }
+
+    hydrateSchema(c, short, services);
 
     if (c.pastor) {
       const info = $('.player-meta .info span');
