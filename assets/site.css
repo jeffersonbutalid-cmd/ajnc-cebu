@@ -696,3 +696,6 @@ button{font-family:inherit;cursor:pointer}
 .nav-wordmark em{font-style:italic;color:var(--red)}
 .nav.scrolled .nav-wordmark{font-size:18px}
 @media (max-width:980px){ .nav-wordmark{display:none} }
+
+/* ===== Seal on a white chip in the nav only (not footer, not favicon) ===== */
+.nav-brand img{ background:#fff; border-radius:50%; padding:5px; box-sizing:border-box; }
