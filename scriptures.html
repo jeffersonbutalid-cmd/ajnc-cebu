@@ -194,36 +194,34 @@
 
 <script>
 /* =====================================================================
-   Email signup destination.
-   Default: Formspree (collects the address; no automated drip).
-   To send the address straight into your 5-day "Knowing Jesus" automation,
-   switch to your email tool below (free tiers: MailerLite or Brevo).
+   Email signup destination. Configured for BREVO.
 
-   MAILERLITE
-     1. MailerLite, Forms, Embedded form, choose "HTML form".
-     2. Copy the <form action="..."> URL into SIGNUP.action.
-     3. Its email field is usually fields[email]  ->  emailField: 'fields[email]'.
-     4. provider: 'external'. Trigger the automation on that form's group.
+   It currently still uses Formspree (so emails keep coming in) until you
+   paste your Brevo form action below. To go live with the 5-day automation:
 
-   BREVO (Sendinblue)
-     1. Brevo, Contacts, Forms, create a form, copy its action URL
-        (looks like https://sibforms.com/serve/MUIE...).
-     2. Its email field is usually EMAIL  ->  emailField: 'EMAIL'.
-     3. provider: 'external'. Trigger the automation on that list.
-
-   The 5 letters to load are in content/knowing-jesus-letters.md.
+     1. Brevo, Contacts, Forms, create a form. Copy its action URL, it looks
+        like  https://sibforms.com/serve/MUIE.....
+     2. Paste that URL into SIGNUP.brevoAction below.
+     3. Change SIGNUP.provider to 'brevo'.
+     4. In Brevo, build an Automation triggered on that list's new contact and
+        add the five letters, one per day. The letters are in
+        content/knowing-jesus-letters.md.
    ===================================================================== */
 var SIGNUP = {
-  provider: 'formspree',                       // 'formspree' or 'external'
-  action: 'https://formspree.io/f/xvzynnkd',   // replace with your MailerLite/Brevo form action
-  emailField: 'email'                          // 'fields[email]' (MailerLite) or 'EMAIL' (Brevo)
+  provider: 'formspree',                                              // change to 'brevo' once brevoAction is set
+  formspree: 'https://formspree.io/f/xvzynnkd',
+  brevoAction: 'https://sibforms.com/serve/REPLACE_WITH_YOUR_BREVO_FORM_ID',
+  brevoEmailField: 'EMAIL'
 };
 
 (function(){
   var pack = document.getElementById('pack');
   var form = document.getElementById('cap-form');
   var skip = document.getElementById('skip');
-  if (form) form.setAttribute('action', SIGNUP.action); // keep no-JS submit in sync
+  var isBrevo = SIGNUP.provider === 'brevo';
+  var action = isBrevo ? SIGNUP.brevoAction : SIGNUP.formspree;
+  var field  = isBrevo ? SIGNUP.brevoEmailField : 'email';
+  if (form) form.setAttribute('action', action); // keep no-JS submit in sync
   function reveal(){ pack.classList.add('show'); pack.scrollIntoView({behavior:'smooth'}); }
   if (skip) skip.addEventListener('click', reveal);
   if (form) form.addEventListener('submit', function(e){
@@ -233,18 +231,17 @@ var SIGNUP = {
     if (email && !email.checkValidity()){ email.reportValidity(); return; }
     btn.textContent = 'Sending…';
     var data = new FormData();
-    data.append(SIGNUP.emailField, email.value);
+    data.append(field, email.value);
     var opts;
-    if (SIGNUP.provider === 'formspree'){
+    if (isBrevo){
+      // Brevo's hosted form is cross-origin; no-cors still delivers the POST.
+      opts = { method:'POST', mode:'no-cors', body:data };
+    } else {
       data.append('source', 'scriptures-pack');
       data.append('_subject', 'Scriptures for the Hard Days, please send + weekly letters');
       opts = { method:'POST', headers:{Accept:'application/json'}, body:data };
-    } else {
-      // Cross-origin hosted forms (MailerLite/Brevo) do not allow reading the
-      // response; no-cors still delivers the POST. Assume success and reveal.
-      opts = { method:'POST', mode:'no-cors', body:data };
     }
-    fetch(SIGNUP.action, opts).then(done).catch(done);
+    fetch(action, opts).then(done).catch(done);
     function done(){ btn.textContent = 'Sent. Here they are.'; reveal(); }
   });
 })();
