@@ -193,10 +193,37 @@
 </footer>
 
 <script>
+/* =====================================================================
+   Email signup destination.
+   Default: Formspree (collects the address; no automated drip).
+   To send the address straight into your 5-day "Knowing Jesus" automation,
+   switch to your email tool below (free tiers: MailerLite or Brevo).
+
+   MAILERLITE
+     1. MailerLite, Forms, Embedded form, choose "HTML form".
+     2. Copy the <form action="..."> URL into SIGNUP.action.
+     3. Its email field is usually fields[email]  ->  emailField: 'fields[email]'.
+     4. provider: 'external'. Trigger the automation on that form's group.
+
+   BREVO (Sendinblue)
+     1. Brevo, Contacts, Forms, create a form, copy its action URL
+        (looks like https://sibforms.com/serve/MUIE...).
+     2. Its email field is usually EMAIL  ->  emailField: 'EMAIL'.
+     3. provider: 'external'. Trigger the automation on that list.
+
+   The 5 letters to load are in content/knowing-jesus-letters.md.
+   ===================================================================== */
+var SIGNUP = {
+  provider: 'formspree',                       // 'formspree' or 'external'
+  action: 'https://formspree.io/f/xvzynnkd',   // replace with your MailerLite/Brevo form action
+  emailField: 'email'                          // 'fields[email]' (MailerLite) or 'EMAIL' (Brevo)
+};
+
 (function(){
   var pack = document.getElementById('pack');
   var form = document.getElementById('cap-form');
   var skip = document.getElementById('skip');
+  if (form) form.setAttribute('action', SIGNUP.action); // keep no-JS submit in sync
   function reveal(){ pack.classList.add('show'); pack.scrollIntoView({behavior:'smooth'}); }
   if (skip) skip.addEventListener('click', reveal);
   if (form) form.addEventListener('submit', function(e){
@@ -205,9 +232,20 @@
     var email = document.getElementById('cap-email');
     if (email && !email.checkValidity()){ email.reportValidity(); return; }
     btn.textContent = 'Sending…';
-    fetch(form.action, { method:'POST', headers:{Accept:'application/json'}, body:new FormData(form) })
-      .then(function(){ btn.textContent = 'Sent. Here they are.'; reveal(); })
-      .catch(function(){ btn.textContent = 'Here they are.'; reveal(); });
+    var data = new FormData();
+    data.append(SIGNUP.emailField, email.value);
+    var opts;
+    if (SIGNUP.provider === 'formspree'){
+      data.append('source', 'scriptures-pack');
+      data.append('_subject', 'Scriptures for the Hard Days, please send + weekly letters');
+      opts = { method:'POST', headers:{Accept:'application/json'}, body:data };
+    } else {
+      // Cross-origin hosted forms (MailerLite/Brevo) do not allow reading the
+      // response; no-cors still delivers the POST. Assume success and reveal.
+      opts = { method:'POST', mode:'no-cors', body:data };
+    }
+    fetch(SIGNUP.action, opts).then(done).catch(done);
+    function done(){ btn.textContent = 'Sent. Here they are.'; reveal(); }
   });
 })();
 </script>
