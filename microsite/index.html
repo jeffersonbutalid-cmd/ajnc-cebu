@@ -45,7 +45,7 @@
 <!-- JSON-LD: Church (hydrated per location by microsite.js) -->
 <script type="application/ld+json" id="ms-church-jsonld">
 {
-  "@context": "https://schema.org", "@type": "Church", "@id": "https://ajnc.ph/microsite/#org", "name": "Apostolic Jesus Name Church Cebu", "alternateName": ["AJNC Cebu", "AJNC Mandaue"], "url": "https://ajnc.ph/microsite/", "logo": "https://ajnc.ph/assets/ajnc-seal.png", "image": "https://ajnc.ph/assets/ajnc-seal.png", "description": "A Oneness Pentecostal church in Mandaue, Cebu. Sunday service 10 AM and 3 PM. Thursday Bible study 6:30 PM.", "telephone": "+63 32 268 1986", "email": "cebu@ajnc.ph", "address": {
+  "@context": "https://schema.org", "@type": "Church", "@id": "https://ajnc.ph/microsite/#org", "name": "Apostolic Jesus Name Church Cebu", "alternateName": ["AJNC Cebu", "AJNC Mandaue"], "url": "https://ajnc.ph/microsite/", "logo": "https://ajnc.ph/assets/ajnc-seal.png", "image": "https://ajnc.ph/assets/ajnc-seal.png", "description": "A Oneness Pentecostal church in Mandaue, Cebu. Sunday service 10 AM and 3 PM. Thursday Bible study 6:30 PM.", "address": {
     "@type": "PostalAddress", "streetAddress": "2nd floor, Un Heng Building, P. Burgos St., Casuntingan", "addressLocality": "Mandaue City", "addressRegion": "Cebu", "postalCode": "6014", "addressCountry": "PH"
   }, "geo": {
     "@type": "GeoCoordinates", "latitude": 10.3242, "longitude": 123.9398
@@ -1302,16 +1302,6 @@ em{font-style:italic;color:var(--red);font-weight:inherit}
         <span class="pill">Sunday 3 PM</span>
         <span class="pill">Thursday 6:30 PM</span>
       </div>
-      <div class="find-contacts">
-        <a href="tel:+63322681986" aria-label="Call AJNC Cebu">
-          <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L7.9 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></svg>
-          +63 32 268 1986
-        </a>
-        <a href="mailto:cebu@ajnc.ph">
-          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-          cebu@ajnc.ph
-        </a>
-      </div>
       <a class="btn btn-red" href="https://www.google.com/maps/search/?api=1&query=AJNC+Cebu+Casuntingan+Mandaue" target="_blank" rel="noopener">Get directions →</a>
     </div>
     <div id="find-map" role="region" aria-label="Map showing AJNC Cebu in Mandaue"></div>
@@ -1349,10 +1339,6 @@ em{font-style:italic;color:var(--red);font-weight:inherit}
       </div>
       <textarea name="message" placeholder="How can we pray for you?" required></textarea>
       <div class="ms-prayer-foot">
-        <a class="ms-prayer-call" href="tel:+63322681986">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L7.9 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></svg>
-          Or call us · +63 32 268 1986
-        </a>
         <button type="submit" class="btn btn-red">Send to our pastors →</button>
       </div>
     </form>
@@ -1409,8 +1395,7 @@ em{font-style:italic;color:var(--red);font-weight:inherit}
       <div class="footer-col">
         <h4>Family</h4>
         <ul>
-          <li><a href="mailto:cebu@ajnc.ph">Get in touch</a></li>
-          <li><a href="tel:+63322681986">Call the church</a></li>
+          <li><a href="#ms-prayer-form">Prayer request</a></li>
           <li><a href="https://www.youtube.com/@ajnccebu" target="_blank" rel="noopener">YouTube</a></li>
           <li><a href="https://ajnc.ph" target="_blank" rel="noopener">AJNC Philippines</a></li>
         </ul>
@@ -1487,7 +1472,7 @@ em{font-style:italic;color:var(--red);font-weight:inherit}
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
       </button>
     </form>
-    <p class="ajnc-chat__disclaimer">For pastoral care, <a href="mailto:cebu@ajnc.ph?subject=Prayer%20request">send a prayer request</a> or <a href="#find">contact us</a>.</p>
+    <p class="ajnc-chat__disclaimer">For pastoral care, <a href="#ms-prayer-form">send a prayer request</a> or <a href="#find">find us</a>.</p>
   </section>
 </div>
 

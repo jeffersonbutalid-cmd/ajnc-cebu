@@ -199,7 +199,6 @@
           <div class="meta">
             <div class="meta-row">${ICONS.pin}<span>${c.address}</span></div>
             <div class="meta-row">${ICONS.clock}<span>${(c.services || []).join(' · ')}</span></div>
-            ${c.phone ? `<div class="meta-row">${ICONS.phone}<a href="tel:${c.phone.replace(/\s/g,'')}">${c.phone}</a></div>` : ''}
           </div>
           <div class="actions">
             <a class="finder__btn finder__btn-red" href="https://www.google.com/maps/dir/?api=1&destination=${c.coords[0]},${c.coords[1]}" target="_blank" rel="noopener">Get directions →</a>

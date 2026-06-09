@@ -85,7 +85,6 @@
     try {
       const d = JSON.parse(el.textContent);
       if (c.name) { d.name = c.name.replace(/^AJNC\b/, 'Apostolic Jesus Name Church'); d.alternateName = [c.name]; }
-      if (c.phone) d.telephone = c.phone;
       if (d.address) {
         if (c.address) d.address.streetAddress = c.address;
         if (c.city) d.address.addressLocality = c.city;
@@ -163,12 +162,6 @@
       if (p) p.textContent = c.address + '.';
     }
 
-    if (c.phone) {
-      document.querySelectorAll('a[href^="tel:"]').forEach(a => {
-        a.href = 'tel:' + c.phone.replace(/\s/g, '');
-        if (a.closest('.find-contacts')) a.lastChild && (a.lastChild.textContent = ' ' + c.phone);
-      });
-    }
     if (c.coords && !isNaN(c.coords[0])) {
       const dir = 'https://www.google.com/maps/dir/?api=1&destination=' + c.coords[0] + ',' + c.coords[1];
       document.querySelectorAll('a[href*="google.com/maps"]').forEach(a => { a.href = dir; });

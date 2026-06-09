@@ -58,25 +58,31 @@ create policy "public read site_config"
 -- =====================================================
 -- Seed data (matches the site's built-in defaults)
 -- =====================================================
+-- Live churches carry real details. We do not publish a phone or email per
+-- church. Coming-soon cities carry no invented address, pastor, or service time.
 insert into public.churches (slug, name, region, province, city, address, pastor, services, phone, website, lat, lng, sort_order) values
-  ('cebu',     'AJNC Cebu',           'visayas',  'Cebu',              'Mandaue City',   '2nd Floor Un Heng Building, Casuntingan, Mandaue City, Cebu 6014', 'Bro. Mario Doromal', '["Sunday 10:00 AM","Sunday 3:00 PM","Thursday 6:30 PM"]', '+63 917 555 4673', '/churches/cebu',     10.3242, 123.9398, 1),
-  ('manila',   'AJNC Manila',         'luzon',    'Metro Manila',      'Quezon City',    'Sample Street, Quezon City, Metro Manila', 'Pastor Cruz',    '["Sunday 9:00 AM","Sunday 6:00 PM"]',                     '+63 2 0000 0000', '/churches/manila',          14.6760, 121.0437, 2),
-  ('davao',    'AJNC Davao',          'mindanao', 'Davao del Sur',     'Davao City',     'Sample Street, Davao City',                'Pastor Mendoza', '["Sunday 8:00 AM","Sunday 5:00 PM"]',                     '+63 82 000 0000', '/churches/davao',           7.0731,  125.6128, 3),
-  ('iloilo',   'AJNC Iloilo',         'visayas',  'Iloilo',            'Iloilo City',    'Sample Street, Iloilo City',               'Pastor Santos',  '["Sunday 9:00 AM","Sunday 5:00 PM"]',                     '+63 33 000 0000', '/churches/iloilo',          10.7202, 122.5621, 4),
-  ('cdo',      'AJNC Cagayan de Oro', 'mindanao', 'Misamis Oriental',  'Cagayan de Oro', 'Sample Street, Cagayan de Oro',            'Pastor Ramos',   '["Sunday 8:30 AM","Sunday 5:00 PM"]',                     '+63 88 000 0000', '/churches/cagayan-de-oro',  8.4542,  124.6319, 5),
-  ('baguio',   'AJNC Baguio',         'luzon',    'Benguet',           'Baguio City',    'Sample Street, Baguio City',               'Pastor Garcia',  '["Sunday 9:00 AM","Sunday 5:00 PM"]',                     '+63 74 000 0000', '/churches/baguio',          16.4023, 120.5960, 6),
-  ('bacolod',  'AJNC Bacolod',        'visayas',  'Negros Occidental', 'Bacolod City',   'Sample Street, Bacolod City',              'Pastor Dela Cruz','["Sunday 8:00 AM","Sunday 5:00 PM"]',                    '+63 34 000 0000', '/churches/bacolod',         10.6770, 122.9500, 7),
-  ('pampanga', 'AJNC Pampanga',       'luzon',    'Pampanga',          'Angeles City',   'Sample Street, Angeles City, Pampanga',    'Pastor Lim',     '["Sunday 9:00 AM","Sunday 5:00 PM"]',                     '+63 45 000 0000', '/churches/pampanga',        15.1450, 120.5887, 8)
+  ('cebu',       'AJNC Cebu',           'visayas',  'Cebu',              'Mandaue City',  '2nd Floor, Un Heng Building, Casuntingan, Mandaue City, Cebu',   'Pastor Mario Doromal',     '["Sunday 10:00 AM","Sunday 3:00 PM","Thursday 6:30 PM"]', null, '/microsite/?church=cebu',       10.3242, 123.9398, 1),
+  ('bacolod',    'AJNC Bacolod',        'visayas',  'Negros Occidental', 'Bacolod City',  '2nd Floor, Javelosa Building, Luzuriaga Street, Bacolod City',   'Ptr. Erwin H. Espera',     '["Sunday 10:00 AM","Sunday 3:30 PM","Bible Study Tuesday 6:30 PM","Prayer Meeting Mon (Men), Thu (Ladies), Fri (Youth) 6:30 PM"]', null, '/microsite/?church=bacolod',    10.6770, 122.9500, 2),
+  ('cadiz',      'AJNC Cadiz',          'visayas',  'Negros Occidental', 'Cadiz City',    'Narra 2, Brgy. Tinampaan, Cadiz City',                          'Ptr. Alfredo Z. Lopez Jr.','["Sunday 10:00 AM","Sunday 4:00 PM","Bible Study Thursday 6:00 PM","Prayer Meeting Tuesday 6:00 PM"]', null, '/microsite/?church=cadiz',      10.9476, 123.3072, 3),
+  ('saravia',    'AJNC Saravia',        'visayas',  'Negros Occidental', 'Saravia',       'Boulevard, Saravia, Negros Occidental',                         'Bro. Leonil Batadlan',     '["Sunday 10:00 AM","Sunday 2:00 PM","Prayer Meeting & Bible Study Wednesday 5:30 PM"]', null, '/microsite/?church=saravia',    10.8190, 123.0386, 4),
+  ('atipuluan',  'AJNC Atipuluan',      'visayas',  'Negros Occidental', 'Atipuluan',     'Prk. Greenhills, Brgy. Atipuluan, Bago City',                   'Bro. Jovin Gonzaga Jr.',   '["Sunday 10:00 AM","Sunday 3:30 PM","Bible Study Thursday 6:00 PM","Prayer Meeting Tuesday 6:00 PM"]', null, '/microsite/?church=atipuluan',  10.5552, 122.8649, 5),
+  ('hinobaan',   'AJNC Hinoba-an',      'visayas',  'Negros Occidental', 'Hinoba-an',     'Prk. 4, Brgy. 2, Hinoba-an, Negros Occidental',                 'Ptr. Lewis Lidres',        '["Sunday 9:00 AM","Bible Study 6:30 PM","Prayer Meeting Tuesday 6:30 PM"]', null, '/microsite/?church=hinobaan',   9.5947,  122.4694, 6),
+  ('kabankalan', 'AJNC Kabankalan',     'visayas',  'Negros Occidental', 'Kabankalan City','Across NoCeCo Main Office, Sitio Naga, Brgy. Binicuil, Kabankalan City', 'Bro. Mario G. Doromal','["Sunday 10:00 AM","Sunday 3:00 PM","Bible Study Thursday 6:30 PM","Prayer Meeting Tuesday 6:30 PM"]', null, '/microsite/?church=kabankalan', 9.9889,  122.8131, 7),
+  ('manila',     'AJNC Manila',         'luzon',    'Metro Manila',      'Quezon City',    null, null, '[]'::jsonb, null, '/microsite/?church=manila',     14.6760, 121.0437, 8),
+  ('davao',      'AJNC Davao',          'mindanao', 'Davao del Sur',     'Davao City',     null, null, '[]'::jsonb, null, '/microsite/?church=davao',       7.0731, 125.6128, 9),
+  ('iloilo',     'AJNC Iloilo',         'visayas',  'Iloilo',            'Iloilo City',    null, null, '[]'::jsonb, null, '/microsite/?church=iloilo',     10.7202, 122.5621, 10),
+  ('cdo',        'AJNC Cagayan de Oro', 'mindanao', 'Misamis Oriental',  'Cagayan de Oro', null, null, '[]'::jsonb, null, '/microsite/?church=cdo',         8.4542, 124.6319, 11),
+  ('baguio',     'AJNC Baguio',         'luzon',    'Benguet',           'Baguio City',    null, null, '[]'::jsonb, null, '/microsite/?church=baguio',     16.4023, 120.5960, 12),
+  ('pampanga',   'AJNC Pampanga',       'luzon',    'Pampanga',          'Angeles City',   null, null, '[]'::jsonb, null, '/microsite/?church=pampanga',   15.1450, 120.5887, 13)
 on conflict (slug) do nothing;
 
--- Example placeholders for the Cebu site/microsite. Add rows per church.
+-- Per-church placeholders for the site/microsite. No contact phone or email is
+-- published; giving numbers (GCash/Maya) are payment details, not contacts.
 insert into public.site_config (church_slug, key, value) values
   ('cebu', 'gcash_number',  '0917 555 4673'),
   ('cebu', 'gcash_name',    'AJNC Cebu Inc.'),
   ('cebu', 'maya_number',   '0917 555 4673'),
   ('cebu', 'bpi_account',   '9069-1250-66'),
   ('cebu', 'youtube_url',   'https://www.youtube.com/@ajnccebu'),
-  ('cebu', 'contact_email', 'hello@ajnc.ph'),
-  ('cebu', 'contact_phone', '+63 917 555 4673'),
   ('cebu', 'service_times', 'Sunday 10:00 AM & 3:00 PM · Thursday 6:30 PM')
 on conflict (church_slug, key) do nothing;
