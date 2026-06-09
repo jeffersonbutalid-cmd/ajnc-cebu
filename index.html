@@ -524,7 +524,7 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
       </div>
     </div>
 
-    <div class="finder__count" id="ajnc-count"><strong>13</strong> churches across the Philippines</div>
+    <div class="finder__count" id="ajnc-count"><strong>7</strong> churches across the Philippines</div>
 
     <div class="finder__body">
       <div class="finder__list" id="ajnc-list" role="region" aria-label="Church list"></div>
@@ -533,7 +533,7 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
 
     <div class="finder-foot">
       <div class="together">Together.</div>
-      <p>13 churches and growing. Don't see your city? <a href="mailto:hello@ajnc.ph?subject=Plant a church">Tell us, we're planting.</a></p>
+      <p>7 churches and growing. Don't see your city? <a href="mailto:hello@ajnc.ph?subject=Plant a church">Tell us, we're planting.</a></p>
     </div>
   </div>
 </section>
@@ -620,7 +620,14 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
       <p>Conferences, fellowships, and special services across the family.</p>
     </div>
 
-    <article class="event-hero">
+    <div class="event-filters" role="tablist" aria-label="Filter events by scope">
+      <button class="event-chip" data-scope="all" aria-pressed="true">All</button>
+      <button class="event-chip" data-scope="national" aria-pressed="false">National</button>
+      <button class="event-chip" data-scope="district" aria-pressed="false">District</button>
+      <button class="event-chip" data-scope="local" aria-pressed="false">Local</button>
+    </div>
+
+    <article class="event-hero" data-scope="national">
       <div class="image" role="img" aria-label="Pentecost Sunday Gathering, AJNC Cebu">
         <div class="date-badge"><div class="day">24</div><div class="month">May</div></div>
       </div>
@@ -637,7 +644,7 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
     </article>
 
     <div class="event-grid">
-      <article class="event-card">
+      <article class="event-card" data-scope="local">
         <div class="date-row">
           <div class="date-tag"><div class="day">07</div><div class="month">Jun</div></div>
           <h4>Youth Night, <em class="italic-red">Burn</em></h4>
@@ -648,7 +655,7 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
           <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Youth+Night+Burn+at+AJNC+Cebu&dates=20260607T190000/20260607T220000&location=Un+Heng+Building,+Casuntingan,+Mandaue+City" target="_blank" rel="noopener" class="btn btn-ghost" style="padding:9px 14px;font-size:13px">Add to calendar</a>
         </div>
       </article>
-      <article class="event-card">
+      <article class="event-card" data-scope="local">
         <div class="date-row">
           <div class="date-tag"><div class="day">21</div><div class="month">Jun</div></div>
           <h4>Family Baptism, <em class="italic-red">Mactan</em></h4>
@@ -659,7 +666,7 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
           <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Family+Baptism+at+Mactan&dates=20260621T053000/20260621T090000&location=Mactan+Shore,+Cebu" target="_blank" rel="noopener" class="btn btn-ghost" style="padding:9px 14px;font-size:13px">Add to calendar</a>
         </div>
       </article>
-      <article class="event-card">
+      <article class="event-card" data-scope="national">
         <div class="date-row">
           <div class="date-tag"><div class="day">12</div><div class="month">Jul</div></div>
           <h4>PH Pastors' <em class="italic-red">Gathering</em></h4>
@@ -671,6 +678,7 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
         </div>
       </article>
     </div>
+    <p class="event-empty" hidden>No events in this category right now. Check back soon.</p>
   </div>
 </section>
 
@@ -1100,6 +1108,30 @@ window.AJNC_EVENTS = {
   modal.addEventListener('click', function(e){ if (e.target === modal) close(); });
   document.addEventListener('keydown', function(e){
     if (modal.dataset.open === 'true' && e.key === 'Escape') close();
+  });
+})();
+
+// Event scope filter (All / National / District / Local)
+(function () {
+  var section = document.getElementById('events');
+  if (!section) return;
+  var chips = section.querySelectorAll('.event-chip');
+  var items = section.querySelectorAll('.event-hero, .event-card');
+  var empty = section.querySelector('.event-empty');
+  function apply(scope) {
+    var shown = 0;
+    items.forEach(function (el) {
+      var match = scope === 'all' || el.getAttribute('data-scope') === scope;
+      el.classList.toggle('u-hidden', !match);
+      if (match) shown++;
+    });
+    if (empty) empty.hidden = shown !== 0;
+  }
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c === chip)); });
+      apply(chip.getAttribute('data-scope'));
+    });
   });
 })();
 </script>

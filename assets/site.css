@@ -418,6 +418,12 @@ button{font-family:inherit;cursor:pointer}
 
 /* ===== Events ===== */
 .events{padding:120px 0}
+.u-hidden{display:none!important}
+.event-filters{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:0 0 32px}
+.event-chip{padding:10px 18px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink);font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;white-space:nowrap}
+.event-chip:hover{border-color:var(--ink)}
+.event-chip[aria-pressed="true"]{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+.event-empty{text-align:center;color:var(--ink);opacity:.7;font-size:15px;padding:24px 0}
 .event-hero{background:var(--blush);border-radius:var(--radius-lg);overflow:hidden;display:grid;grid-template-columns:1.1fr .9fr;margin-bottom:32px}
 @media (max-width:900px){ .event-hero{grid-template-columns:1fr} }
 .event-hero .image{aspect-ratio:16/10;background:linear-gradient(135deg,#0E2B4F 0%,#c8262e 100%);position:relative;overflow:hidden}

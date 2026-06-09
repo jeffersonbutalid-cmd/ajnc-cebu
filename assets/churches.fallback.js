@@ -1,12 +1,10 @@
 /* =====================================================
    AJNC — Built-in church dataset (fallback)
-   Used when Supabase isn't configured (or a fetch fails). AJNC Cebu and the
-   Negros Occidental family are live. The remaining cities are placeholders for
-   AJNC's growing family: they carry NO invented address, pastor, or service
-   time, and are marked comingSoon so the finder shows them honestly until real
-   details are confirmed. We do not publish phone numbers or emails per church.
-   Coordinates for the Negros churches are approximate town/city centers.
-   Keep in sync with supabase/schema.sql.
+   Used when Supabase isn't configured (or a fetch fails). Only churches with
+   confirmed details are listed: AJNC Cebu and the Negros Occidental family. We
+   do not publish phone numbers or emails per church. Coordinates for the Negros
+   churches are approximate town/city centers. Keep in sync with
+   supabase/schema.sql.
    ===================================================== */
 window.AJNC_FALLBACK_CHURCHES = [
   {
@@ -64,13 +62,5 @@ window.AJNC_FALLBACK_CHURCHES = [
     pastor: "Bro. Mario G. Doromal",
     services: ["Sunday 10:00 AM", "Sunday 3:00 PM", "Bible Study Thursday 6:30 PM", "Prayer Meeting Tuesday 6:30 PM"],
     website: "/microsite/?church=kabankalan", coords: [9.9889, 122.8131]
-  },
-
-  // Coming soon: real cities, no invented details yet.
-  { id: "manila",   slug: "manila",   name: "AJNC Manila",         region: "luzon",    province: "Metro Manila",      city: "Quezon City",    comingSoon: true, coords: [14.6760, 121.0437] },
-  { id: "davao",    slug: "davao",    name: "AJNC Davao",          region: "mindanao", province: "Davao del Sur",     city: "Davao City",     comingSoon: true, coords: [7.0731, 125.6128] },
-  { id: "iloilo",   slug: "iloilo",   name: "AJNC Iloilo",         region: "visayas",  province: "Iloilo",            city: "Iloilo City",    comingSoon: true, coords: [10.7202, 122.5621] },
-  { id: "cdo",      slug: "cdo",      name: "AJNC Cagayan de Oro", region: "mindanao", province: "Misamis Oriental",  city: "Cagayan de Oro", comingSoon: true, coords: [8.4542, 124.6319] },
-  { id: "baguio",   slug: "baguio",   name: "AJNC Baguio",         region: "luzon",    province: "Benguet",           city: "Baguio City",    comingSoon: true, coords: [16.4023, 120.5960] },
-  { id: "pampanga", slug: "pampanga", name: "AJNC Pampanga",       region: "luzon",    province: "Pampanga",          city: "Angeles City",   comingSoon: true, coords: [15.1450, 120.5887] }
+  }
 ];

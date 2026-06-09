@@ -59,7 +59,7 @@ create policy "public read site_config"
 -- Seed data (matches the site's built-in defaults)
 -- =====================================================
 -- Live churches carry real details. We do not publish a phone or email per
--- church. Coming-soon cities carry no invented address, pastor, or service time.
+-- church. Only churches with confirmed details are listed.
 insert into public.churches (slug, name, region, province, city, address, pastor, services, phone, website, lat, lng, sort_order) values
   ('cebu',       'AJNC Cebu',           'visayas',  'Cebu',              'Mandaue City',  '2nd Floor, Un Heng Building, Casuntingan, Mandaue City, Cebu',   'Pastor Mario Doromal',     '["Sunday 10:00 AM","Sunday 3:00 PM","Thursday 6:30 PM"]', null, '/microsite/?church=cebu',       10.3242, 123.9398, 1),
   ('bacolod',    'AJNC Bacolod',        'visayas',  'Negros Occidental', 'Bacolod City',  '2nd Floor, Javelosa Building, Luzuriaga Street, Bacolod City',   'Ptr. Erwin H. Espera',     '["Sunday 10:00 AM","Sunday 3:30 PM","Bible Study Tuesday 6:30 PM","Prayer Meeting Mon (Men), Thu (Ladies), Fri (Youth) 6:30 PM"]', null, '/microsite/?church=bacolod',    10.6770, 122.9500, 2),
@@ -67,13 +67,7 @@ insert into public.churches (slug, name, region, province, city, address, pastor
   ('saravia',    'AJNC Saravia',        'visayas',  'Negros Occidental', 'Saravia',       'Boulevard, Saravia, Negros Occidental',                         'Bro. Leonil Batadlan',     '["Sunday 10:00 AM","Sunday 2:00 PM","Prayer Meeting & Bible Study Wednesday 5:30 PM"]', null, '/microsite/?church=saravia',    10.8190, 123.0386, 4),
   ('atipuluan',  'AJNC Atipuluan',      'visayas',  'Negros Occidental', 'Atipuluan',     'Prk. Greenhills, Brgy. Atipuluan, Bago City',                   'Bro. Jovin Gonzaga Jr.',   '["Sunday 10:00 AM","Sunday 3:30 PM","Bible Study Thursday 6:00 PM","Prayer Meeting Tuesday 6:00 PM"]', null, '/microsite/?church=atipuluan',  10.5552, 122.8649, 5),
   ('hinobaan',   'AJNC Hinoba-an',      'visayas',  'Negros Occidental', 'Hinoba-an',     'Prk. 4, Brgy. 2, Hinoba-an, Negros Occidental',                 'Ptr. Lewis Lidres',        '["Sunday 9:00 AM","Bible Study 6:30 PM","Prayer Meeting Tuesday 6:30 PM"]', null, '/microsite/?church=hinobaan',   9.5947,  122.4694, 6),
-  ('kabankalan', 'AJNC Kabankalan',     'visayas',  'Negros Occidental', 'Kabankalan City','Across NoCeCo Main Office, Sitio Naga, Brgy. Binicuil, Kabankalan City', 'Bro. Mario G. Doromal','["Sunday 10:00 AM","Sunday 3:00 PM","Bible Study Thursday 6:30 PM","Prayer Meeting Tuesday 6:30 PM"]', null, '/microsite/?church=kabankalan', 9.9889,  122.8131, 7),
-  ('manila',     'AJNC Manila',         'luzon',    'Metro Manila',      'Quezon City',    null, null, '[]'::jsonb, null, '/microsite/?church=manila',     14.6760, 121.0437, 8),
-  ('davao',      'AJNC Davao',          'mindanao', 'Davao del Sur',     'Davao City',     null, null, '[]'::jsonb, null, '/microsite/?church=davao',       7.0731, 125.6128, 9),
-  ('iloilo',     'AJNC Iloilo',         'visayas',  'Iloilo',            'Iloilo City',    null, null, '[]'::jsonb, null, '/microsite/?church=iloilo',     10.7202, 122.5621, 10),
-  ('cdo',        'AJNC Cagayan de Oro', 'mindanao', 'Misamis Oriental',  'Cagayan de Oro', null, null, '[]'::jsonb, null, '/microsite/?church=cdo',         8.4542, 124.6319, 11),
-  ('baguio',     'AJNC Baguio',         'luzon',    'Benguet',           'Baguio City',    null, null, '[]'::jsonb, null, '/microsite/?church=baguio',     16.4023, 120.5960, 12),
-  ('pampanga',   'AJNC Pampanga',       'luzon',    'Pampanga',          'Angeles City',   null, null, '[]'::jsonb, null, '/microsite/?church=pampanga',   15.1450, 120.5887, 13)
+  ('kabankalan', 'AJNC Kabankalan',     'visayas',  'Negros Occidental', 'Kabankalan City','Across NoCeCo Main Office, Sitio Naga, Brgy. Binicuil, Kabankalan City', 'Bro. Mario G. Doromal','["Sunday 10:00 AM","Sunday 3:00 PM","Bible Study Thursday 6:30 PM","Prayer Meeting Tuesday 6:30 PM"]', null, '/microsite/?church=kabankalan', 9.9889,  122.8131, 7)
 on conflict (slug) do nothing;
 
 -- Per-church placeholders for the site/microsite. No contact phone or email is
