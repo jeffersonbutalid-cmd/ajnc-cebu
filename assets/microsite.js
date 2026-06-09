@@ -162,9 +162,16 @@
       if (p) p.textContent = c.address + '.';
     }
 
-    if (c.coords && !isNaN(c.coords[0])) {
-      const dir = 'https://www.google.com/maps/dir/?api=1&destination=' + c.coords[0] + ',' + c.coords[1];
+    // Directions resolve to the real street address (Google geocodes it precisely),
+    // not the approximate map pin.
+    const dest = c.address
+      ? encodeURIComponent(c.address + ', ' + (c.province || short || '') + ', Philippines')
+      : (c.coords && !isNaN(c.coords[0]) ? c.coords[0] + ',' + c.coords[1] : '');
+    if (dest) {
+      const dir = 'https://www.google.com/maps/dir/?api=1&destination=' + dest;
       document.querySelectorAll('a[href*="google.com/maps"]').forEach(a => { a.href = dir; });
+    }
+    if (c.coords && !isNaN(c.coords[0])) {
       renderMap(c.coords, c.name, c.address);
     }
 

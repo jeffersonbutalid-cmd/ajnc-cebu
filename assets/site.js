@@ -201,7 +201,7 @@
             <div class="meta-row">${ICONS.clock}<span>${(c.services || []).join(' · ')}</span></div>
           </div>
           <div class="actions">
-            <a class="finder__btn finder__btn-red" href="https://www.google.com/maps/dir/?api=1&destination=${c.coords[0]},${c.coords[1]}" target="_blank" rel="noopener">Get directions →</a>
+            <a class="finder__btn finder__btn-red" href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent((c.address ? c.address + ', ' : '') + (c.province || c.city || '') + ', Philippines')}" target="_blank" rel="noopener">Get directions →</a>
             <a class="finder__btn finder__btn-ghost" href="${c.website || ('microsite/?church=' + (c.slug || c.id))}">Visit Site</a>
           </div>
         </button>`;
