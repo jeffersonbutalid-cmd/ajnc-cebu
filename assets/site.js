@@ -202,7 +202,7 @@
           </div>
           <div class="actions">
             <a class="finder__btn finder__btn-red" href="https://www.google.com/maps/dir/?api=1&destination=${c.coords[0]},${c.coords[1]}" target="_blank" rel="noopener">Get directions →</a>
-            <a class="finder__btn finder__btn-ghost" href="microsite/?church=${c.slug || c.id}">Visit Site</a>
+            <a class="finder__btn finder__btn-ghost" href="${c.website || ('microsite/?church=' + (c.slug || c.id))}">Visit Site</a>
           </div>
         </button>`;
       }).join('');

@@ -680,9 +680,9 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
       <article class="event-card" data-scope="district">
         <div class="date-row">
           <div class="date-tag"><div class="day">3</div><div class="month">Days</div></div>
-          <h4>iConnect <em class="italic-red">District</em></h4>
+          <h4>iConnect <em class="italic-red">Conference</em></h4>
         </div>
-        <div class="meta">District gathering · Dates to be announced</div>
+        <div class="meta">District conference · Dates to be announced</div>
         <div class="actions">
           <a href="#" data-event-trigger="iconnect-district" class="btn btn-red" style="padding:9px 14px;font-size:13px">Details</a>
           <a href="#find" class="btn btn-ghost" style="padding:9px 14px;font-size:13px">Ask your pastor</a>
@@ -1073,8 +1073,8 @@ window.AJNC_EVENTS = {
       'Pastors and elders from across the AJNC PH family meet in Manila for a day of prayer, the Word, and counsel. Hosted by the AJNC Manila family.', 'For ordained ministers and church board members. RSVP through your local pastor.'
     ], highlights: ['Prayer and the Word', 'For pastors and elders', 'RSVP required'], calendarUrl: 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=PH+Pastors+Gathering+at+AJNC+Manila&dates=20260712T090000/20260712T170000&location=AJNC+Manila'
   }, 'iconnect-district': {
-    category: 'District', title: 'iConnect <em>· District.</em>', when: 'Three-day district gathering · dates to be announced', where: 'Host church to be announced', body: [
-      'iConnect is our three-day district gathering, bringing the AJNC family across the district together for worship, the Word, workshops, and fellowship between the local churches.', 'Dates and the host church will be announced soon. Watch this space, or ask your local pastor for details.'
+    category: 'District', title: 'iConnect <em>· Conference.</em>', when: 'Three-day district conference · dates to be announced', where: 'Host church to be announced', body: [
+      'iConnect is our three-day district conference, bringing the AJNC family across the district together for worship, the Word, workshops, and fellowship between the local churches.', 'Dates and the host church will be announced soon. Watch this space, or ask your local pastor for details.'
     ], highlights: ['Three days', 'District-wide', 'Worship and the Word', 'Dates to be announced']
   }
 };
@@ -1134,7 +1134,8 @@ window.AJNC_EVENTS = {
   var section = document.getElementById('events');
   if (!section) return;
   var chips = section.querySelectorAll('.event-chip');
-  var items = section.querySelectorAll('.event-hero, .event-card');
+  // The featured event (.event-hero) always stays visible; only the cards filter.
+  var items = section.querySelectorAll('.event-card');
   var empty = section.querySelector('.event-empty');
   function apply(scope) {
     var shown = 0;

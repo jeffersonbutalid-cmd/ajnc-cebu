@@ -13,7 +13,7 @@ window.AJNC_FALLBACK_CHURCHES = [
     address: "2nd Floor, Un Heng Building, Casuntingan, Mandaue City, Cebu",
     pastor: "Pastor Mario Doromal",
     services: ["Sunday 10:00 AM", "Sunday 3:00 PM", "Thursday 6:30 PM"],
-    website: "/microsite/?church=cebu", coords: [10.3242, 123.9398]
+    website: "#top", coords: [10.3242, 123.9398]
   },
   {
     id: "bacolod", slug: "bacolod", name: "AJNC Bacolod",
