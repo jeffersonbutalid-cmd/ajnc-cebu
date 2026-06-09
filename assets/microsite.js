@@ -171,7 +171,13 @@
       const dir = 'https://www.google.com/maps/dir/?api=1&destination=' + dest;
       document.querySelectorAll('a[href*="google.com/maps"]').forEach(a => { a.href = dir; });
     }
-    if (c.coords && !isNaN(c.coords[0])) {
+    // Snap the pin to the exact geocoded address when a Maps key is set;
+    // otherwise fall back to the built-in approximate coords.
+    if (window.AJNC_MAPS && window.AJNC_MAPS.hasKey && c.address) {
+      window.AJNC_MAPS.geocode(window.AJNC_MAPS.query(c))
+        .then(coords => { c.coords = coords; renderMap(coords, c.name, c.address); })
+        .catch(() => { if (c.coords && !isNaN(c.coords[0])) renderMap(c.coords, c.name, c.address); });
+    } else if (c.coords && !isNaN(c.coords[0])) {
       renderMap(c.coords, c.name, c.address);
     }
 

@@ -146,6 +146,20 @@
       markers[c.id] = m;
     });
 
+    // Snap each pin to the exact geocoded street address when a Maps key is set.
+    // Markers render at the built-in approximate coords first, so the map is
+    // never empty if geocoding is unavailable.
+    if (window.AJNC_MAPS && window.AJNC_MAPS.hasKey) {
+      CHURCHES.forEach(c => {
+        const q = window.AJNC_MAPS.query(c);
+        if (!q) return;
+        window.AJNC_MAPS.geocode(q).then(coords => {
+          c.coords = coords;
+          if (markers[c.id]) markers[c.id].setLatLng(coords);
+        }).catch(() => { /* keep the approximate pin */ });
+      });
+    }
+
     const listEl = document.getElementById('ajnc-list');
     const countEl = document.getElementById('ajnc-count');
 

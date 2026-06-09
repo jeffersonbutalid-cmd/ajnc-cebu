@@ -19,6 +19,13 @@ window.AJNC_CONFIG = {
   youtubeChannelId: 'UC2S7h4HtT5jO6GdJbTTGpKQ',
   youtubeHandleUrl: 'https://www.youtube.com/@ajnccebu',
 
+  // --- Google Maps (accurate church pins + directions) ---
+  // Public by design; restrict this key by HTTP referrer in Google Cloud
+  // Console (ajnc.ph + your Netlify URL) and enable Maps JavaScript API +
+  // Geocoding API. Maps render at approximate coords and snap to the exact
+  // geocoded address when this key is present.
+  mapsApiKey: 'AIzaSyApuWcKaoENxPXS8T9NNCAWJEzNnbYuHZI',
+
   // --- AI church assistant (Netlify Function calling Claude) ---
   chatEndpoint: '/.netlify/functions/chat',
 
