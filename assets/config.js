@@ -24,7 +24,7 @@ window.AJNC_CONFIG = {
   // Console (ajnc.ph + your Netlify URL) and enable Maps JavaScript API +
   // Geocoding API. Maps render at approximate coords and snap to the exact
   // geocoded address when this key is present.
-  mapsApiKey: 'AIzaSyApuWcKaoENxPXS8T9NNCAWJEzNnbYuHZI',
+  mapsApiKey: 'AIzaSyAk1RVhNz-mrWf2T9uPpAH2sBo5bo44MM8',
 
   // --- AI church assistant (Netlify Function calling Claude) ---
   chatEndpoint: '/.netlify/functions/chat',
