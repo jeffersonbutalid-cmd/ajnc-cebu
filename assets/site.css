@@ -397,17 +397,17 @@ button{font-family:inherit;cursor:pointer}
 .ministry-card:hover{transform:translateY(-6px) rotate(.4deg);box-shadow:var(--shadow-lg)}
 .ministry-card .photo{height:140px;border-radius:12px;margin-bottom:22px;background-size:cover;background-position:center;position:relative;overflow:hidden}
 .ministry-card .photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%, rgba(14,43,79,.18));mix-blend-mode:multiply}
-.ministry-card .photo.kids{background:#E8B53C}
-.ministry-card .photo.youth{background:linear-gradient(135deg,#C8262E 0%, #971C22 100%)}
-.ministry-card .photo.prayer{background:linear-gradient(135deg,#5C6B7A 0%, #0E2B4F 100%)}
-.ministry-card .photo.couples{background:linear-gradient(135deg,#971C22 0%, #E9C9B6 100%)}
-.ministry-card .photo.sya{background:#0E2B4F}
-.ministry-card .photo.joy{background:linear-gradient(135deg,#E8B53C 0%, #971C22 100%)}
+.ministry-card .photo.kids{background-image:url('02-ministry-kids.png'),linear-gradient(135deg,#E8B53C,#E8B53C)}
+.ministry-card .photo.youth{background-image:url('03-ministry-youth.png'),linear-gradient(135deg,#C8262E 0%, #971C22 100%)}
+.ministry-card .photo.prayer{background-image:url('09-ministry-prayer-warriors.png'),linear-gradient(135deg,#5C6B7A 0%, #0E2B4F 100%)}
+.ministry-card .photo.couples{background-image:url('05-ministry-young-couples.png'),linear-gradient(135deg,#971C22 0%, #E9C9B6 100%)}
+.ministry-card .photo.sya{background-image:url('04-ministry-sya.png'),linear-gradient(135deg,#0E2B4F,#0E2B4F)}
+.ministry-card .photo.joy{background-image:url('06-ministry-joy-fellowship.png'),linear-gradient(135deg,#E8B53C 0%, #971C22 100%)}
 .ministry-card .photo.campus{background:linear-gradient(135deg,#E8B53C 0%, #C8262E 100%)}
 .ministry-card .photo.afterwork{background:linear-gradient(135deg,#5C6B7A 0%, #E9C9B6 100%)}
-.ministry-card .photo.outreach{background:linear-gradient(135deg,#971C22 0%, #E8B53C 100%)}
-.ministry-card .photo.music{background:linear-gradient(135deg,#0E2B4F 0%, #5C6B7A 100%)}
-.ministry-card .photo.pulpit{background:linear-gradient(135deg,#0E2B4F 0%, #C8262E 100%)}
+.ministry-card .photo.outreach{background-image:url('10-ministry-outreach.png'),linear-gradient(135deg,#971C22 0%, #E8B53C 100%)}
+.ministry-card .photo.music{background-image:url('07-ministry-music.png'),linear-gradient(135deg,#0E2B4F 0%, #5C6B7A 100%)}
+.ministry-card .photo.pulpit{background-image:url('08-ministry-pulpit.png'),linear-gradient(135deg,#0E2B4F 0%, #C8262E 100%)}
 .ministry-card h3{font-family:var(--display);font-weight:700;font-size:24px;letter-spacing:-0.02em;color:var(--ink);margin:0 0 10px;line-height:1.1}
 .ministry-card__title-block{margin-bottom:8px}
 .ministry-card__title-block h3{font-size:28px;margin:0 0 2px}
@@ -560,15 +560,13 @@ button{font-family:inherit;cursor:pointer}
 @media (max-width:900px){ .story-grid{grid-template-columns:1fr} }
 .story-card{background:rgba(244,239,229,.04);border:1px solid rgba(244,239,229,.08);border-radius:var(--radius-lg);padding:32px;transition:all .25s}
 .story-card:hover{border-color:var(--gold);background:rgba(244,239,229,.07);transform:translateY(-4px)}
-.story-card .portrait{width:56px;height:56px;border-radius:50%;background:linear-gradient(140deg,#f3d7a3 0%,#8e4a2e 100%);margin-bottom:18px}
-.story-card .portrait.p2{background:linear-gradient(140deg,#e9c9b6 0%,#b87a55 100%)}
-.story-card .portrait.p3{background:linear-gradient(140deg,#d99a5e 0%,#971C22 100%)}
+.story-card .portrait{width:56px;height:56px;border-radius:50%;background-image:url('11-testimonial-joanna.png'),linear-gradient(140deg,#f3d7a3 0%,#8e4a2e 100%);background-size:cover;background-position:center;margin-bottom:18px}
+.story-card .portrait.p2{background-image:url('12-testimonial-mark.png'),linear-gradient(140deg,#e9c9b6 0%,#b87a55 100%)}
+.story-card .portrait.p3{background-image:url('13-testimonial-rachel-paolo.png'),linear-gradient(140deg,#d99a5e 0%,#971C22 100%)}
 .story-card .quote{font-family:var(--display);font-style:italic;font-size:21px;line-height:1.35;color:var(--bone);margin:0 0 20px;letter-spacing:-0.01em}
 .story-card .quote em{color:var(--gold)}
 .story-card .who{font-family:var(--display);font-weight:700;font-size:15px;color:var(--bone)}
 .story-card .where{font-family:var(--body);font-size:13px;color:rgba(244,239,229,.6);margin-top:2px}
-.story-card .read{margin-top:18px;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--gold);text-decoration:none}
-.story-card .read:hover{color:var(--bone)}
 
 /* ===== Giving ===== */
 .giving{padding:120px 0;background:var(--blush)}

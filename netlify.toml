@@ -22,3 +22,9 @@
   from = "/api/chat"
   to = "/.netlify/functions/chat"
   status = 200
+
+# Old British-spelling blog slug -> US spelling (permanent)
+[[redirects]]
+  from = "/blog/why-we-baptise-in-jesus-name*"
+  to = "/blog/why-we-baptize-in-jesus-name.html"
+  status = 301

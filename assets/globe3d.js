@@ -184,7 +184,7 @@
       if (!reduced) line.geometry.setDrawRange(0, 0);
       globe.add(line);
 
-      // bright comet head travelling the beam
+      // bright comet head traveling the beam
       const head = new THREE.Sprite(new THREE.SpriteMaterial({
         map: dotMap, color: 0xFFE9B0, transparent: true, opacity: 0,
         blending: THREE.AdditiveBlending, depthWrite: false
@@ -268,7 +268,7 @@
     }
 
     // Initial yaw: place the beacon (Philippines) front of camera, slightly
-    // right of centre, then spin continuously about the Earth's axis from there.
+    // right of center, then spin continuously about the Earth's axis from there.
     const rb = Math.hypot(B.x, B.z) || 1;
     const baseYaw = Math.asin(Math.min(0.34 / rb, 1)) - Math.atan2(B.x, B.z);
     const SPIN = 0.085; // rad/s, one revolution every ~74s
@@ -296,7 +296,7 @@
         ring.material.opacity = (1 - ph) * 0.55;
       });
 
-      // travelling beams
+      // traveling beams
       arcs.forEach(a => {
         const ph = ((t - a.delay) % a.period) / a.period;
         if (ph < 0) { a.line.geometry.setDrawRange(0, 0); a.head.material.opacity = 0; a.dot.material.opacity = 0; return; }
@@ -320,7 +320,7 @@
     }
 
     if (reduced) {
-      // single dignified frame: Philippines centred, full arcs, no motion
+      // single dignified frame: Philippines centered, full arcs, no motion
       globe.rotation.y = baseYaw;
       globe.rotation.x = TILT;
       ripples.forEach((ring, i) => { ring.scale.setScalar(1 + i * 1.7); ring.material.opacity = 0.35 - i * 0.1; });
