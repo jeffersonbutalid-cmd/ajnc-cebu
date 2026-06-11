@@ -394,6 +394,16 @@ button{font-family:inherit;cursor:pointer}
 @media (max-width:880px){ .ministry-grid{grid-template-columns:repeat(2,1fr);gap:22px} }
 @media (max-width:560px){ .ministry-grid{grid-template-columns:1fr} }
 .ministry-card{background:var(--blush);border-radius:18px;padding:28px;transition:transform .35s, box-shadow .35s;cursor:pointer;display:flex;flex-direction:column;min-height:340px}
+/* soft brand tints in a diagonal pattern so neighbors never match */
+.ministry-grid>:nth-child(1){background:#F6E7C5}
+.ministry-grid>:nth-child(2){background:#F7DCD6}
+.ministry-grid>:nth-child(3){background:#E0E8F3}
+.ministry-grid>:nth-child(4){background:#E4EDDE}
+.ministry-grid>:nth-child(5){background:#F6E7C5}
+.ministry-grid>:nth-child(6){background:#F7DCD6}
+.ministry-grid>:nth-child(7){background:#E0E8F3}
+.ministry-grid>:nth-child(8){background:#E4EDDE}
+.ministry-grid>:nth-child(9){background:#F6E7C5}
 .ministry-card:hover{transform:translateY(-6px) rotate(.4deg);box-shadow:var(--shadow-lg)}
 .ministry-card .photo{height:140px;border-radius:12px;margin-bottom:22px;background-size:cover;background-position:center;position:relative;overflow:hidden}
 .ministry-card .photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%, rgba(14,43,79,.18));mix-blend-mode:multiply}
