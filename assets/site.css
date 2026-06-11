@@ -708,19 +708,6 @@ button{font-family:inherit;cursor:pointer}
    kinetic hero type, staggered card reveals, progress hairline.
    ===================================================== */
 
-/* ----- Hero: 3D canvas replaces the SVG halo when WebGL is live ----- */
-.hero-canvas{display:none}
-body.webgl-halo .hero-canvas{display:block;width:clamp(190px,21vw,270px);aspect-ratio:1/1;margin:-30px auto -6px;pointer-events:none}
-body.webgl-halo .hero-halo{display:none}
-.hero-canvas canvas{width:100% !important;height:100% !important;display:block}
-
-/* ----- Kinetic hero headline ----- */
-.kin-word{display:inline-block}
-h1.kinetic .kin-word{animation:kin-rise .7s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--ki,0)*70ms + 120ms)}
-@keyframes kin-rise{from{opacity:0;transform:translateY(.55em)}to{opacity:1;transform:none}}
-.hero-follow{animation:hero-follow .8s cubic-bezier(.2,.7,.2,1) backwards;animation-delay:calc(.6s + var(--hi,0)*130ms)}
-@keyframes hero-follow{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-
 /* ----- Scroll progress hairline ----- */
 .scroll-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:200;pointer-events:none;background:linear-gradient(90deg,var(--gold),var(--red));transform:scaleX(0);transform-origin:0 50%}
 
@@ -778,7 +765,6 @@ h1.kinetic .kin-word{animation:kin-rise .7s cubic-bezier(.2,.7,.2,1) both;animat
 @keyframes card-rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
 
 @media (prefers-reduced-motion: reduce){
-  h1.kinetic .kin-word,.hero-follow,
   .reveal.in :is(.plan-grid,.believe-grid,.ministry-grid,.event-grid,.sermon-more-grid,.story-grid,.pay-grid)>*{animation:none}
   .scroll-progress{display:none}
 }

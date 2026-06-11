@@ -150,7 +150,7 @@
           <a href="scriptures.html">Scriptures for hard days</a>
         </div>
       </div>
-      <a class="nav-link" href="#find">Church Locator</a>
+      <a class="nav-link" href="#world">Church Locator</a>
       <a class="nav-link" href="#contact">Contact Us</a>
       <a class="nav-link nav-cta-mobile" href="#plan">Plan your visit →</a>
     </div>
@@ -168,8 +168,7 @@
   <div class="hero-bg" aria-hidden="true"></div>
 
   <div class="hero-inner">
-    <!-- Halo centered at top: 3D canvas when WebGL is available, SVG otherwise -->
-    <div id="hero-canvas" class="hero-canvas" aria-hidden="true"></div>
+    <!-- Halo centered at top -->
     <svg class="hero-halo" viewBox="-100 -100 200 200" aria-hidden="true">
       <defs>
         <radialGradient id="haloGlow" cx="50%" cy="50%" r="50%">
@@ -502,6 +501,26 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
 })();
 </script>
 
+<!-- ============================ MISSION GLOBE ============================ -->
+<section class="world reveal" id="world" aria-labelledby="world-h">
+  <div class="container world-grid">
+    <div class="world-copy">
+      <span class="halo-icon" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="dot"></i></span>
+      <span class="eyebrow gold">Our mission</span>
+      <h2 id="world-h">Together we carry the gospel<br/><em>to the whole world.</em></h2>
+      <p>What began on Negros Island in the Philippines now worships across the islands and beyond, with churches in Dubai and Cambodia, and we are still going. Every beam of light carries one name: Jesus.</p>
+      <div class="world-actions">
+        <a href="#find" class="btn btn-red">Find your church <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+    <div class="world-globe">
+      <div class="world-glow" aria-hidden="true"></div>
+      <div id="world-canvas" aria-hidden="true"></div>
+      <img class="world-fallback" src="assets/ajnc-seal-mark.png" alt="" loading="lazy" decoding="async"/>
+    </div>
+  </div>
+</section>
+
 <!-- ============================ FIND A CHURCH ============================ -->
 <section class="finder reveal" id="find" aria-labelledby="find-h">
   <div class="container">
@@ -535,27 +554,6 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
     <div class="finder-foot">
       <div class="together">Together.</div>
       <p>7 churches and growing. Don't see your city? <a href="mailto:hello@ajnc.ph?subject=Plant a church">Tell us, we're planting.</a></p>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ MISSION GLOBE ============================ -->
-<section class="world reveal" id="world" aria-labelledby="world-h">
-  <div class="container world-grid">
-    <div class="world-copy">
-      <span class="halo-icon" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="dot"></i></span>
-      <span class="eyebrow gold">Our mission</span>
-      <h2 id="world-h">Together we carry the gospel<br/><em>to the whole world.</em></h2>
-      <p>What began on Negros Island in the Philippines now worships across the islands and beyond, with churches in Dubai and Cambodia, and we are still going. Every beam of light carries one name: Jesus.</p>
-      <div class="world-actions">
-        <a href="#plan" class="btn btn-red">Plan your visit <span aria-hidden="true">→</span></a>
-        <a href="#find" class="btn btn-ghost-dark">Find your church</a>
-      </div>
-    </div>
-    <div class="world-globe">
-      <div class="world-glow" aria-hidden="true"></div>
-      <div id="world-canvas" aria-hidden="true"></div>
-      <img class="world-fallback" src="assets/ajnc-seal-mark.png" alt="" loading="lazy" decoding="async"/>
     </div>
   </div>
 </section>

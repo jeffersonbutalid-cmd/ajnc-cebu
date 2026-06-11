@@ -1,43 +1,10 @@
 /* =====================================================
    AJNC — Experience layer
-   Small, dependency-free motion touches: kinetic hero headline,
-   count-up stats, scroll progress hairline, hero parallax.
-   Everything respects prefers-reduced-motion.
+   Small, dependency-free motion touches: count-up stats,
+   scroll progress hairline. Respects prefers-reduced-motion.
    ===================================================== */
 (function () {
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* ---------- Kinetic hero headline: word-by-word rise ---------- */
-  function kineticHero() {
-    if (reduced) return;
-    const h1 = document.getElementById('hero-h1');
-    if (!h1) return;
-    let i = 0;
-    function wrapWords(node) {
-      [...node.childNodes].forEach(child => {
-        if (child.nodeType === Node.TEXT_NODE) {
-          const frag = document.createDocumentFragment();
-          child.textContent.split(/(\s+)/).forEach(part => {
-            if (!part) return;
-            if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
-            const w = document.createElement('span');
-            w.className = 'kin-word';
-            w.style.setProperty('--ki', i++);
-            w.textContent = part;
-            frag.appendChild(w);
-          });
-          node.replaceChild(frag, child);
-        } else if (child.nodeType === Node.ELEMENT_NODE && child.tagName !== 'BR') {
-          wrapWords(child);
-        }
-      });
-    }
-    wrapWords(h1);
-    h1.classList.add('kinetic');
-    // the supporting lines follow the headline
-    document.querySelectorAll('.hero-eyebrow, .hero .lead, .hero-cta, .hero-times')
-      .forEach((el, j) => { el.classList.add('hero-follow'); el.style.setProperty('--hi', j); });
-  }
 
   /* ---------- Count-up numbers ---------- */
   function countUps() {
@@ -86,28 +53,7 @@
     update();
   }
 
-  /* ---------- Hero parallax: content drifts up slower than the page ---------- */
-  function heroParallax() {
-    if (reduced) return;
-    const inner = document.querySelector('.hero-inner');
-    const hint = document.querySelector('.hero .scroll-hint');
-    if (!inner) return;
-    let ticking = false;
-    function update() {
-      ticking = false;
-      const y = window.scrollY;
-      if (y < window.innerHeight) {
-        inner.style.transform = 'translateY(' + (y * 0.16) + 'px)';
-        inner.style.opacity = Math.max(1 - y / (window.innerHeight * 0.9), 0);
-        if (hint) hint.style.opacity = Math.max(1 - y / 160, 0);
-      }
-    }
-    window.addEventListener('scroll', () => {
-      if (!ticking) { ticking = true; requestAnimationFrame(update); }
-    }, { passive: true });
-  }
-
-  function init() { kineticHero(); countUps(); progressBar(); heroParallax(); }
+  function init() { countUps(); progressBar(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
 })();
