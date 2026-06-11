@@ -7,6 +7,10 @@
 
 [build.environment]
   NODE_VERSION = "20"
+  # The Google Maps JS key in assets/config.js is intentionally public: it ships
+  # to the browser and is protected by HTTP-referrer + API restrictions in Google
+  # Cloud Console, not by secrecy. Tell Netlify's secrets scanner it's expected.
+  SECRETS_SCAN_SMART_DETECTION_OMIT_VALUES = "AIzaSyAk1RVhNz-mrWf2T9uPpAH2sBo5bo44MM8"
 
 # The knowledge base is embedded in the function (netlify/functions/_knowledge.mjs),
 # so no extra bundling config is needed — this works with drag-and-drop deploys.
