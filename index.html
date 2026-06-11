@@ -31,7 +31,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
 <!-- Leaflet (Find a Church map) -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<link rel="stylesheet" href="assets/vendor/leaflet.css" />
 
 <!-- Site CSS -->
 <link rel="stylesheet" href="assets/site.css" />
@@ -168,7 +168,8 @@
   <div class="hero-bg" aria-hidden="true"></div>
 
   <div class="hero-inner">
-    <!-- Halo centered at top -->
+    <!-- Halo centered at top: 3D canvas when WebGL is available, SVG otherwise -->
+    <div id="hero-canvas" class="hero-canvas" aria-hidden="true"></div>
     <svg class="hero-halo" viewBox="-100 -100 200 200" aria-hidden="true">
       <defs>
         <radialGradient id="haloGlow" cx="50%" cy="50%" r="50%">
@@ -393,12 +394,12 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
       <p>Six pillars we have not, and will not, compromise on.</p>
     </div>
     <div class="believe-grid">
-      <article class="believe-card"><div class="num">01</div><h4>One God</h4><p>There is one God who has revealed Himself as Father in creation, Son in redemption, Holy Ghost in regeneration. Deuteronomy 6:4.</p></article>
-      <article class="believe-card"><div class="num">02</div><h4>Jesus is Lord</h4><p>In Him dwells all the fullness of the Godhead bodily. He is the Almighty, the I AM, the Saviour of the world. Colossians 2:9.</p></article>
-      <article class="believe-card"><div class="num">03</div><h4>Acts 2:38</h4><p>Repent, and be baptised in the name of Jesus Christ for the remission of sins, and ye shall receive the gift of the Holy Ghost.</p></article>
-      <article class="believe-card"><div class="num">04</div><h4>The Holy Ghost</h4><p>Infilling of the Spirit, evidenced by speaking in other tongues as the Spirit gives utterance. The Pentecost experience, today.</p></article>
-      <article class="believe-card"><div class="num">05</div><h4>The Word</h4><p>The Bible is the inspired Word of God, sufficient, infallible, the standard for faith, practice, and the church we are building.</p></article>
-      <article class="believe-card"><div class="num">06</div><h4>The Family</h4><p>The church is the household of God. We walk together across generations and neighbourhoods. Nobody walks alone.</p></article>
+      <article class="believe-card" data-tilt><div class="num">01</div><h4>One God</h4><p>There is one God who has revealed Himself as Father in creation, Son in redemption, Holy Ghost in regeneration. Deuteronomy 6:4.</p></article>
+      <article class="believe-card" data-tilt><div class="num">02</div><h4>Jesus is Lord</h4><p>In Him dwells all the fullness of the Godhead bodily. He is the Almighty, the I AM, the Saviour of the world. Colossians 2:9.</p></article>
+      <article class="believe-card" data-tilt><div class="num">03</div><h4>Acts 2:38</h4><p>Repent, and be baptised in the name of Jesus Christ for the remission of sins, and ye shall receive the gift of the Holy Ghost.</p></article>
+      <article class="believe-card" data-tilt><div class="num">04</div><h4>The Holy Ghost</h4><p>Infilling of the Spirit, evidenced by speaking in other tongues as the Spirit gives utterance. The Pentecost experience, today.</p></article>
+      <article class="believe-card" data-tilt><div class="num">05</div><h4>The Word</h4><p>The Bible is the inspired Word of God, sufficient, infallible, the standard for faith, practice, and the church we are building.</p></article>
+      <article class="believe-card" data-tilt><div class="num">06</div><h4>The Family</h4><p>The church is the household of God. We walk together across generations and neighbourhoods. Nobody walks alone.</p></article>
     </div>
   </div>
 </section>
@@ -430,7 +431,7 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
 
     <!-- More sermons -->
     <div class="sermon-more-grid">
-      <article class="sermon-mini">
+      <article class="sermon-mini" data-tilt>
         <a class="sermon-mini__thumb" href="https://www.youtube.com/watch?v=Yqr8poq_Wb0" target="_blank" rel="noopener" aria-label="Watch on YouTube">
           <img src="https://img.youtube.com/vi/Yqr8poq_Wb0/hqdefault.jpg" alt="" loading="lazy"/>
           <span class="sermon-mini__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
@@ -441,7 +442,7 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
           <p class="info"><span>Ptr. Elezer Tianero</span></p>
         </div>
       </article>
-      <article class="sermon-mini">
+      <article class="sermon-mini" data-tilt>
         <a class="sermon-mini__thumb" href="https://www.youtube.com/watch?v=TWYheAO-zTQ" target="_blank" rel="noopener" aria-label="Watch on YouTube">
           <img src="https://img.youtube.com/vi/TWYheAO-zTQ/hqdefault.jpg" alt="" loading="lazy"/>
           <span class="sermon-mini__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
@@ -452,7 +453,7 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
           <p class="info"><span>Ptr. Jeffrey Candoleta</span></p>
         </div>
       </article>
-      <article class="sermon-mini">
+      <article class="sermon-mini" data-tilt>
         <a class="sermon-mini__thumb" href="https://www.youtube.com/watch?v=8_3wMElg240" target="_blank" rel="noopener" aria-label="Watch on YouTube">
           <img src="https://img.youtube.com/vi/8_3wMElg240/hqdefault.jpg" alt="" loading="lazy"/>
           <span class="sermon-mini__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
@@ -534,6 +535,32 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
     <div class="finder-foot">
       <div class="together">Together.</div>
       <p>7 churches and growing. Don't see your city? <a href="mailto:hello@ajnc.ph?subject=Plant a church">Tell us, we're planting.</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ MISSION GLOBE ============================ -->
+<section class="world reveal" id="world" aria-labelledby="world-h">
+  <div class="container world-grid">
+    <div class="world-copy">
+      <span class="halo-icon" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="dot"></i></span>
+      <span class="eyebrow gold">Our mission</span>
+      <h2 id="world-h">Together we carry the gospel<br/><em>to the whole world.</em></h2>
+      <p>From one congregation in Mandaue to a growing family across the Visayas, and a gospel that does not stop at the water's edge. Every beam of light carries one name: Jesus.</p>
+      <div class="world-stats" role="list">
+        <div class="wstat" role="listitem"><strong data-countup="40">40</strong><span>Years of ministry</span></div>
+        <div class="wstat" role="listitem"><strong data-countup="7">7</strong><span>Churches and growing</span></div>
+        <div class="wstat" role="listitem"><strong data-countup="1">1</strong><span>Name above every name</span></div>
+      </div>
+      <div class="world-actions">
+        <a href="#plan" class="btn btn-red">Plan your visit <span aria-hidden="true">→</span></a>
+        <a href="#find" class="btn btn-ghost-dark">Find your church</a>
+      </div>
+    </div>
+    <div class="world-globe">
+      <div class="world-glow" aria-hidden="true"></div>
+      <div id="world-canvas" aria-hidden="true"></div>
+      <img class="world-fallback" src="assets/ajnc-seal-mark.png" alt="" loading="lazy" decoding="async"/>
     </div>
   </div>
 </section>
@@ -644,7 +671,7 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
     </article>
 
     <div class="event-grid">
-      <article class="event-card" data-scope="local">
+      <article class="event-card" data-tilt data-scope="local">
         <div class="date-row">
           <div class="date-tag"><div class="day">07</div><div class="month">Jun</div></div>
           <h4>Youth Night, <em class="italic-red">Burn</em></h4>
@@ -655,7 +682,7 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
           <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Youth+Night+Burn+at+AJNC+Cebu&dates=20260607T190000/20260607T220000&location=Un+Heng+Building,+Casuntingan,+Mandaue+City" target="_blank" rel="noopener" class="btn btn-ghost" style="padding:9px 14px;font-size:13px">Add to calendar</a>
         </div>
       </article>
-      <article class="event-card" data-scope="local">
+      <article class="event-card" data-tilt data-scope="local">
         <div class="date-row">
           <div class="date-tag"><div class="day">21</div><div class="month">Jun</div></div>
           <h4>Family Baptism, <em class="italic-red">Mactan</em></h4>
@@ -666,7 +693,7 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
           <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Family+Baptism+at+Mactan&dates=20260621T053000/20260621T090000&location=Mactan+Shore,+Cebu" target="_blank" rel="noopener" class="btn btn-ghost" style="padding:9px 14px;font-size:13px">Add to calendar</a>
         </div>
       </article>
-      <article class="event-card" data-scope="national">
+      <article class="event-card" data-tilt data-scope="national">
         <div class="date-row">
           <div class="date-tag"><div class="day">12</div><div class="month">Jul</div></div>
           <h4>PH Pastors' <em class="italic-red">Gathering</em></h4>
@@ -677,7 +704,7 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
           <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=PH+Pastors+Gathering+at+AJNC+Manila&dates=20260712T090000/20260712T170000&location=AJNC+Manila" target="_blank" rel="noopener" class="btn btn-ghost" style="padding:9px 14px;font-size:13px">Add to calendar</a>
         </div>
       </article>
-      <article class="event-card" data-scope="district">
+      <article class="event-card" data-tilt data-scope="district">
         <div class="date-row">
           <div class="date-tag"><div class="day">3</div><div class="month">Days</div></div>
           <h4>iConnect <em class="italic-red">Conference</em></h4>
@@ -753,21 +780,21 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
     </div>
 
     <div class="story-grid">
-      <article class="story-card">
+      <article class="story-card" data-tilt>
         <div class="portrait" role="img" aria-hidden="true"></div>
         <p class="quote">"I came in the back of the room one Wednesday. They prayed for my mother. <em>She is whole today.</em>"</p>
         <div class="who">Joanna M.</div>
         <div class="where">Mandaue · Baptised 2024</div>
         <a href="#" class="read">Read Joanna's story →</a>
       </article>
-      <article class="story-card">
+      <article class="story-card" data-tilt>
         <div class="portrait p2" role="img" aria-hidden="true"></div>
         <p class="quote">"For twenty years I argued with the gospel. The Holy Ghost <em>argued back.</em> I have not been the same."</p>
         <div class="who">Mark D.</div>
         <div class="where">Cebu City · Baptised 2023</div>
         <a href="#" class="read">Read Mark's story →</a>
       </article>
-      <article class="story-card">
+      <article class="story-card" data-tilt>
         <div class="portrait p3" role="img" aria-hidden="true"></div>
         <p class="quote">"My family fell apart. The church <em>did not let me fall.</em> We were rebuilt together."</p>
         <div class="who">Rachel and Paolo S.</div>
@@ -1257,11 +1284,14 @@ window.AJNC_EVENTS = {
 
 <!-- ============================ SCRIPTS ============================ -->
 <!-- Three.js for hero halo (lazy, skipped on mobile / no-WebGL) -->
-<script src="https://unpkg.com/three@0.160.0/build/three.min.js" defer></script>
+<script src="assets/vendor/three.min.js" defer></script>
 <script src="assets/halo3d.js" defer></script>
+<script src="assets/globe-points.js" defer></script>
+<script src="assets/globe3d.js" defer></script>
+<script src="assets/wow.js" defer></script>
 
 <!-- Leaflet for Find a Church map -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+<script src="assets/vendor/leaflet.js" defer></script>
 
 <!-- Shared data (Supabase: church locations + microsite placeholders) -->
 <script src="assets/config.js" defer></script>
