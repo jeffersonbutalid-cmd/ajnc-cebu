@@ -451,6 +451,47 @@ button{font-family:inherit;cursor:pointer}
 .event-card .meta{font-size:13px;color:var(--slate);margin:8px 0 14px}
 .event-card .actions{display:flex;gap:10px}
 
+/* ----- Data-driven event cards: placeholder art header + body ----- */
+.event-card{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.ev-img{position:relative;aspect-ratio:16/9;overflow:hidden}
+.ev-img::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 28% 26%,rgba(255,255,255,.14),transparent 62%)}
+.ev-ico{position:absolute;right:-16px;bottom:-18px;width:120px;height:120px;fill:none;stroke:#fff;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round;opacity:.2;z-index:1}
+.ev-img .date-tag{position:absolute;z-index:2;top:14px;left:14px;width:auto;background:var(--bone);border-radius:11px;padding:8px 12px;text-align:center;box-shadow:0 6px 16px rgba(0,0,0,.22)}
+.ev-img .date-tag .day{font-family:var(--display);font-weight:700;font-size:22px;line-height:1;color:var(--red)}
+.ev-img .date-tag .month{font-size:10px;letter-spacing:.18em;font-weight:700;text-transform:uppercase;color:var(--ink);margin-top:3px}
+.ev-dept{position:absolute;z-index:2;top:16px;right:14px;background:rgba(14,43,79,.5);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 11px;border-radius:999px;-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.ev-body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:9px;flex:1}
+.ev-body h4{font-family:var(--display);font-weight:700;font-size:19px;line-height:1.14;letter-spacing:-0.02em;color:var(--ink);margin:0}
+.ev-body h4 em{font-style:italic;color:var(--red)}
+.ev-body .meta{font-size:13px;color:var(--slate);margin:0}
+.ev-body .actions{margin-top:auto;display:flex;gap:8px;flex-wrap:wrap;padding-top:4px}
+
+/* placeholder theme gradients (swap for photos later) */
+.ev-img--conference{background:linear-gradient(135deg,#0E2B4F,#7d1a2e 70%,#C8262E)}
+.ev-img--men{background:linear-gradient(135deg,#0f274a,#33567d)}
+.ev-img--retreat{background:linear-gradient(135deg,#b9852f,#E8B53C 70%,#f1d9a4)}
+.ev-img--teach{background:linear-gradient(135deg,#33547d,#0E2B4F)}
+.ev-img--youth{background:linear-gradient(135deg,#C8262E,#E8B53C)}
+.ev-img--prayer{background:linear-gradient(135deg,#0a1d3a,#22386a)}
+.ev-img--mission{background:linear-gradient(135deg,#E8B53C,#C8262E)}
+.ev-img--word{background:linear-gradient(135deg,#0E2B4F,#b9852f)}
+.ev-img--thanks{background:linear-gradient(135deg,#E8B53C,#cf7a45 65%,#C8262E)}
+
+/* featured hero gets the conference icon watermark */
+.event-hero .image .ev-ico{position:absolute;right:-12px;bottom:-14px;width:170px;height:170px;opacity:.22;z-index:1}
+.event-hero .image .date-badge{z-index:2}
+
+/* modal cover picks up the event theme */
+.event-modal__cover.ev-img--conference,.event-modal__cover.ev-img--men,.event-modal__cover.ev-img--retreat,.event-modal__cover.ev-img--teach,.event-modal__cover.ev-img--youth,.event-modal__cover.ev-img--prayer,.event-modal__cover.ev-img--mission,.event-modal__cover.ev-img--word,.event-modal__cover.ev-img--thanks{position:relative}
+
+/* ----- Pager ----- */
+.event-pager{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:30px}
+.event-pager__btn{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink);font-size:14px;font-weight:600;cursor:pointer;transition:all .2s}
+.event-pager__btn svg{width:16px;height:16px}
+.event-pager__btn:hover:not(:disabled){border-color:var(--ink);transform:translateY(-1px)}
+.event-pager__btn:disabled{opacity:.38;cursor:default}
+.event-pager__status{font-size:13px;color:var(--ink);opacity:.7;font-variant-numeric:tabular-nums;min-width:54px;text-align:center}
+
 /* ===== Leadership ===== */
 .leaders{padding:120px 0;background:var(--paper)}
 
