@@ -119,25 +119,13 @@ def to_xyz(lat, lon):
 
 XYZ = to_xyz(P_lat, P_lon)
 
-# ---- rotation: Philippines faces the camera, north up ----
+# ---- no baked rotation: north pole stays exactly +y so the renderer can
+# spin the globe continuously about the true Earth axis (like a desk globe).
+# globe3d.js computes the initial yaw that brings the beacon front-centre. ----
 CEBU = (10.3157, 123.8854)
-TARGET = np.array([0.34, 0.02, 0.94]); TARGET /= np.linalg.norm(TARGET)
-v_ph = to_xyz(*CEBU)
-npole = np.array([0.0, 1.0, 0.0])
-
-def basis(fwd, up_hint):
-    f3 = fwd / np.linalg.norm(fwd)
-    f2 = up_hint - np.dot(up_hint, f3) * f3
-    f2 /= np.linalg.norm(f2)
-    f1 = np.cross(f2, f3)
-    return np.stack([f1, f2, f3], axis=1)  # columns
-
-E = basis(v_ph, npole)
-F = basis(TARGET, np.array([0.0, 1.0, 0.0]))
-R = F @ E.T
-XYZ = XYZ @ R.T
-beacon = R @ v_ph
-print(f"beacon (Cebu): {tuple(round(float(x), 3) for x in beacon)}")
+R = np.eye(3)
+beacon = R @ to_xyz(*CEBU)
+print(f"beacon (Cebu, unrotated frame): {tuple(round(float(x), 3) for x in beacon)}")
 
 # ---- arc endpoints: real cities ----
 CITIES = [

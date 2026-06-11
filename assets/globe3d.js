@@ -246,16 +246,23 @@
       }, { rootMargin: '120px' }).observe(mount);
     }
 
+    // Initial yaw: place the beacon (Philippines) front of camera, slightly
+    // right of centre, then spin continuously about the Earth's axis from there.
+    const rb = Math.hypot(B.x, B.z) || 1;
+    const baseYaw = Math.asin(Math.min(0.34 / rb, 1)) - Math.atan2(B.x, B.z);
+    const SPIN = 0.085; // rad/s, one revolution every ~74s
+    const TILT = 0.10;  // slight desk-globe tilt toward the viewer
+
     const start = performance.now();
     function frame() {
       const t = (performance.now() - start) * 0.001;
 
-      // sway (never enough to show the empty far side for long)
-      if (!dragging) { dragTX *= 0.97; dragTY *= 0.97; } // spring back after drag
+      // continuous rotation, drag adds a spring-back offset on top
+      if (!dragging) { dragTX *= 0.97; dragTY *= 0.97; }
       dragX += (dragTX - dragX) * 0.06;
       dragY += (dragTY - dragY) * 0.06;
-      globe.rotation.y = Math.sin(t * 0.09) * 0.26 + dragX;
-      globe.rotation.x = Math.sin(t * 0.06) * 0.06 + dragY;
+      globe.rotation.y = baseYaw + t * SPIN + dragX;
+      globe.rotation.x = TILT + dragY;
 
       stars.rotation.y = t * 0.004;
 
@@ -292,7 +299,9 @@
     }
 
     if (reduced) {
-      // single dignified frame: full arcs, glowing beacon, no motion
+      // single dignified frame: Philippines centred, full arcs, no motion
+      globe.rotation.y = baseYaw;
+      globe.rotation.x = TILT;
       ripples.forEach((ring, i) => { ring.scale.setScalar(1 + i * 1.7); ring.material.opacity = 0.35 - i * 0.1; });
       arcs.forEach(a => a.line.geometry.setDrawRange(0, ARC_PTS + 1));
       resize();
