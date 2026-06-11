@@ -474,6 +474,7 @@ button{font-family:inherit;cursor:pointer}
 .ev-body h4{font-family:var(--display);font-weight:700;font-size:19px;line-height:1.14;letter-spacing:-0.02em;color:var(--ink);margin:0}
 .ev-body h4 em{font-style:italic;color:var(--red)}
 .ev-body .meta{font-size:13px;color:var(--slate);margin:0}
+.ev-body .desc{font-size:13.5px;line-height:1.5;color:var(--ink);opacity:.74;margin:0}
 .ev-body .actions{margin-top:auto;display:flex;gap:8px;flex-wrap:wrap;padding-top:4px}
 
 /* placeholder theme gradients (swap for photos later) */
@@ -481,7 +482,9 @@ button{font-family:inherit;cursor:pointer}
 .ev-img--men{background:linear-gradient(135deg,#0f274a,#33567d)}
 .ev-img--retreat{background:linear-gradient(135deg,#b9852f,#E8B53C 70%,#f1d9a4)}
 .ev-img--teach{background:linear-gradient(135deg,#33547d,#0E2B4F)}
-.ev-img--youth{background:linear-gradient(135deg,#C8262E,#E8B53C)}
+.ev-img--youth{background:linear-gradient(135deg,#C8262E,#971C22)}
+.ev-img--kids{background:linear-gradient(135deg,#b9852f,#E8B53C)}
+.ev-img--sya{background:linear-gradient(135deg,#0E2B4F,#33567d)}
 .ev-img--prayer{background:linear-gradient(135deg,#0a1d3a,#22386a)}
 .ev-img--mission{background:linear-gradient(135deg,#E8B53C,#C8262E)}
 .ev-img--word{background:linear-gradient(135deg,#0E2B4F,#b9852f)}

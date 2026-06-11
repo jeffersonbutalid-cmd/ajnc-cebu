@@ -942,9 +942,12 @@ Office hours · Mon, Fri, 9 AM, 5 PM</div>
 .event-modal__title em{color:#C8262E;font-style:italic;font-weight:700}
 .event-modal__cover{
   width:100%;aspect-ratio:16/9;
-  background:linear-gradient(135deg,#E9C9B6,#E8B53C 50%,#971C22);
   border-radius:14px;margin:0 0 28px;
   position:relative;overflow:hidden;
+  background-size:cover;background-position:center;
+}
+.event-modal__cover:not([class*="ev-img--"]){
+  background:linear-gradient(135deg,#E9C9B6,#E8B53C 50%,#971C22);
 }
 .event-modal__cover::after{
   content:'COVER PHOTO';
@@ -952,6 +955,7 @@ Office hours · Mon, Fri, 9 AM, 5 PM</div>
   font-size:10px;letter-spacing:.22em;
   color:rgba(250,247,241,.8);font-weight:600;
 }
+.event-modal__cover.has-img::after{display:none}
 .event-modal__meta-grid{
   display:grid;grid-template-columns:1fr 1fr;gap:20px;
   margin:0 0 28px;padding:20px 0;
@@ -1044,6 +1048,8 @@ Office hours · Mon, Fri, 9 AM, 5 PM</div>
     men: 'M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2 M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8',
     retreat: 'm2 20 7-13 4 7 3-4 6 10z',
     teach: 'M4 19.5A2.5 2.5 0 0 1 6.5 17H20 M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z',
+    kids: 'M2 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H2z M22 4h-7a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h8z',
+    sya: 'M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2 M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8 M22 21v-2a4 4 0 0 0-3-3.87',
     youth: 'M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.3 1-3a2.5 2.5 0 0 0 2.5 2.5z',
     prayer: 'M12 3l1.9 5.8H20l-4.9 3.6 1.9 5.8L12 14.6 7.1 18.2l1.9-5.8L4 8.8h6.1z',
     mission: 'M22 2 11 13 M22 2 15 22 11 13 2 9 22 2z',
@@ -1063,17 +1069,17 @@ Office hours · Mon, Fri, 9 AM, 5 PM</div>
   };
 
   var LIST = [
-    { id: 'men-fellowship', scope: 'district', theme: 'men', day: '12', mon: 'Jun', title: 'Men&rsquo;s <em>Fellowship</em>', dept: 'Men', dateline: 'June 12, 2026', venue: 'Iloilo', when: 'Friday 12 June 2026', where: 'Iloilo', body: ['A gathering for the men of the family: brotherhood, the Word, and a charge to lead well at home and in the church.'], highlights: ['For the men', 'Fellowship'], s: '20260612', e: '20260613', loc: 'Iloilo' },
-    { id: 'sya-retreat', scope: 'district', theme: 'retreat', day: '12', mon: 'Jun', title: 'Singles & Young <em>Adults Retreat</em>', dept: 'SYA', dateline: 'June 12, 2026', venue: 'Aklan', when: 'Friday 12 June 2026', where: 'Aklan', body: ['A retreat for singles and young adults: rest, worship, honest conversation, and time set apart with God and the family.'], highlights: ['Singles & young adults', 'Time away'], s: '20260612', e: '20260613', loc: 'Aklan' },
-    { id: 'ss-echo', scope: 'local', theme: 'teach', day: '13', mon: 'Jun', title: 'Sunday School <em>Echo Seminar</em>', dept: 'Sunday School', dateline: 'June 13, 2026', venue: 'AJNC Cebu', when: 'Saturday 13 June 2026', where: 'AJNC Cebu, Mandaue', body: ['Our Sunday School teachers echo what they received at the district seminar, so every class is ready for the season ahead.'], highlights: ['For teachers', 'Sunday School'], s: '20260613', e: '20260614', loc: 'AJNC Cebu, Mandaue' },
-    { id: 'yp-culmination', scope: 'local', theme: 'youth', day: '20', mon: 'Jun', title: 'Young People <em>Culmination</em>', dept: 'Young People', dateline: 'June 20, 2026', venue: 'To be announced', when: 'Saturday 20 June 2026', where: 'To be announced', body: ['The young people close the season together: worship, testimonies, and a celebration of all God has done this term.'], highlights: ['Young people', 'Worship night'], s: '20260620', e: '20260621', loc: '' },
-    { id: 'ss-teachers', scope: 'district', theme: 'teach', day: '20', mon: 'Aug', title: 'Sunday School <em>Teachers Retreat</em>', dept: 'Sunday School', dateline: 'August 20 to 22, 2026', venue: 'To be announced', when: '20 to 22 August 2026', where: 'To be announced', body: ['Three days set apart for our Sunday School teachers: training, rest, and preparation for the children God sends us.'], highlights: ['For teachers', 'Three days'], s: '20260820', e: '20260823', loc: '' },
-    { id: 'yp-prayer-aug', scope: 'local', theme: 'prayer', day: '21', mon: 'Aug', title: 'YP <em>Prayer Night</em>', dept: 'Young People', dateline: 'August 21, 2026', venue: 'AJNC Cebu', when: 'Friday 21 August 2026', where: 'AJNC Cebu, Mandaue', body: ['An evening of prayer and worship for the young people. Come hungry, come expectant.'], highlights: ['Young people', 'Prayer & worship'], s: '20260821', e: '20260822', loc: 'AJNC Cebu, Mandaue' },
-    { id: 'yp-mission-aug', scope: 'local', theme: 'mission', day: '22', mon: 'Aug', title: 'YP <em>Mission Day</em>', dept: 'Young People', dateline: 'August 22, 2026', venue: 'To be announced', when: 'Saturday 22 August 2026', where: 'To be announced', body: ['The young people take the gospel to the streets: outreach, friendship evangelism, and serving the community.'], highlights: ['Young people', 'Outreach'], s: '20260822', e: '20260823', loc: '' },
-    { id: 'contending', scope: 'national', theme: 'word', day: '09', mon: 'Sep', title: 'Contending for <em>the Faith</em>', dept: 'Whole church', dateline: 'September 9 to 11, 2026', venue: 'To be announced', when: '9 to 11 September 2026', where: 'To be announced', body: ['Three days in the Word, grounding the whole family in the apostolic faith once delivered to the saints.'], highlights: ['Whole church', 'Three days', 'The Word'], s: '20260909', e: '20260912', loc: '' },
-    { id: 'yp-prayer-nov', scope: 'local', theme: 'prayer', day: '20', mon: 'Nov', title: 'YP <em>Prayer Night</em>', dept: 'Young People', dateline: 'November 20, 2026', venue: 'AJNC Cebu', when: 'Friday 20 November 2026', where: 'AJNC Cebu, Mandaue', body: ['Another evening of prayer and worship for the young people as the year draws to a close.'], highlights: ['Young people', 'Prayer & worship'], s: '20261120', e: '20261121', loc: 'AJNC Cebu, Mandaue' },
-    { id: 'yp-mission-nov', scope: 'local', theme: 'mission', day: '21', mon: 'Nov', title: 'YP <em>Mission Day</em>', dept: 'Young People', dateline: 'November 21, 2026', venue: 'To be announced', when: 'Saturday 21 November 2026', where: 'To be announced', body: ['The young people carry the gospel out once more: outreach and service before the year ends.'], highlights: ['Young people', 'Outreach'], s: '20261121', e: '20261122', loc: '' },
-    { id: 'thanksgiving', scope: 'local', theme: 'thanks', day: '20', mon: 'Dec', title: 'Thanksgiving <em>Day</em>', dept: 'Whole church', dateline: 'December 20, 2026', venue: 'To be announced', when: 'Sunday 20 December 2026', where: 'To be announced', body: ['The whole family gathers to give thanks for the year: testimonies, worship, and a table shared together.'], highlights: ['Whole church', 'Give thanks'], s: '20261220', e: '20261221', loc: '' }
+    { id: 'men-fellowship', scope: 'district', theme: 'men', day: '12', mon: 'Jun', title: 'Men&rsquo;s <em>Fellowship</em>', dept: 'Men', dateline: 'June 12, 2026', venue: 'Iloilo', desc: 'Brotherhood, the Word, and a charge to lead well at home and in the church.', when: 'Friday 12 June 2026', where: 'Iloilo', body: ['A gathering for the men of the family: brotherhood, the Word, and a charge to lead well at home and in the church.'], highlights: ['For the men', 'Fellowship'], s: '20260612', e: '20260613', loc: 'Iloilo' },
+    { id: 'sya-retreat', scope: 'district', theme: 'sya', day: '12', mon: 'Jun', title: 'Singles & Young <em>Adults Retreat</em>', dept: 'SYA', dateline: 'June 12, 2026', venue: 'Aklan', desc: 'Rest, worship, and honest conversation, time set apart with God and the family.', when: 'Friday 12 June 2026', where: 'Aklan', body: ['A retreat for singles and young adults: rest, worship, honest conversation, and time set apart with God and the family.'], highlights: ['Singles & young adults', 'Time away'], s: '20260612', e: '20260613', loc: 'Aklan' },
+    { id: 'ss-echo', scope: 'local', theme: 'kids', day: '13', mon: 'Jun', title: 'Sunday School <em>Echo Seminar</em>', dept: 'Sunday School', dateline: 'June 13, 2026', venue: 'AJNC Cebu', desc: 'Our teachers echo the district seminar so every class is ready for the season.', when: 'Saturday 13 June 2026', where: 'AJNC Cebu, Mandaue', body: ['Our Sunday School teachers echo what they received at the district seminar, so every class is ready for the season ahead.'], highlights: ['For teachers', 'Sunday School'], s: '20260613', e: '20260614', loc: 'AJNC Cebu, Mandaue' },
+    { id: 'yp-culmination', scope: 'local', theme: 'youth', day: '20', mon: 'Jun', title: 'Young People <em>Culmination</em>', dept: 'Young People', dateline: 'June 20, 2026', venue: '', desc: 'Worship, testimonies, and a celebration of all God has done this season.', when: 'Saturday 20 June 2026', where: 'Venue announced through your local church', body: ['The young people close the season together: worship, testimonies, and a celebration of all God has done this term.'], highlights: ['Young people', 'Worship night'], s: '20260620', e: '20260621', loc: '' },
+    { id: 'ss-teachers', scope: 'district', theme: 'kids', day: '20', mon: 'Aug', title: 'Sunday School <em>Teachers Retreat</em>', dept: 'Sunday School', dateline: 'August 20 to 22, 2026', venue: '', desc: 'Three days of training and rest for the teachers of our children.', when: '20 to 22 August 2026', where: 'Venue announced through your local church', body: ['Three days set apart for our Sunday School teachers: training, rest, and preparation for the children God sends us.'], highlights: ['For teachers', 'Three days'], s: '20260820', e: '20260823', loc: '' },
+    { id: 'yp-prayer-aug', scope: 'local', theme: 'youth', day: '21', mon: 'Aug', title: 'YP <em>Prayer Night</em>', dept: 'Young People', dateline: 'August 21, 2026', venue: 'AJNC Cebu', desc: 'An evening of prayer and worship for the young people. Come expectant.', when: 'Friday 21 August 2026', where: 'AJNC Cebu, Mandaue', body: ['An evening of prayer and worship for the young people. Come hungry, come expectant.'], highlights: ['Young people', 'Prayer & worship'], s: '20260821', e: '20260822', loc: 'AJNC Cebu, Mandaue' },
+    { id: 'yp-mission-aug', scope: 'local', theme: 'youth', day: '22', mon: 'Aug', title: 'YP <em>Mission Day</em>', dept: 'Young People', dateline: 'August 22, 2026', venue: '', desc: 'The young people take the gospel to the streets: outreach and serving the community.', when: 'Saturday 22 August 2026', where: 'Venue announced through your local church', body: ['The young people take the gospel to the streets: outreach, friendship evangelism, and serving the community.'], highlights: ['Young people', 'Outreach'], s: '20260822', e: '20260823', loc: '' },
+    { id: 'contending', scope: 'national', theme: 'word', day: '09', mon: 'Sep', title: 'Contending for <em>the Faith</em>', dept: 'Whole church', dateline: 'September 9 to 11, 2026', venue: '', desc: 'Three days in the Word, grounding the whole family in the apostolic faith.', when: '9 to 11 September 2026', where: 'Venue announced through your local church', body: ['Three days in the Word, grounding the whole family in the apostolic faith once delivered to the saints.'], highlights: ['Whole church', 'Three days', 'The Word'], s: '20260909', e: '20260912', loc: '' },
+    { id: 'yp-prayer-nov', scope: 'local', theme: 'youth', day: '20', mon: 'Nov', title: 'YP <em>Prayer Night</em>', dept: 'Young People', dateline: 'November 20, 2026', venue: 'AJNC Cebu', desc: 'Prayer and worship for the young people as the year draws to a close.', when: 'Friday 20 November 2026', where: 'AJNC Cebu, Mandaue', body: ['Another evening of prayer and worship for the young people as the year draws to a close.'], highlights: ['Young people', 'Prayer & worship'], s: '20261120', e: '20261121', loc: 'AJNC Cebu, Mandaue' },
+    { id: 'yp-mission-nov', scope: 'local', theme: 'youth', day: '21', mon: 'Nov', title: 'YP <em>Mission Day</em>', dept: 'Young People', dateline: 'November 21, 2026', venue: '', desc: 'Outreach and service before the year ends, carrying the gospel out once more.', when: 'Saturday 21 November 2026', where: 'Venue announced through your local church', body: ['The young people carry the gospel out once more: outreach and service before the year ends.'], highlights: ['Young people', 'Outreach'], s: '20261121', e: '20261122', loc: '' },
+    { id: 'thanksgiving', scope: 'local', theme: 'thanks', day: '20', mon: 'Dec', title: 'Thanksgiving <em>Day</em>', dept: 'Whole church', dateline: 'December 20, 2026', venue: '', desc: 'Testimonies, worship, and a table shared by the whole family in thanks.', when: 'Sunday 20 December 2026', where: 'Venue announced through your local church', body: ['The whole family gathers to give thanks for the year: testimonies, worship, and a table shared together.'], highlights: ['Whole church', 'Give thanks'], s: '20261220', e: '20261221', loc: '' }
   ];
 
   function evCal(ev) { return calUrl(strip(ev.title) + ' · AJNC', ev.s, ev.e, ev.loc); }
@@ -1091,7 +1097,8 @@ Office hours · Mon, Fri, 9 AM, 5 PM</div>
       '</div>' +
       '<div class="ev-body">' +
         '<h4>' + ev.title + '</h4>' +
-        '<div class="meta">' + ev.dateline + ' &middot; ' + ev.venue + '</div>' +
+        '<div class="meta">' + ev.dateline + (ev.venue ? ' &middot; ' + ev.venue : '') + '</div>' +
+        (ev.desc ? '<p class="desc">' + ev.desc + '</p>' : '') +
         '<div class="actions">' +
           '<button class="btn btn-red" type="button" data-ev="' + ev.id + '" style="padding:9px 14px;font-size:13px">Details</button>' +
           '<a class="btn btn-ghost" href="' + evCal(ev) + '" target="_blank" rel="noopener" style="padding:9px 14px;font-size:13px">Add to calendar</a>' +
@@ -1175,7 +1182,7 @@ Office hours · Mon, Fri, 9 AM, 5 PM</div>
   var byId = {};
   [FEATURED].concat(LIST).forEach(function (ev) {
     byId[ev.id] = {
-      category: ev.dept || 'District Conference', theme: ev.theme,
+      category: ev.dept || 'District Conference', theme: ev.theme, img: ev.img,
       title: ev.title, when: ev.when, where: ev.where,
       body: ev.body, highlights: ev.highlights, calendarUrl: evCal(ev)
     };
@@ -1190,7 +1197,10 @@ Office hours · Mon, Fri, 9 AM, 5 PM</div>
       modal.querySelector('#event-modal-tag').textContent = data.category;
       modal.querySelector('#event-modal-title').innerHTML = data.title;
       var cover = modal.querySelector('.event-modal__cover');
-      if (cover) cover.className = 'event-modal__cover' + (data.theme ? ' ev-img--' + data.theme : '');
+      if (cover) {
+        cover.className = 'event-modal__cover' + (data.theme ? ' ev-img--' + data.theme : '') + (data.img ? ' has-img' : '');
+        cover.style.backgroundImage = data.img ? "url('" + data.img + "')" : '';
+      }
       var values = modal.querySelectorAll('.event-modal__meta-value');
       values[0].textContent = data.when;
       values[1].textContent = data.where;
