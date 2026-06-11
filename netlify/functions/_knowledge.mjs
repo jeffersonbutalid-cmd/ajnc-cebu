@@ -1,5 +1,5 @@
-/* AUTO-GENERATED from data/upci-knowledge.md — edit that file, then regenerate,
-   or edit this string directly. This is the knowledge base the chat function uses. */
+/* AUTO-GENERATED from data/upci-knowledge.md. Do not edit by hand.
+   Regenerate after editing the markdown (see scripts in repo history). */
 export const KNOWLEDGE = `# AJNC / UPCI Knowledge Base
 
 This is the knowledge base for the AJNC church assistant. It is grounded in the
@@ -97,10 +97,12 @@ Christ, filled with the Holy Ghost, and walking together until He returns.
 - One Gospel. The same message, carried from Mandaue to the ends of the earth.
 - One Mission. Acts 2:38 lived in the open: repentance, baptism in Jesus' name, the gift of the Holy Ghost.
 
-**Our story.** AJNC Cebu's story is small and ordinary: families who pray
-together on Sunday and midweek, neighbors invited to dinner, baptisms in the sea,
-prayer meetings that run later than they were meant to. Together, those small
-things have become a church the city can recognize.
+**Our story.** The AJNC family began on Negros Island in the Philippines and has
+grown across the islands and beyond, with churches in Cebu, Negros Occidental,
+Dubai, and Cambodia, and it is still growing. AJNC Cebu's own story is small and
+ordinary: families who pray together on Sunday and midweek, neighbors invited to
+dinner, baptisms in the sea, prayer meetings that run later than they were meant
+to. Together, those small things have become a church the city can recognize.
 
 ## AJNC Cebu — leadership
 
