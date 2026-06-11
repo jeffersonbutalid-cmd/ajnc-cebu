@@ -122,11 +122,13 @@ beacon = centroid_in(0.30, 0.52, -0.18, 0.08)
 print(f"beacon (Philippines): {tuple(round(x, 3) for x in beacon)}")
 
 # ---- arc endpoints: land centroids per world region on the seal ----
+# Cambodia and the Middle East (Dubai) lead the list: AJNC has churches there.
 arcs = [
+    centroid_in(0.08, 0.26, -0.06, 0.16),   # Cambodia / Indochina
+    centroid_in(-0.80, -0.42, 0.02, 0.38),  # Middle East / Dubai
     centroid_in(0.38, 0.72, 0.28, 0.62),    # Japan / NE Asia
     centroid_in(0.30, 0.85, -0.85, -0.45),  # Australia
     centroid_in(-0.35, -0.02, -0.10, 0.22), # India / South Asia
-    centroid_in(-0.80, -0.42, 0.02, 0.38),  # Middle East
     centroid_in(-0.92, -0.55, -0.45, -0.05),# Africa
     centroid_in(-0.15, 0.28, 0.32, 0.66),   # China / Central Asia
     centroid_in(-0.72, -0.30, 0.45, 0.80),  # Europe / Russia (top-left)
