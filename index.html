@@ -1052,7 +1052,7 @@ Office hours · Mon, Fri, 9 AM, 5 PM</div>
   };
 
   var FEATURED = {
-    id: 'iconnect-2026', theme: 'conference', scope: 'district', day: '27', mon: 'Nov',
+    id: 'iconnect-2026', theme: 'conference', scope: 'district', img: 'assets/01-pentecost-hero.png', day: '27', mon: 'Nov',
     title: 'iConnect <em>Conference</em>', label: 'Featured · District Conference',
     dateline: 'November 27 to 29, 2026', venue: 'Iloilo',
     desc: 'Our three-day district conference returns. Three days of worship, the Word, workshops, and fellowship with the AJNC family across the district. Open to every member, and a friend you bring along.',
@@ -1078,10 +1078,14 @@ Office hours · Mon, Fri, 9 AM, 5 PM</div>
 
   function evCal(ev) { return calUrl(strip(ev.title) + ' · AJNC', ev.s, ev.e, ev.loc); }
 
+  function bgStyle(ev) {
+    return ev.img ? ' style="background-image:url(\'' + ev.img + '\');background-size:cover;background-position:center"' : '';
+  }
+
   function cardHTML(ev) {
     return '<article class="event-card">' +
-      '<div class="ev-img ev-img--' + ev.theme + '" role="img" aria-label="' + strip(ev.title) + '">' +
-        '<svg class="ev-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="' + ICONS[ev.theme] + '"/></svg>' +
+      '<div class="ev-img ev-img--' + ev.theme + '"' + bgStyle(ev) + ' role="img" aria-label="' + strip(ev.title) + '">' +
+        (ev.img ? '' : '<svg class="ev-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="' + ICONS[ev.theme] + '"/></svg>') +
         '<span class="ev-dept">' + ev.dept + '</span>' +
         '<div class="date-tag"><div class="day">' + ev.day + '</div><div class="month">' + ev.mon + '</div></div>' +
       '</div>' +
@@ -1098,8 +1102,8 @@ Office hours · Mon, Fri, 9 AM, 5 PM</div>
 
   function featuredHTML(ev) {
     return '<article class="event-hero">' +
-      '<div class="image" role="img" aria-label="' + strip(ev.title) + '">' +
-        '<svg class="ev-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="' + ICONS[ev.theme] + '"/></svg>' +
+      '<div class="image"' + bgStyle(ev) + ' role="img" aria-label="' + strip(ev.title) + '">' +
+        (ev.img ? '' : '<svg class="ev-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="' + ICONS[ev.theme] + '"/></svg>') +
         '<div class="date-badge"><div class="day">' + ev.day + '</div><div class="month">' + ev.mon + '</div></div>' +
       '</div>' +
       '<div class="copy">' +
