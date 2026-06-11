@@ -151,16 +151,28 @@
       ripples.push(ring);
     }
 
-    /* ---- gospel beams: bezier arcs from the beacon to the nations ---- */
+    /* ---- gospel beams: bezier arcs from the beacon to the nations ----
+       Control points use spherical interpolation so even near-antipodal
+       beams (Manila to Buenos Aires) arc cleanly over the globe. */
+    function slerpV(a, b, t) {
+      const d = Math.min(Math.max(a.dot(b), -1), 1);
+      const th = Math.acos(d);
+      if (th < 1e-4) return a.clone();
+      const s = Math.sin(th);
+      return a.clone().multiplyScalar(Math.sin((1 - t) * th) / s)
+        .add(b.clone().multiplyScalar(Math.sin(t * th) / s));
+    }
     const ARC_PTS = 120;
     const arcs = DATA.arcs.map((end, i) => {
-      const E = new THREE.Vector3(end[0], end[1], end[2]);
-      const p0 = B.clone().multiplyScalar(R);
+      const E = new THREE.Vector3(end[0], end[1], end[2]).normalize();
+      const n0 = B.clone().normalize();
+      const th = Math.acos(Math.min(Math.max(n0.dot(E), -1), 1));
+      const p0 = n0.clone().multiplyScalar(R);
       const p3 = E.clone().multiplyScalar(R);
-      const dist = p0.distanceTo(p3);
-      const lift = R * (1.18 + Math.min(dist / (R * 2), 1) * 0.28);
-      const p1 = p0.clone().lerp(p3, 0.3).normalize().multiplyScalar(lift);
-      const p2 = p0.clone().lerp(p3, 0.7).normalize().multiplyScalar(lift);
+      // short hops hug the surface, long hauls soar
+      const lift = R * (1.15 + (th / Math.PI) * 0.55);
+      const p1 = slerpV(n0, E, 0.3).multiplyScalar(lift);
+      const p2 = slerpV(n0, E, 0.7).multiplyScalar(lift);
       const curve = new THREE.CubicBezierCurve3(p0, p1, p2, p3);
       const pts = curve.getPoints(ARC_PTS);
       const g = new THREE.BufferGeometry().setFromPoints(pts);
@@ -187,7 +199,16 @@
       dot.position.copy(p3);
       globe.add(dot);
 
-      return { line, head, curve, dot, delay: i * 0.7, period: 5.6 };
+      // persistent target marker: a small gold city dot, always lit
+      const mark = new THREE.Sprite(new THREE.SpriteMaterial({
+        map: dotMap, color: GOLD, transparent: true, opacity: 0.85,
+        blending: THREE.AdditiveBlending, depthWrite: false, depthTest: true
+      }));
+      mark.scale.setScalar(0.13);
+      mark.position.copy(E.clone().multiplyScalar(R * 1.01));
+      globe.add(mark);
+
+      return { line, head, curve, dot, delay: i * 0.9, period: 7.5 };
     });
 
     /* ---- starfield ---- */

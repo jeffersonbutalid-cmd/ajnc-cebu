@@ -127,16 +127,25 @@ R = np.eye(3)
 beacon = R @ to_xyz(*CEBU)
 print(f"beacon (Cebu, unrotated frame): {tuple(round(float(x), 3) for x in beacon)}")
 
-# ---- arc endpoints: real cities ----
+# ---- arc endpoints: major cities across every continent (the first two are
+# AJNC churches; the rest carry the beams worldwide as the globe spins) ----
 CITIES = [
-    ("Phnom Penh", 11.556, 104.928),
-    ("Dubai",      25.204,  55.270),
-    ("Tokyo",      35.676, 139.650),
-    ("Sydney",    -33.868, 151.209),
-    ("Delhi",      28.614,  77.209),
-    ("Jakarta",    -6.175, 106.827),
-    ("Seoul",      37.566, 126.978),
-    ("Nairobi",    -1.292,  36.822),
+    ("Phnom Penh",   11.556, 104.928),
+    ("Dubai",        25.204,  55.270),
+    ("Tokyo",        35.676, 139.650),
+    ("Seoul",        37.566, 126.978),
+    ("Delhi",        28.614,  77.209),
+    ("Jakarta",      -6.175, 106.827),
+    ("Sydney",      -33.868, 151.209),
+    ("Auckland",    -36.848, 174.763),
+    ("Nairobi",      -1.292,  36.822),
+    ("Lagos",         6.524,   3.379),
+    ("Cairo",        30.044,  31.236),
+    ("London",       51.507,  -0.128),
+    ("Rome",         41.903,  12.496),
+    ("New York",     40.713, -74.006),
+    ("Los Angeles",  34.052,-118.244),
+    ("Buenos Aires",-34.603, -58.382),
 ]
 arcs = []
 for name, la, lo in CITIES:
