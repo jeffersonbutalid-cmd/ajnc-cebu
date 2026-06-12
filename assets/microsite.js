@@ -153,6 +153,20 @@
       if (bios[1]) bios[1].textContent = 'Whoever you are and whatever you are carrying, there is a seat at the table for you.';
     }
 
+    // Per-church pastor photo (falls back to the gradient when none is set).
+    const photo = $('.pastor-photo');
+    if (photo) {
+      if (c.pastorPhoto) {
+        photo.style.backgroundImage = "url('" + c.pastorPhoto + "')";
+        photo.classList.add('has-photo');
+        photo.setAttribute('role', 'img');
+        photo.setAttribute('aria-label', (c.pastor || 'Pastor') + ' of ' + (c.name || 'AJNC'));
+      } else {
+        photo.style.backgroundImage = '';
+        photo.classList.remove('has-photo');
+      }
+    }
+
     const addrEl = $('.find-address');
     if (addrEl && c.address) {
       addrEl.innerHTML = '<span class="street">' + esc(c.address) + '</span>' +
