@@ -1037,11 +1037,11 @@ em{font-style:italic;color:var(--red);font-weight:inherit}
         </button>
         <div class="nav-dd">
           <a href="#believe">What We Believe</a>
-          <a href="#about">Pastors</a>
+          <a href="#about">Our Shepherd</a>
         </div>
       </div>
-      <a class="nav-link" href="#welcome">New Here</a>
       <a class="nav-link" href="../blog/">Blog</a>
+      <a class="nav-link" href="#scriptures">Scripture for Hard Days</a>
       <a class="nav-link" href="#prayer">Prayer Request</a>
       <a class="nav-link" href="#connect">Connect</a>
       <a class="nav-link" href="#find">Contact Us</a>
@@ -1103,56 +1103,6 @@ em{font-style:italic;color:var(--red);font-weight:inherit}
   </div>
 </aside>
 -->
-
-<!-- ====================== NEW HERE / WHAT TO EXPECT ====================== -->
-<style>
-.welcome{background:var(--ink);color:var(--bone);padding:clamp(56px,7vw,96px) 0}
-.welcome .section-head h2{color:var(--bone)}
-.welcome .section-head h2 em{color:var(--gold)}
-.welcome .section-head .eyebrow.gold{color:var(--gold)}
-.welcome .section-head p{color:rgba(250,247,241,.72)}
-.welcome-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-@media(max-width:880px){.welcome-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:520px){.welcome-grid{grid-template-columns:1fr}}
-.welcome-card{background:rgba(250,247,241,.05);border:1px solid rgba(250,247,241,.10);border-radius:14px;padding:24px 22px}
-.welcome-ico{width:42px;height:42px;border-radius:50%;background:rgba(232,181,60,.14);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
-.welcome-ico svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-.welcome-card h3{font-family:var(--display);font-weight:700;font-size:19px;margin:0 0 8px;color:var(--bone)}
-.welcome-card p{margin:0;font-size:14.5px;line-height:1.55;color:rgba(250,247,241,.72)}
-.welcome-cta{text-align:center;margin-top:38px}
-</style>
-<section class="welcome" id="welcome" aria-labelledby="welcome-h">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow gold">New here?</span>
-      <h2 id="welcome-h">What to expect on your <em>first visit.</em></h2>
-      <p>However you come, you will be welcomed as family. Here is what your first Sunday looks like.</p>
-    </div>
-    <div class="welcome-grid">
-      <div class="welcome-card">
-        <div class="welcome-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M19 14c1.5-1.5 3-3.3 3-5.5A4.5 4.5 0 0 0 12 6 4.5 4.5 0 0 0 2 8.5c0 2.2 1.5 4 3 5.5l7 7Z"/></svg></div>
-        <h3>Come as you are</h3>
-        <p>No dress code, no pressure. Bring yourself, exactly as you are today.</p>
-      </div>
-      <div class="welcome-card">
-        <div class="welcome-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01"/><path d="M15 9h.01"/></svg></div>
-        <h3>Bring the kids</h3>
-        <p>Children are family too. There is a safe, joyful class for them.</p>
-      </div>
-      <div class="welcome-card">
-        <div class="welcome-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-        <h3>About 90 minutes</h3>
-        <p>We worship, hear the Word, and pray together. Family lunch follows.</p>
-      </div>
-      <div class="welcome-card">
-        <div class="welcome-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5Z"/></svg></div>
-        <h3>Cebuano &amp; English</h3>
-        <p>Preaching in both, so you will follow along and feel at home.</p>
-      </div>
-    </div>
-    <div class="welcome-cta"><a class="btn btn-red" href="#visit">Plan your visit →</a></div>
-  </div>
-</section>
 
 <!-- ====================== PLAN YOUR VISIT ====================== -->
 <section class="plan" id="visit" aria-labelledby="plan-h">
@@ -1306,6 +1256,33 @@ em{font-style:italic;color:var(--red);font-weight:inherit}
       <a class="btn btn-red" href="https://www.google.com/maps/dir/?api=1&destination=2nd%20Floor%2C%20Un%20Heng%20Building%2C%20Casuntingan%2C%20Mandaue%20City%2C%20Cebu%2C%20Philippines" target="_blank" rel="noopener">Get directions →</a>
     </div>
     <div id="find-map" role="region" aria-label="Map showing AJNC Cebu in Mandaue"></div>
+  </div>
+</section>
+
+<!-- ====================== SCRIPTURE FOR HARD DAYS ====================== -->
+<style>
+.ms-scripture{background:var(--ink);color:var(--bone);padding:clamp(56px,7vw,96px) 0}
+.ms-scripture .inner{max-width:720px;margin:0 auto;text-align:center}
+.ms-scripture .eyebrow{display:inline-block;font:700 11px/1 var(--body);letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.ms-scripture .ico{width:54px;height:54px;border-radius:50%;background:rgba(232,181,60,.14);display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.ms-scripture .ico svg{width:26px;height:26px;stroke:var(--gold);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.ms-scripture h2{font-family:var(--display);font-weight:700;font-size:clamp(28px,4vw,40px);line-height:1.08;color:var(--bone);margin:0 0 14px}
+.ms-scripture h2 em{font-style:italic;color:var(--gold)}
+.ms-scripture p{font-size:16px;line-height:1.6;color:rgba(250,247,241,.74);margin:0 auto 26px;max-width:560px}
+.ms-scripture .btn-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+</style>
+<section class="ms-scripture" id="scriptures" aria-labelledby="ms-scripture-h">
+  <div class="container">
+    <div class="inner">
+      <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M12 6.5v6"/><path d="M9 9.5h6"/></svg></div>
+      <span class="eyebrow">A free gift</span>
+      <h2 id="ms-scripture-h">Scriptures for the <em>hard days.</em></h2>
+      <p>A small pack of verses for the nights that feel heavy, anxious, or grieving. We will text it to you with a short word of encouragement. No cost, no catch.</p>
+      <div class="btn-row">
+        <a class="btn btn-red" href="../scriptures.html">Get the verses →</a>
+        <a class="btn btn-ghost-light" href="#prayer">Ask for prayer</a>
+      </div>
+    </div>
   </div>
 </section>
 
