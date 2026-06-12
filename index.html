@@ -3,22 +3,26 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Apostolic Jesus Name Church Philippines | AJNC — Find a Pentecostal Church Near You</title>
-<meta name="description" content="Apostolic Jesus Name Church (AJNC) is a family of Oneness Pentecostal churches across the Philippines — Cebu, Manila, Davao, and more. Sunday service, bible study, and Jesus-name baptism. Find a church near you." />
+<title>Apostolic Jesus Name Church Philippines | AJNC, Find a Pentecostal Church Near You</title>
+<meta name="description" content="Apostolic Jesus Name Church (AJNC) is a family of Oneness Pentecostal churches across the Philippines, Cebu, Manila, Davao, and more. Sunday service, bible study, and Jesus-name baptism. Find a church near you." />
 <meta name="keywords" content="Apostolic Jesus Name Church Philippines, AJNC, AJNC Cebu, AJNC Mandaue, Oneness Pentecostal Philippines, Apostolic church Philippines, Jesus name baptism, Acts 2:38 church, Holy Ghost Philippines, Pentecostal church Mandaue, born again church Philippines" />
 <link rel="canonical" href="https://ajnc.ph/" />
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
 <meta name="theme-color" content="#FAF7F1" />
+<link rel="icon" type="image/png" href="assets/ajnc-seal-mark.png" />
+<link rel="apple-touch-icon" href="assets/ajnc-seal-mark.png" />
 
 <!-- Open Graph / Twitter -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Apostolic Jesus Name Church Philippines" />
-<meta property="og:title" content="AJNC Philippines — A church that feels like home" />
+<meta property="og:title" content="AJNC Philippines, A church that feels like home" />
 <meta property="og:description" content="A family of Oneness Pentecostal churches across the Philippines. Worship with family, near you." />
 <meta property="og:url" content="https://ajnc.ph/" />
 <meta property="og:locale" content="en_PH" />
-<meta property="og:image" content="https://ajnc.ph/og.png" />
+<meta property="og:image" content="https://ajnc.ph/assets/church-family.jpg" />
+<meta name="twitter:image" content="https://ajnc.ph/assets/church-family.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="AJNC Philippines — A church that feels like home" />
+<meta name="twitter:title" content="AJNC Philippines, A church that feels like home" />
 <meta name="twitter:description" content="A family of Oneness Pentecostal churches across the Philippines." />
 
 <!-- Fonts (self-hosted in production; Google Fonts for prototype) -->
@@ -27,44 +31,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
 <!-- Leaflet (Find a Church map) -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<link rel="stylesheet" href="assets/vendor/leaflet.css" />
 
 <!-- Site CSS -->
 <link rel="stylesheet" href="assets/site.css" />
-<link rel="stylesheet" href="assets/timeline.css" />
+<link rel="stylesheet" href="assets/chat.css" />
 
 <!-- JSON-LD: Church / ReligiousOrganization -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Church",
-  "@id": "https://ajnc.ph/#org",
-  "name": "Apostolic Jesus Name Church Philippines",
-  "alternateName": ["AJNC", "AJNC Philippines"],
-  "url": "https://ajnc.ph/",
-  "logo": "https://ajnc.ph/assets/logo-original.png",
-  "image": "https://ajnc.ph/og.png",
-  "description": "A family of Oneness Pentecostal churches across the Philippines. Baptism in Jesus' name (Acts 2:38), infilling of the Holy Ghost, the apostolic faith.",
-  "telephone": "+63 32 000 0000",
-  "email": "hello@ajnc.ph",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "P. Burgos St.",
-    "addressLocality": "Mandaue City",
-    "addressRegion": "Cebu",
-    "postalCode": "6014",
-    "addressCountry": "PH"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 10.3242,
-    "longitude": 123.9398
-  },
-  "areaServed": "Philippines",
-  "sameAs": [
-    "https://www.facebook.com/ajnc.ph",
-    "https://www.instagram.com/ajnc.cebu",
-    "https://www.youtube.com/@ajnc.ph"
+  "@context": "https://schema.org", "@type": "Church", "@id": "https://ajnc.ph/#org", "name": "Apostolic Jesus Name Church Philippines", "alternateName": ["AJNC", "AJNC Philippines"], "url": "https://ajnc.ph/", "logo": "https://ajnc.ph/assets/ajnc-seal.png", "image": "https://ajnc.ph/assets/church-family.jpg", "description": "A family of Oneness Pentecostal churches across the Philippines. Baptism in Jesus' name (Acts 2:38), infilling of the Holy Ghost, the apostolic faith.", "telephone": "+63 917 555 4673", "email": "hello@ajnc.ph", "address": {
+    "@type": "PostalAddress", "streetAddress": "2nd Floor, Un Heng Building, Casuntingan", "addressLocality": "Mandaue City", "addressRegion": "Cebu", "postalCode": "6014", "addressCountry": "PH"
+  }, "geo": {
+    "@type": "GeoCoordinates", "latitude": 10.3242, "longitude": 123.9398
+  }, "areaServed": "Philippines", "sameAs": [
+    "https://www.facebook.com/ajnc.ph", "https://www.instagram.com/ajnc.cebu", "https://www.youtube.com/@ajnc.ph"
   ]
 }
 </script>
@@ -72,9 +53,7 @@
 <!-- JSON-LD: BreadcrumbList (Home) -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ajnc.ph/" }
   ]
 }
@@ -83,28 +62,15 @@
 <!-- JSON-LD: FAQPage (We Believe) -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
     {
-      "@type": "Question",
-      "name": "Who is God in the apostolic faith?",
-      "acceptedAnswer": { "@type": "Answer", "text": "There is one God who has revealed Himself as Father in creation, Son in redemption, and Holy Ghost in regeneration — Jesus Christ is His name." }
-    },
-    {
-      "@type": "Question",
-      "name": "Why do you baptize in Jesus' name?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Acts 2:38 — Peter said, ‘Repent, and be baptized every one of you in the name of Jesus Christ for the remission of sins, and ye shall receive the gift of the Holy Ghost.’" }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the Holy Ghost baptism?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The infilling of the Holy Spirit, evidenced by speaking in other tongues as the Spirit gives utterance — the same experience as the day of Pentecost." }
-    },
-    {
-      "@type": "Question",
-      "name": "What should I expect on my first visit?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Come as you are. We worship together, hear the Word, and pray for one another. Family lunch follows the second service." }
+      "@type": "Question", "name": "Who is God in the apostolic faith?", "acceptedAnswer": { "@type": "Answer", "text": "There is one God who has revealed Himself as Father in creation, Son in redemption, and Holy Ghost in regeneration, Jesus Christ is His name." }
+    }, {
+      "@type": "Question", "name": "Why do you baptize in Jesus' name?", "acceptedAnswer": { "@type": "Answer", "text": "Acts 2:38, Peter said, ‘Repent, and be baptized every one of you in the name of Jesus Christ for the remission of sins, and ye shall receive the gift of the Holy Ghost.’" }
+    }, {
+      "@type": "Question", "name": "What is the Holy Ghost baptism?", "acceptedAnswer": { "@type": "Answer", "text": "The infilling of the Holy Spirit, evidenced by speaking in other tongues as the Spirit gives utterance, the same experience as the day of Pentecost." }
+    }, {
+      "@type": "Question", "name": "What should I expect on my first visit?", "acceptedAnswer": { "@type": "Answer", "text": "Come as you are. We worship together, hear the Word, and pray for one another. Family lunch follows the second service." }
     }
   ]
 }
@@ -113,51 +79,41 @@
 <!-- JSON-LD: Church Pastor Person -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Pastor Doromal",
-  "jobTitle": "Church Pastor, AJNC Cebu",
-  "worksFor": { "@id": "https://ajnc.ph/#org" }
+  "@context": "https://schema.org", "@type": "Person", "name": "Pastor Doromal", "jobTitle": "Church Pastor, AJNC Cebu", "worksFor": { "@id": "https://ajnc.ph/#org" }
 }
 </script>
 
 <!-- JSON-LD: Featured Sermon (VideoObject) -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "VideoObject",
-  "name": "That I May Know Him — Philippians 3:10",
-  "description": "Sunday teaching on knowing Christ, the power of his resurrection, and the fellowship of his sufferings.",
-  "thumbnailUrl": "https://ajnc.ph/sermons/know-him.jpg",
-  "uploadDate": "2026-05-04",
-  "duration": "PT42M",
-  "publisher": { "@id": "https://ajnc.ph/#org" }
+  "@context": "https://schema.org", "@type": "VideoObject", "name": "That I May Know Him, Philippians 3:10", "description": "Sunday teaching on knowing Christ, the power of his resurrection, and the fellowship of his sufferings.", "thumbnailUrl": "https://ajnc.ph/sermons/know-him.jpg", "uploadDate": "2026-05-04", "duration": "PT42M", "publisher": { "@id": "https://ajnc.ph/#org" }
 }
 </script>
 
 <!-- JSON-LD: Upcoming Event -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Event",
-  "name": "Pentecost Sunday Gathering",
-  "startDate": "2026-05-24T08:00:00+08:00",
-  "endDate": "2026-05-24T20:00:00+08:00",
-  "eventStatus": "https://schema.org/EventScheduled",
-  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-  "location": {
-    "@type": "Place",
-    "name": "AJNC Cebu",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "P. Burgos St.",
-      "addressLocality": "Mandaue City",
-      "addressRegion": "Cebu",
-      "postalCode": "6014",
-      "addressCountry": "PH"
+  "@context": "https://schema.org", "@type": "Event", "name": "Pentecost Sunday Gathering", "startDate": "2026-05-24T08:00:00+08:00", "endDate": "2026-05-24T20:00:00+08:00", "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "location": {
+    "@type": "Place", "name": "AJNC Cebu", "address": {
+      "@type": "PostalAddress", "streetAddress": "2nd Floor, Un Heng Building, Casuntingan", "addressLocality": "Mandaue City", "addressRegion": "Cebu", "postalCode": "6014", "addressCountry": "PH"
     }
-  },
-  "organizer": { "@id": "https://ajnc.ph/#org" }
+  }, "organizer": { "@id": "https://ajnc.ph/#org" }
+}
+</script>
+
+<!-- JSON-LD: WebSite -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org", "@type": "WebSite", "@id": "https://ajnc.ph/#website", "name": "Apostolic Jesus Name Church Philippines", "alternateName": "AJNC", "url": "https://ajnc.ph/", "inLanguage": "en-PH", "publisher": { "@id": "https://ajnc.ph/#org" }
+}
+</script>
+
+<!-- JSON-LD: WebPage (speakable for voice / answer engines) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org", "@type": "WebPage", "@id": "https://ajnc.ph/#webpage", "url": "https://ajnc.ph/", "name": "Apostolic Jesus Name Church Philippines", "isPartOf": { "@id": "https://ajnc.ph/#website" }, "about": { "@id": "https://ajnc.ph/#org" }, "inLanguage": "en-PH", "speakable": {
+    "@type": "SpeakableSpecification", "cssSelector": ["#believe", "#plan"]
+  }
 }
 </script>
 </head>
@@ -166,19 +122,39 @@
 <!-- ============================ NAV ============================ -->
 <header class="nav" role="banner">
   <nav class="nav-inner" aria-label="Primary">
-    <a href="#" class="nav-brand" aria-label="Apostolic Jesus Name Church Cebu — home">
-      <img src="assets/logo-original.png" alt="AJNC logo" />
+    <a href="#" class="nav-brand" aria-label="Apostolic Jesus Name Church Cebu, home">
+      <img src="assets/ajnc-seal.png" alt="AJNC seal" />
+      <span class="nav-wordmark">AJNC <em>Cebu</em></span>
     </a>
     <div class="nav-links" role="navigation">
-      <a href="#about">About</a>
-      <a href="#timeline">Our Story</a>
-      <a href="#plan">Plan Your Visit</a>
-      <a href="#leaders">Pastors</a>
-      <a href="#sermons">Sermons</a>
-      <a href="blog/">The Word</a>
-      <a href="#ministries">Ministries</a>
-      <a href="#giving">Giving</a>
-      <a href="#contact">Contact</a>
+      <div class="nav-item has-dd">
+        <button type="button" class="nav-link dd-toggle" aria-haspopup="true" aria-expanded="false">About
+          <svg class="dd-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="nav-dd">
+          <a href="#about">Who We Are</a>
+          <a href="#believe">What We Believe</a>
+          <a href="#world">Our Mission</a>
+          <a href="#leaders">Our Shepherds</a>
+        </div>
+      </div>
+      <a class="nav-link" href="#ministries">Ministries</a>
+      <a class="nav-link" href="#events">Events</a>
+      <a class="nav-link" href="#giving">Giving</a>
+      <a class="nav-link" href="#prayer">Prayer Request</a>
+      <div class="nav-item has-dd">
+        <button type="button" class="nav-link dd-toggle" aria-haspopup="true" aria-expanded="false">Resources
+          <svg class="dd-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="nav-dd">
+          <a href="#sermons">Sermons</a>
+          <a href="blog/">Blog</a>
+          <a href="scriptures.html">Scriptures for hard days</a>
+        </div>
+      </div>
+      <a class="nav-link" href="#find">Church Locator</a>
+      <a class="nav-link" href="#contact">Contact Us</a>
+      <a class="nav-link nav-cta-mobile" href="#plan">Plan your visit →</a>
     </div>
     <a href="#plan" class="nav-cta">Plan your visit →</a>
     <button class="nav-burger" aria-label="Open menu">
@@ -215,7 +191,6 @@
     <p class="lead">A Oneness Pentecostal church on the 2nd floor of Un Heng Building, Casuntingan. We gather every Tuesday, Thursday and Sunday to know Jesus together. Come as you are.</p>
     <div class="hero-cta">
       <a href="#plan" class="btn btn-red">Plan your visit <span aria-hidden="true">→</span></a>
-      <a href="#sermons" class="btn btn-ghost"><span class="live-dot" aria-hidden="true"></span>This Sunday's service</a>
     </div>
     <p class="hero-times">Tuesdays &amp; Thursdays 6.30 PM. Sunday 10 AM &amp; 3 PM. </p>
   </div>
@@ -228,7 +203,7 @@
 
 <!-- ============================ STRIP ============================ -->
 <aside class="strip" id="strip" aria-label="Mission statement">
-  Together <span class="gold">we carry</span> the gospel to the whole world.
+  Together we carry the gospel to <span class="gold">the whole world</span>.
 </aside>
 
 <!-- ============================ WHAT'S NEXT ============================ -->
@@ -324,7 +299,7 @@
 <section class="whats-next" aria-label="What's next at AJNC Cebu">
   <div class="whats-next__inner">
     <div class="whats-next__main">
-      <p class="whats-next__date">This Sunday · 8 AM and 5 PM</p>
+      <p class="whats-next__date">This Sunday · 10 AM and 3 PM</p>
       <p class="whats-next__title">Worship, the Word, and prayer. Come as you are.</p>
     </div>
     <a href="#plan" class="whats-next__cta">
@@ -380,19 +355,6 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
         <div class="num">03</div>
         <h3>Where to <em>find us.</em></h3>
         <p>From Mandaue to Manila, eight churches and growing. Drop in, get directions, meet the pastor.</p>
-        <div class="map-thumb" aria-hidden="true">
-          <svg viewBox="0 0 300 120" preserveAspectRatio="xMidYMid slice">
-            <rect width="300" height="120" fill="#dfd5c4"/>
-            <!-- Simplified Philippines silhouette -->
-            <path d="M70 30 Q90 20 100 35 L105 50 L115 55 Q120 70 110 80 L95 85 L85 75 L75 70 Q65 50 70 30 Z" fill="#c8b896"/>
-            <path d="M130 50 Q150 40 165 55 L170 70 Q175 85 160 90 L140 88 Q130 75 130 50 Z" fill="#c8b896"/>
-            <path d="M180 70 Q200 60 215 75 L225 95 Q220 110 200 108 L185 100 Q175 88 180 70 Z" fill="#c8b896"/>
-            <!-- Pins -->
-            <circle cx="100" cy="40" r="5" fill="#C8262E"/><circle cx="100" cy="40" r="9" fill="none" stroke="#E8B53C" stroke-width="1"/>
-            <circle cx="150" cy="65" r="5" fill="#C8262E"/><circle cx="150" cy="65" r="9" fill="none" stroke="#E8B53C" stroke-width="1"/>
-            <circle cx="205" cy="90" r="5" fill="#C8262E"/><circle cx="205" cy="90" r="9" fill="none" stroke="#E8B53C" stroke-width="1"/>
-          </svg>
-        </div>
         <a href="#find" class="more" style="margin-top:14px">Find your city →</a>
       </article>
     </div>
@@ -404,8 +366,8 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
   <div class="container about-grid">
     <div class="about-collage" aria-hidden="true">
       <div class="photo p1"><span class="photo-tag">Sunday · Mandaue</span></div>
-      <div class="photo p2"><span class="photo-tag">Baptism · Liloan</span></div>
-      <div class="photo p3"><span class="photo-tag">Prayer · Wednesday</span></div>
+      <div class="photo p2"><span class="photo-tag">Baptism · Mandaue</span></div>
+      <div class="photo p3"><span class="photo-tag">Prayer · Tuesday</span></div>
       <div class="photo p4"><span class="photo-tag">Family Lunch · Un Heng</span></div>
     </div>
     <div class="about">
@@ -414,7 +376,7 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
       <h2 id="about-h" style="text-align: left">A family carrying the gospel <em>here in Mandaue.</em></h2>
       <p style="text-align: left">AJNC Cebu is a Oneness Pentecostal family on the 2nd floor of Un Heng Building, Casuntingan. One congregation. One body. Rooted in Mandaue since 1986.</p>
       <p style="text-align: left">We hold the apostolic faith plainly. One God, revealed in Jesus Christ. Baptism in His name for the remission of sins. The infilling of the Holy Ghost. The gospel of Pentecost is the gospel we preach in Mandaue.</p>
-      <p style="text-align: left">Our story is small and ordinary. Families who pray together on Sunday and on Wednesday. Neighbours invited to dinner. Baptisms in the sea. Prayer meetings that run later than they were supposed to. Together, those small things have become a family in Casuntingan.</p>
+      <p style="text-align: left">Our story is small and ordinary. Families who pray together on Sunday and on Wednesday. Neighbors invited to dinner. Baptisms in the sea. Prayer meetings that run later than they were supposed to. Together, those small things have become a family in Casuntingan.</p>
       <div style="display:flex;gap:14px;margin-top:24px;flex-wrap:wrap">
         <a href="#believe" class="btn btn-dark">What we believe →</a>
         <a href="#leaders" class="btn btn-ghost">Meet the pastors</a>
@@ -433,13 +395,82 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
       <p>Six pillars we have not, and will not, compromise on.</p>
     </div>
     <div class="believe-grid">
-      <article class="believe-card"><div class="num">01</div><h4>One God</h4><p>There is one God who has revealed Himself as Father in creation, Son in redemption, Holy Ghost in regeneration. Deuteronomy 6:4.</p></article>
-      <article class="believe-card"><div class="num">02</div><h4>Jesus is Lord</h4><p>In Him dwells all the fullness of the Godhead bodily. He is the Almighty, the I AM, the Saviour of the world. Colossians 2:9.</p></article>
-      <article class="believe-card"><div class="num">03</div><h4>Acts 2:38</h4><p>Repent, and be baptised in the name of Jesus Christ for the remission of sins — and ye shall receive the gift of the Holy Ghost.</p></article>
-      <article class="believe-card"><div class="num">04</div><h4>The Holy Ghost</h4><p>Infilling of the Spirit, evidenced by speaking in other tongues as the Spirit gives utterance. The Pentecost experience, today.</p></article>
-      <article class="believe-card"><div class="num">05</div><h4>The Word</h4><p>The Bible is the inspired Word of God — sufficient, infallible, the standard for faith, practice, and the church we are building.</p></article>
-      <article class="believe-card"><div class="num">06</div><h4>The Family</h4><p>The church is the household of God. We walk together across generations and neighbourhoods. Nobody walks alone.</p></article>
+      <article class="believe-card" data-tilt><div class="num">01</div><h4>One God</h4><p>There is one God who has revealed Himself as Father in creation, Son in redemption, Holy Ghost in regeneration. Deuteronomy 6:4.</p></article>
+      <article class="believe-card" data-tilt><div class="num">02</div><h4>Jesus is Lord</h4><p>In Him dwells all the fullness of the Godhead bodily. He is the Almighty, the I AM, the Saviour of the world. Colossians 2:9.</p></article>
+      <article class="believe-card" data-tilt><div class="num">03</div><h4>Acts 2:38</h4><p>Repent, and be baptized in the name of Jesus Christ for the remission of sins, and ye shall receive the gift of the Holy Ghost.</p></article>
+      <article class="believe-card" data-tilt><div class="num">04</div><h4>The Holy Ghost</h4><p>Infilling of the Spirit, evidenced by speaking in other tongues as the Spirit gives utterance. The Pentecost experience, today.</p></article>
+      <article class="believe-card" data-tilt><div class="num">05</div><h4>The Word</h4><p>The Bible is the inspired Word of God, sufficient, infallible, the standard for faith, practice, and the church we are building.</p></article>
+      <article class="believe-card" data-tilt><div class="num">06</div><h4>The Family</h4><p>The church is the household of God. We walk together across generations and neighborhoods. Nobody walks alone.</p></article>
     </div>
+  </div>
+</section>
+
+<!-- ============================ MISSION GLOBE ============================ -->
+<section class="world reveal" id="world" aria-labelledby="world-h">
+  <div class="container world-grid">
+    <div class="world-copy">
+      <span class="halo-icon" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="dot"></i></span>
+      <span class="eyebrow gold">Our mission</span>
+      <h2 id="world-h">Together we carry the gospel<br/><em>to the whole world.</em></h2>
+      <p>What began on Negros Island in the Philippines now worships across the islands and beyond, with churches in Dubai and Cambodia, and we are still going. Every beam of light carries one name: Jesus.</p>
+      <div class="world-actions">
+        <a href="#find" class="btn btn-red">Find your church <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+    <div class="world-globe">
+      <div class="world-glow" aria-hidden="true"></div>
+      <div id="world-canvas" aria-hidden="true"></div>
+      <img class="world-fallback" src="assets/ajnc-seal-mark.png" alt="" loading="lazy" decoding="async"/>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ LEADERSHIP ============================ -->
+<section class="leaders reveal" id="leaders" aria-labelledby="leaders-h">
+  <div class="container">
+    <div class="section-head">
+      <span class="halo-icon" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="dot"></i></span>
+      <span class="eyebrow red">Church Pastor &amp; leadership</span>
+      <h2 id="leaders-h">A family <em>shepherded.</em></h2>
+      <p>The pastor and elders who shepherd the AJNC Cebu family.</p>
+    </div>
+
+    <article class="pastor-card">
+      <div class="pastor-photo-wrap">
+        <span class="pastor-halo pastor-halo--outer" aria-hidden="true"></span>
+        <span class="pastor-halo pastor-halo--inner" aria-hidden="true"></span>
+        <div class="pastor-photo">
+          <img src="assets/pastor-mario.png" alt="Bro. Mario Doromal preaching at AJNC Cebu" />
+        </div>
+      </div>
+      <div class="pastor-body">
+        <span class="eyebrow gold">Church Pastor</span>
+        <h3 class="pastor-name">Bro. Mario Doromal</h3>
+        <div class="pastor-role">Church Pastor, AJNC Cebu</div>
+        <blockquote class="pastor-quote">
+          <p>"That I may know him, and the power of his resurrection, and the fellowship of his sufferings."</p>
+          <cite>Philippians 3:10</cite>
+        </blockquote>
+        <p class="pastor-bio">Bro. Mario shepherds the AJNC Cebu family on the 2nd floor of Un Heng Building, Casuntingan. His ministry is shaped by the apostolic doctrine of Acts 2:38, a deep love for the local family, and an unhurried commitment to the Word.</p>
+        <p class="pastor-bio">He preaches every Sunday at the Mandaue church and walks with the family through every ordinary day in between.</p>
+      </div>
+    </article>
+
+    <aside class="memorial-card" aria-label="In memoriam">
+      <span class="memorial-halo" aria-hidden="true"></span>
+      <div class="memorial-photo-wrap">
+        <div class="memorial-photo">
+          <img src="assets/rev-espera.png" alt="Rev. Emilio Espera Jr., founding pastor of AJNC Cebu" class="rotate-cw90" />
+        </div>
+      </div>
+      <div class="memorial-body">
+        <span class="eyebrow gold memorial-eyebrow">A life faithfully lived</span>
+        <h3 class="memorial-name">Rev. <em>Emilio Espera Jr.</em></h3>
+        <div class="memorial-dates">10.09.1975 &nbsp;to&nbsp; 03.07.2026</div>
+        <p class="memorial-bio">Founding pastor of AJNC Cebu. Pastor Espera went home to be with the Lord in March 2026 after a lifetime of faithful service. The family carries his work forward.</p>
+        <div class="memorial-roles">District 3 Superintendent &middot; AJNC Board of Trustee</div>
+      </div>
+    </aside>
   </div>
 </section>
 
@@ -453,37 +484,57 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
       <p>Sunday teaching. Thursday Bible study. Special services. Listen wherever you are.</p>
     </div>
 
-    <article class="sermon-player">
-      <div class="ajnc-player" id="ajnc-sermon-player">
-        <div class="ajnc-player__fallback" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        </div>
-      </div>
-      <div class="meta">
-        <div class="ajnc-badge-row"><span class="ajnc-badge" id="ajnc-sermon-badge">LATEST · SUNDAY</span></div>
-        <h3>That I may know him, and the power of his resurrection and the fellowship of his sufferings.</h3>
-        <div class="scripture">Philippians 3:10</div>
-        <p class="info"><span>Pastor Mario Doromal</span><span>Audio &amp; Video</span></p>
-        <div class="sermon-cta-row">
-          <a href="https://www.youtube.com/@ajnccebu" target="_blank" rel="noopener" class="btn btn-red">Watch on YouTube →</a>
-          <a href="#" class="btn btn-ghost" style="color:var(--bone);border-color:rgba(244,239,229,.25)">Listen audio</a>
-        </div>
-      </div>
-    </article>
-
+    <!-- Featured sermon (top) -->
     <article class="sermon-featured" id="sermon-featured">
-      <a class="sermon-featured__thumb" href="https://www.youtube.com/watch?v=FEATURED_SERMON_VIDEO_ID" target="_blank" rel="noopener" aria-label="Watch featured sermon on YouTube">
-        <img id="sermon-featured-img" src="https://img.youtube.com/vi/FEATURED_SERMON_VIDEO_ID/maxresdefault.jpg" alt="" loading="lazy"/>
+      <a class="sermon-featured__thumb" href="https://www.youtube.com/watch?v=USfbRXdo2sM" target="_blank" rel="noopener" aria-label="Watch featured sermon on YouTube">
+        <img id="sermon-featured-img" src="https://img.youtube.com/vi/USfbRXdo2sM/maxresdefault.jpg" alt="" loading="lazy"/>
         <span class="sermon-featured__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
       </a>
       <div class="sermon-featured__body">
         <span class="ajnc-eyebrow-gold">Featured sermon</span>
-        <h3>The Fellowship of His Sufferings</h3>
-        <div class="scripture">Philippians 3:10</div>
-        <p class="info"><span>Pastor Mario Doromal</span><span>6 Apr 2026</span><span>39 min</span></p>
-        <a href="https://www.youtube.com/watch?v=FEATURED_SERMON_VIDEO_ID" target="_blank" rel="noopener" class="btn btn-red">Watch sermon →</a>
+        <h3>The Generosity of Gratitude</h3>
+        <div class="scripture">2 Corinthians 9:11</div>
+        <p class="info"><span>Rev. Emilio Espera, Jr.</span><span>December 21, 2025</span><span>40 min</span></p>
+        <a href="https://www.youtube.com/watch?v=USfbRXdo2sM" target="_blank" rel="noopener" class="btn btn-red">Watch sermon →</a>
       </div>
     </article>
+
+    <!-- More sermons -->
+    <div class="sermon-more-grid">
+      <article class="sermon-mini" data-tilt>
+        <a class="sermon-mini__thumb" href="https://www.youtube.com/watch?v=Yqr8poq_Wb0" target="_blank" rel="noopener" aria-label="Watch on YouTube">
+          <img src="https://img.youtube.com/vi/Yqr8poq_Wb0/hqdefault.jpg" alt="" loading="lazy"/>
+          <span class="sermon-mini__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+        </a>
+        <div class="sermon-mini__body">
+          <h4>Mission: The Heartbeat Of God</h4>
+          <div class="scripture">Matthew 28:18-20 | Luke 19:10</div>
+          <p class="info"><span>Ptr. Elezer Tianero</span></p>
+        </div>
+      </article>
+      <article class="sermon-mini" data-tilt>
+        <a class="sermon-mini__thumb" href="https://www.youtube.com/watch?v=TWYheAO-zTQ" target="_blank" rel="noopener" aria-label="Watch on YouTube">
+          <img src="https://img.youtube.com/vi/TWYheAO-zTQ/hqdefault.jpg" alt="" loading="lazy"/>
+          <span class="sermon-mini__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+        </a>
+        <div class="sermon-mini__body">
+          <h4>Fulfilling God's Plan For My Life</h4>
+          <div class="scripture">Acts 20:22-24 | Acts 9:6-13</div>
+          <p class="info"><span>Ptr. Jeffrey Candoleta</span></p>
+        </div>
+      </article>
+      <article class="sermon-mini" data-tilt>
+        <a class="sermon-mini__thumb" href="https://www.youtube.com/watch?v=8_3wMElg240" target="_blank" rel="noopener" aria-label="Watch on YouTube">
+          <img src="https://img.youtube.com/vi/8_3wMElg240/hqdefault.jpg" alt="" loading="lazy"/>
+          <span class="sermon-mini__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+        </a>
+        <div class="sermon-mini__body">
+          <h4>From Lukewarm To Burning: Overcoming Spiritual Complacency</h4>
+          <div class="scripture">Revelation 3:14-22</div>
+          <p class="info"><span>Ptr. Emilio Espera Jr.</span></p>
+        </div>
+      </article>
+    </div>
 
     <div class="sermons-foot">
       <a class="btn-gold-outline" href="https://www.youtube.com/@ajnccebu" target="_blank" rel="noopener">View all sermons →</a>
@@ -493,7 +544,7 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
 
 <script>
 (function () {
-  var YOUTUBE_CHANNEL_ID = 'UC_REPLACE_WITH_AJNC_CEBU_CHANNEL_ID';
+  var YOUTUBE_CHANNEL_ID = 'UC2S7h4HtT5jO6GdJbTTGpKQ';
   var UPLOADS_PLAYLIST = 'UU' + YOUTUBE_CHANNEL_ID.slice(2);
   function isServiceLive() {
     var phtString = new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila' });
@@ -553,7 +604,7 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
 
     <div class="finder-foot">
       <div class="together">Together.</div>
-      <p>8 churches and growing. Don't see your city? <a href="mailto:hello@ajnc.ph?subject=Plant a church">Tell us — we're planting.</a></p>
+      <p>8 churches and growing. Don't see your city? <a href="mailto:hello@ajnc.ph?subject=Plant a church">Tell us, we're planting.</a></p>
     </div>
   </div>
 </section>
@@ -565,14 +616,14 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
       <span class="halo-icon" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="dot"></i></span>
       <span class="eyebrow red">Ministries</span>
       <h2 id="ministries-h">Find your <em>place</em><br/>in the family.</h2>
-      <p>Nine ways to serve and be served. Every age, every gift, every neighbourhood.</p>
+      <p>Nine ways to serve and be served. Every age, every gift, every neighborhood.</p>
     </div>
 
     <div class="ministry-grid">
       <article class="ministry-card">
         <div class="photo kids" role="img" aria-label="Kids ministry"></div>
         <h3>Kids</h3>
-        <p>Bible stories, songs, and snacks. A safe and joyful Sunday class for ages 2 to 11.</p>
+        <p>Bible stories, songs, and snacks. A safe and joyful Sunday class for the children of the family.</p>
         <a href="mailto:hello@ajnccebu.ph?subject=Joining%20Kids" class="more">Learn more →</a>
       </article>
       <article class="ministry-card">
@@ -582,19 +633,7 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
         <a href="mailto:hello@ajnccebu.ph?subject=Joining%20Youth" class="more">Learn more →</a>
       </article>
       <article class="ministry-card">
-        <div class="photo prayer" role="img" aria-label="Prayer Warriors ministry"></div>
-        <h3>Prayer Warriors</h3>
-        <p>The intercessors who lift the church and the city in prayer. Wednesday nights and Saturday mornings.</p>
-        <a href="mailto:hello@ajnccebu.ph?subject=Joining%20Prayer%20Warriors" class="more">Learn more →</a>
-      </article>
-      <article class="ministry-card">
-        <div class="photo couples" role="img" aria-label="Young Couples ministry"></div>
-        <h3>Young Couples</h3>
-        <p>For married couples in their first years. Growing together in Christ, with kids in tow.</p>
-        <a href="mailto:hello@ajnccebu.ph?subject=Joining%20Young%20Couples" class="more">Learn more →</a>
-      </article>
-      <article class="ministry-card">
-        <div class="photo sya" role="img" aria-label="SYA — Singles and Young Adults"></div>
+        <div class="photo sya" role="img" aria-label="SYA, Singles and Young Adults"></div>
         <div class="ministry-card__title-block">
           <h3>SYA</h3>
           <p class="ministry-card__subtitle">Singles and Young Adults</p>
@@ -603,25 +642,34 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
         <a href="mailto:hello@ajnccebu.ph?subject=Joining%20SYA" class="more">Learn more →</a>
       </article>
       <article class="ministry-card">
-        <div class="photo joy" role="img" aria-label="JOY — Just Older Youth"></div>
-        <div class="ministry-card__title-block">
-          <h3>JOY</h3>
-          <p class="ministry-card__subtitle">Just Older Youth</p>
-        </div>
+        <div class="photo couples" role="img" aria-label="Young Couples ministry"></div>
+        <h3>Young Couples</h3>
+        <p>For married couples in their first years. Growing together in Christ, with kids in tow.</p>
+        <a href="mailto:hello@ajnccebu.ph?subject=Joining%20Young%20Couples" class="more">Learn more →</a>
+      </article>
+      <article class="ministry-card">
+        <div class="photo joy" role="img" aria-label="Joy Fellowship ministry"></div>
+        <h3>Joy Fellowship</h3>
         <p>The titas and titos who refuse to stop growing. Bible study, fun, and faithful friendship.</p>
-        <a href="mailto:hello@ajnccebu.ph?subject=Joining%20JOY" class="more">Learn more →</a>
+        <a href="mailto:hello@ajnccebu.ph?subject=Joining%20Joy%20Fellowship" class="more">Learn more →</a>
       </article>
       <article class="ministry-card">
-        <div class="photo campus" role="img" aria-label="Campus ministry"></div>
-        <h3>Campus</h3>
-        <p>Reaching students across Cebu's universities. Discipleship that fits between classes.</p>
-        <a href="mailto:hello@ajnccebu.ph?subject=Joining%20Campus" class="more">Learn more →</a>
+        <div class="photo music" role="img" aria-label="Music ministry"></div>
+        <h3>Music</h3>
+        <p>Worship leaders, the choir, and musicians who carry the congregation into the presence of God.</p>
+        <a href="mailto:hello@ajnccebu.ph?subject=Joining%20Music" class="more">Learn more →</a>
       </article>
       <article class="ministry-card">
-        <div class="photo afterwork" role="img" aria-label="After Work ministry"></div>
-        <h3>After Work</h3>
-        <p>For working professionals. Weekday evenings, after the day winds down, in the Word together.</p>
-        <a href="mailto:hello@ajnccebu.ph?subject=Joining%20After%20Work" class="more">Learn more →</a>
+        <div class="photo pulpit" role="img" aria-label="Pulpit ministry"></div>
+        <h3>Pulpit Ministry</h3>
+        <p>Ministers and teachers who preach the Word, Sunday services, Bible study, and the training of the next.</p>
+        <a href="mailto:hello@ajnccebu.ph?subject=Joining%20Pulpit%20Ministry" class="more">Learn more →</a>
+      </article>
+      <article class="ministry-card">
+        <div class="photo prayer" role="img" aria-label="Prayer Warriors ministry"></div>
+        <h3>Prayer Warriors</h3>
+        <p>The intercessors who lift the church and the city in prayer. Wednesday nights and Saturday mornings.</p>
+        <a href="mailto:hello@ajnccebu.ph?subject=Joining%20Prayer%20Warriors" class="more">Learn more →</a>
       </article>
       <article class="ministry-card">
         <div class="photo outreach" role="img" aria-label="Outreach ministry"></div>
@@ -643,155 +691,31 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
       <p>Conferences, fellowships, and special services across the family.</p>
     </div>
 
-    <article class="event-hero">
-      <div class="image" role="img" aria-label="Pentecost Sunday Gathering — AJNC Cebu">
-        <div class="date-badge"><div class="day">24</div><div class="month">May</div></div>
-      </div>
-      <div class="copy">
-        <div class="label">Featured · Pentecost Sunday</div>
-        <h3>One Spirit. <em>One family.</em><br/>Pentecost 2026.</h3>
-        <p>An all-day Pentecost gathering — sunrise prayer, two services, baptisms at Mactan, and family dinner. Open to every AJNC family and their guests.</p>
-        <div class="meta"><span>Sun · 24 May</span><span>8 AM – 8 PM</span><span>AJNC Cebu, Mandaue</span></div>
-        <div class="actions">
-          <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pentecost+2026+at+AJNC+Cebu&dates=20260524T080000/20260524T200000&details=Sunrise+prayer,+two+services,+baptisms+at+Mactan,+family+dinner.&location=Un+Heng+Building,+Casuntingan,+Mandaue+City" target="_blank" rel="noopener" class="btn btn-red">Add to calendar →</a>
-          <a href="#" data-event-trigger="pentecost-2026" class="btn btn-ghost">Event details</a>
-        </div>
-      </div>
-    </article>
+    <div class="event-filters" role="tablist" aria-label="Filter events by scope">
+      <button class="event-chip" data-scope="all" aria-pressed="true">All</button>
+      <button class="event-chip" data-scope="national" aria-pressed="false">National</button>
+      <button class="event-chip" data-scope="district" aria-pressed="false">District</button>
+      <button class="event-chip" data-scope="local" aria-pressed="false">Local</button>
+    </div>
 
-    <div class="event-grid">
-      <article class="event-card">
-        <div class="date-row">
-          <div class="date-tag"><div class="day">07</div><div class="month">Jun</div></div>
-          <h4>Youth Night — <em class="italic-red">Burn</em></h4>
-        </div>
-        <div class="meta">Sat 7:00 PM · AJNC Cebu</div>
-        <div class="actions">
-          <a href="#" data-event-trigger="youth-night-burn" class="btn btn-red" style="padding:9px 14px;font-size:13px">Details</a>
-          <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Youth+Night+Burn+at+AJNC+Cebu&dates=20260607T190000/20260607T220000&location=Un+Heng+Building,+Casuntingan,+Mandaue+City" target="_blank" rel="noopener" class="btn btn-ghost" style="padding:9px 14px;font-size:13px">Add to calendar</a>
-        </div>
-      </article>
-      <article class="event-card">
-        <div class="date-row">
-          <div class="date-tag"><div class="day">21</div><div class="month">Jun</div></div>
-          <h4>Family Baptism — <em class="italic-red">Mactan</em></h4>
-        </div>
-        <div class="meta">Sat 5:30 AM · Mactan Shore</div>
-        <div class="actions">
-          <a href="#" data-event-trigger="family-baptism-mactan" class="btn btn-red" style="padding:9px 14px;font-size:13px">Details</a>
-          <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Family+Baptism+at+Mactan&dates=20260621T053000/20260621T090000&location=Mactan+Shore,+Cebu" target="_blank" rel="noopener" class="btn btn-ghost" style="padding:9px 14px;font-size:13px">Add to calendar</a>
-        </div>
-      </article>
-      <article class="event-card">
-        <div class="date-row">
-          <div class="date-tag"><div class="day">12</div><div class="month">Jul</div></div>
-          <h4>PH Pastors' <em class="italic-red">Gathering</em></h4>
-        </div>
-        <div class="meta">Sat 9 AM · AJNC Manila</div>
-        <div class="actions">
-          <a href="#" data-event-trigger="ph-pastors-gathering" class="btn btn-red" style="padding:9px 14px;font-size:13px">Details</a>
-          <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=PH+Pastors+Gathering+at+AJNC+Manila&dates=20260712T090000/20260712T170000&location=AJNC+Manila" target="_blank" rel="noopener" class="btn btn-ghost" style="padding:9px 14px;font-size:13px">Add to calendar</a>
-        </div>
-      </article>
+    <div id="events-featured"></div>
+
+    <div class="event-grid" id="events-grid" aria-live="polite"></div>
+    <p class="event-empty" hidden>No events in this category right now. Check back soon.</p>
+
+    <div class="event-pager" id="events-pager" hidden>
+      <button class="event-pager__btn" type="button" data-page="prev" aria-label="Previous events">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+        Prev
+      </button>
+      <span class="event-pager__status" id="events-page-status"></span>
+      <button class="event-pager__btn" type="button" data-page="next" aria-label="More events">
+        Next
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+      </button>
     </div>
   </div>
 </section>
-
-<!-- ============================ LEADERSHIP ============================ -->
-<section class="leaders reveal" id="leaders" aria-labelledby="leaders-h">
-  <div class="container">
-    <div class="section-head">
-      <span class="halo-icon" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="dot"></i></span>
-      <span class="eyebrow red">Church Pastor &amp; leadership</span>
-      <h2 id="leaders-h">A family <em>shepherded.</em></h2>
-      <p>The pastor and elders who shepherd the AJNC Cebu family.</p>
-    </div>
-
-    <article class="pastor-card">
-      <div class="pastor-photo-wrap">
-        <span class="pastor-halo pastor-halo--outer" aria-hidden="true"></span>
-        <span class="pastor-halo pastor-halo--inner" aria-hidden="true"></span>
-        <div class="pastor-photo">
-          <img src="assets/pastor-mario.png" alt="Bro. Mario Doromal preaching at AJNC Cebu" />
-        </div>
-      </div>
-      <div class="pastor-body">
-        <span class="eyebrow gold">Church Pastor</span>
-        <h3 class="pastor-name">Bro. Mario Doromal</h3>
-        <div class="pastor-role">Church Pastor, AJNC Cebu</div>
-        <blockquote class="pastor-quote">
-          <p>"That I may know him, and the power of his resurrection, and the fellowship of his sufferings."</p>
-          <cite>Philippians 3:10</cite>
-        </blockquote>
-        <p class="pastor-bio">Bro. Mario shepherds the AJNC Cebu family on the 2nd floor of Un Heng Building, Casuntingan. His ministry is shaped by the apostolic doctrine of Acts 2:38, a deep love for the local family, and an unhurried commitment to the Word.</p>
-        <p class="pastor-bio">He preaches every Sunday at the Mandaue church and walks with the family through every ordinary day in between.</p>
-      </div>
-    </article>
-
-    <aside class="memorial-card" aria-label="In memoriam">
-      <span class="memorial-halo" aria-hidden="true"></span>
-      <div class="memorial-photo-wrap">
-        <div class="memorial-photo">
-          <img src="assets/rev-espera.png" alt="Rev. Emilio Espera Jr., founding pastor of AJNC Cebu" class="rotate-cw90" />
-        </div>
-      </div>
-      <div class="memorial-body">
-        <span class="eyebrow gold memorial-eyebrow">A life faithfully lived</span>
-        <h3 class="memorial-name">Rev. <em>Emilio Espera Jr.</em></h3>
-        <div class="memorial-dates">10.09.1975 &nbsp;to&nbsp; 03.07.2026</div>
-        <p class="memorial-bio">Founding pastor of AJNC Cebu. Pastor Espera went home to be with the Lord in March 2026 after a lifetime of faithful service. The family carries his work forward.</p>
-        <div class="memorial-roles">District 3 Superintendent &middot; AJNC Board of Trustee</div>
-      </div>
-    </aside>
-  </div>
-</section>
-
-<!-- ============================ OUR STORY (TIMELINE) ============================ -->
-<section class="timeline reveal" id="timeline" aria-labelledby="timeline-h">
-  <div class="container">
-    <div class="section-head">
-      <span class="halo-icon" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="dot"></i></span>
-      <span class="eyebrow red">Our story</span>
-      <h2 id="timeline-h">How God carried us <em>here.</em></h2>
-      <p>Every prayer, every baptism, every name written down. The family God has built in Mandaue, since 1986.</p>
-    </div>
-    <div class="timeline-controls">
-      <div class="timeline-chips" role="tablist" aria-label="Filter by era">
-        <button type="button" class="tl-chip active" data-era="all">All eras</button>
-        <button type="button" class="tl-chip" data-era="beginnings">Beginnings</button>
-        <button type="button" class="tl-chip" data-era="growth">Growth</button>
-        <button type="button" class="tl-chip" data-era="today">Today</button>
-        <button type="button" class="tl-chip" data-era="future">To come</button>
-      </div>
-      <div class="tl-progress-track" aria-hidden="true"><div class="tl-progress-fill"></div></div>
-    </div>
-    <div class="tl-rail-wrap" id="tl-rail-wrap">
-      <div class="tl-rail" aria-hidden="true"></div>
-    </div>
-    <div class="tl-foot">
-      <p class="tl-foot-mark">Together.</p>
-      <p class="tl-foot-note">Got a story we should add? Tell us at <a href="mailto:hello@ajnccebu.ph">hello@ajnccebu.ph</a>. We love hearing how God moves.</p>
-    </div>
-  </div>
-</section>
-
-<div class="tl-modal" id="tl-modal" role="dialog" aria-modal="true" aria-labelledby="tl-modal-title">
-  <div class="tl-modal-card">
-    <button type="button" class="tl-modal-close" aria-label="Close">✕</button>
-    <span class="tl-modal-eyebrow"></span>
-    <div class="tl-modal-year">2006</div>
-    <div class="tl-modal-photo" aria-hidden="true"></div>
-    <h3 id="tl-modal-title"></h3>
-    <p class="tl-modal-sub"></p>
-    <div class="tl-modal-body"></div>
-    <blockquote class="tl-modal-scripture"><cite></cite></blockquote>
-    <div class="tl-modal-chips"></div>
-    <div class="tl-modal-nav">
-      <button type="button" class="prev"><span class="nav-label">Previous</span><span class="nav-year">—</span><span class="nav-title"></span></button>
-      <button type="button" class="next"><span class="nav-label">Next</span><span class="nav-year">—</span><span class="nav-title"></span></button>
-    </div>
-  </div>
-</div>
 
 <!-- ============================ STORIES ============================ -->
 <section class="stories reveal" id="stories" aria-labelledby="stories-h">
@@ -800,30 +724,27 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
       <span class="halo-icon" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="dot"></i></span>
       <span class="eyebrow">Stories &amp; testimonies</span>
       <h2 id="stories-h">What God <em>has done.</em></h2>
-      <p>The family in their own words — baptisms, healings, homecomings.</p>
+      <p>The family in their own words, baptisms, healings, homecomings.</p>
     </div>
 
     <div class="story-grid">
-      <article class="story-card">
-        <div class="portrait" role="img" aria-hidden="true"></div>
+      <article class="story-card" data-tilt>
+        <div class="portrait" role="img" aria-label="Joanna M."></div>
         <p class="quote">"I came in the back of the room one Wednesday. They prayed for my mother. <em>She is whole today.</em>"</p>
         <div class="who">Joanna M.</div>
-        <div class="where">Mandaue · Baptised 2024</div>
-        <a href="#" class="read">Read Joanna's story →</a>
+        <div class="where">Mandaue · Baptized 2024</div>
       </article>
-      <article class="story-card">
-        <div class="portrait p2" role="img" aria-hidden="true"></div>
+      <article class="story-card" data-tilt>
+        <div class="portrait p2" role="img" aria-label="Mark D."></div>
         <p class="quote">"For twenty years I argued with the gospel. The Holy Ghost <em>argued back.</em> I have not been the same."</p>
         <div class="who">Mark D.</div>
-        <div class="where">Cebu City · Baptised 2023</div>
-        <a href="#" class="read">Read Mark's story →</a>
+        <div class="where">Cebu City · Baptized 2023</div>
       </article>
-      <article class="story-card">
-        <div class="portrait p3" role="img" aria-hidden="true"></div>
+      <article class="story-card" data-tilt>
+        <div class="portrait p3" role="img" aria-label="Rachel and Paolo S."></div>
         <p class="quote">"My family fell apart. The church <em>did not let me fall.</em> We were rebuilt together."</p>
         <div class="who">Rachel and Paolo S.</div>
-        <div class="where">Iloilo · Baptised 2025</div>
-        <a href="#" class="read">Read their story →</a>
+        <div class="where">Iloilo · Baptized 2025</div>
       </article>
     </div>
   </div>
@@ -836,33 +757,42 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
       <span class="halo-icon sm" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="dot"></i></span>
       <span class="eyebrow red">Giving · Partner with us</span>
       <h2 id="giving-h">Carry the gospel <em>with us.</em></h2>
-      <p>Your tithes and offerings carry the gospel across the Philippines — pastors trained, churches planted, the streets fed, the family kept.</p>
-      <div class="scripture">"Each one must give as he has decided in his heart — not reluctantly or under compulsion, for God loves a cheerful giver."<br/><span style="font-size:13px;letter-spacing:.18em;font-style:normal;font-weight:700;color:var(--gold-deep);text-transform:uppercase;display:block;margin-top:10px">2 Corinthians 9 : 7</span></div>
-      <p style="font-size:14px;color:var(--ink);opacity:.72;margin-top:18px">All amounts are in Philippine Pesos (₱). Foreign partners can give via bank transfer — contact <a href="mailto:partners@ajnc.ph" style="color:var(--red);text-decoration:none">partners@ajnc.ph</a>.</p>
+      <p>Your tithes and offerings carry the gospel across the Philippines, pastors trained, churches planted, the streets fed, the family kept.</p>
+      <div class="scripture">"Each one must give as he has decided in his heart, not reluctantly or under compulsion, for God loves a cheerful giver."<br/><span style="font-size:13px;letter-spacing:.18em;font-style:normal;font-weight:700;color:var(--gold-deep);text-transform:uppercase;display:block;margin-top:10px">2 Corinthians 9 : 7</span></div>
+      <p style="font-size:14px;color:var(--ink);opacity:.72;margin-top:18px">All amounts are in Philippine Pesos (₱). Foreign partners can give via bank transfer, contact <a href="mailto:partners@ajnc.ph" style="color:var(--red);text-decoration:none">partners@ajnc.ph</a>.</p>
     </div>
 
     <div class="pay-grid">
       <div class="pay-card">
         <div class="label"><div class="logo gcash">GC</div><h4>GCash</h4></div>
         <p class="desc">Scan or send to:</p>
-        <span class="ref">0917 555 4673</span>
-        <p class="desc" style="margin-top:8px">Account name · AJNC Cebu Inc.</p>
+        <span class="ref" data-ajnc-bind="gcash_number">0917 555 4673</span>
+        <p class="desc" style="margin-top:8px">Account name · <span data-ajnc-bind="gcash_name">AJNC Cebu Inc.</span></p>
       </div>
       <div class="pay-card">
         <div class="label"><div class="logo maya">M</div><h4>Maya</h4></div>
         <p class="desc">Send to:</p>
-        <span class="ref">0917 555 4673</span>
+        <span class="ref" data-ajnc-bind="maya_number">0917 555 4673</span>
         <p class="desc" style="margin-top:8px">Account name · AJNC Cebu Inc.</p>
       </div>
       <div class="pay-card">
         <div class="label"><div class="logo bpi">BPI</div><h4>BPI Bank Transfer</h4></div>
         <p class="desc">Account no.</p>
-        <span class="ref">9069-1250-66</span>
+        <span class="ref" data-ajnc-bind="bpi_account">9069-1250-66</span>
         <p class="desc" style="margin-top:8px">AJNC Cebu Inc. · BPI Mandaue</p>
       </div>
       <div class="pay-card">
         <div class="label"><div class="logo cash">₱</div><h4>In person · Sunday</h4></div>
         <p class="desc">Drop your offering in the offering box at the sanctuary. Designate the envelope for tithe, missions, or building fund.</p>
+      </div>
+    </div>
+
+    <div class="give-merch" style="grid-column:1 / -1;display:flex;gap:24px;align-items:center;flex-wrap:wrap;background:var(--bone);border:1px solid var(--gold);border-radius:18px;padding:22px 26px;margin-top:8px">
+      <img src="assets/tote-magkahiusa.png" alt="AJNC Cebu Magkahiusa canvas tote bag" width="120" height="120" loading="lazy" style="width:120px;height:120px;object-fit:contain;flex-shrink:0" />
+      <div style="flex:1;min-width:240px">
+        <span class="eyebrow red" style="display:block;margin-bottom:6px">A thank-you gift</span>
+        <h3 style="font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:-.01em;color:var(--ink);margin:0 0 6px">Free <em style="font-style:italic;color:var(--red)">Magkahiusa</em> tote for gifts of ₱1,000 or more</h3>
+        <p style="margin:0;font-size:15px;line-height:1.55;color:var(--ink);opacity:.82">Give ₱1,000 or more and we'd love to hand you our canvas tote as our thanks. Mention "tote" with your gift, or email <a href="mailto:hello@ajnc.ph?subject=Magkahiusa%20tote" style="color:var(--red);text-decoration:none">hello@ajnc.ph</a> and we'll set one aside for you.</p>
       </div>
     </div>
   </div>
@@ -875,9 +805,11 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
       <span class="halo-icon" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="dot"></i></span>
       <span class="eyebrow red">Prayer request</span>
       <h2 id="prayer-h">We'd love to pray <em>with you.</em></h2>
-      <p class="sub">Send us a note. Our pastoral team reads every request and prays through them together each week.</p>
+      <p class="sub">Send us a note. Our pastoral team reads every request and prays through them together each week. Prefer to talk? Call our prayer line at <a href="tel:+639175554673" style="color:var(--red);text-decoration:none;font-weight:600">+63 917 555 4673</a>.</p>
+      <p style="margin:-24px 0 34px;font-size:15.5px"><a href="scriptures.html" style="color:var(--red);font-weight:600;text-decoration:none">Carrying something heavy? Get free Scriptures for the hard days →</a></p>
 
-      <form id="prayer-form" class="prayer-form" novalidate>
+      <form id="prayer-form" class="prayer-form" method="POST" data-formspree="prayer" action="https://formspree.io/f/xkoeaajp" novalidate>
+        <input type="hidden" name="_subject" value="New prayer request, AJNC Cebu" />
         <div class="row">
           <div>
             <label for="pr-name">Your name <span style="color:var(--slate);font-weight:400">(optional)</span></label>
@@ -886,6 +818,10 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
           <div>
             <label for="pr-email">Email <span style="color:var(--slate);font-weight:400">(optional)</span></label>
             <input id="pr-email" name="email" type="email" autocomplete="email" />
+          </div>
+          <div>
+            <label for="pr-phone">Phone <span style="color:var(--slate);font-weight:400">(optional)</span></label>
+            <input id="pr-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="0917 000 0000" />
           </div>
         </div>
         <div>
@@ -908,7 +844,7 @@ SPECIAL EVENT VARIANT (uncomment, edit the date and title, then comment out the 
       <span class="halo-icon sm" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="dot"></i></span>
       <span class="eyebrow red">Contact &amp; visit</span>
       <h2 id="contact-h">Visit us <em>in Mandaue.</em></h2>
-      <p style="font-size:16px;color:var(--ink);opacity:.78;margin:0 0 24px">Walk in any Sunday — no appointment needed.</p>
+      <p style="font-size:16px;color:var(--ink);opacity:.78;margin:0 0 24px">Walk in any Sunday, no appointment needed.</p>
 
       <div class="nap">
         <div class="nap-row">
@@ -923,7 +859,7 @@ Cebu 6014, Philippines</div>
 Sunday · 10:00 AM &amp; 3:00 PM
  · 6:30 PM (Prayer Meeting)
 Thursday · 6:30 PM (Bible Study)
-Office hours · Mon–Fri, 9 AM – 5 PM</div>
+Office hours · Mon, Fri, 9 AM, 5 PM</div>
         </div>
         <div class="nap-row" style="text-align: left">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -932,9 +868,9 @@ Office hours · Mon–Fri, 9 AM – 5 PM</div>
       </div>
 
       <div class="social" aria-label="Social media">
-        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9V14.9H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.7-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3V22A10 10 0 0 0 22 12z"/></svg></a>
-        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
-        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.7-.5-5.5a3 3 0 0 0-2.1-2.1C18.6 4 12 4 12 4s-6.6 0-8.4.4a3 3 0 0 0-2.1 2.1C1 8.3 1 12 1 12s0 3.7.5 5.5a3 3 0 0 0 2.1 2.1C5.4 20 12 20 12 20s6.6 0 8.4-.4a3 3 0 0 0 2.1-2.1C23 15.7 23 12 23 12zM10 15.5v-7l6 3.5-6 3.5z"/></svg></a>
+        <a href="https://www.facebook.com/ajnc.cebu" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9V14.9H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.7-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3V22A10 10 0 0 0 22 12z"/></svg></a>
+        <a href="https://www.instagram.com/ajnc.cebu" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a href="https://www.youtube.com/@ajnccebu" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.7-.5-5.5a3 3 0 0 0-2.1-2.1C18.6 4 12 4 12 4s-6.6 0-8.4.4a3 3 0 0 0-2.1 2.1C1 8.3 1 12 1 12s0 3.7.5 5.5a3 3 0 0 0 2.1 2.1C5.4 20 12 20 12 20s6.6 0 8.4-.4a3 3 0 0 0 2.1-2.1C23 15.7 23 12 23 12zM10 15.5v-7l6 3.5-6 3.5z"/></svg></a>
       </div>
     </div>
 
@@ -951,9 +887,10 @@ Office hours · Mon–Fri, 9 AM – 5 PM</div>
   <div class="container">
     <span class="eyebrow" style="color:var(--gold);position:relative">A letter from family</span>
     <h2 id="news-h" style="margin-top:14px">Sermon notes, prayer updates,<br/>and <em>what God's doing</em> across the islands.</h2>
-    <p class="sub">One short email every other week. No spam, no marketing — just the family.</p>
-    <form id="newsletter-form" class="newsletter-form" novalidate>
-      <input type="email" placeholder="your@email.ph" required aria-label="Email address" />
+    <p class="sub">One short email every other week. No spam, no marketing, just the family.</p>
+    <form id="newsletter-form" class="newsletter-form" method="POST" data-formspree="newsletter" action="https://formspree.io/f/xvzynnkd" novalidate>
+      <input type="hidden" name="_subject" value="New newsletter signup, AJNC Cebu" />
+      <input type="email" name="email" placeholder="your@email.ph" required aria-label="Email address" />
       <button type="submit">Send me letters from AJNC</button>
     </form>
   </div>
@@ -1009,9 +946,12 @@ Office hours · Mon–Fri, 9 AM – 5 PM</div>
 .event-modal__title em{color:#C8262E;font-style:italic;font-weight:700}
 .event-modal__cover{
   width:100%;aspect-ratio:16/9;
-  background:linear-gradient(135deg,#E9C9B6,#E8B53C 50%,#971C22);
   border-radius:14px;margin:0 0 28px;
   position:relative;overflow:hidden;
+  background-size:cover;background-position:center;
+}
+.event-modal__cover:not([class*="ev-img--"]){
+  background:linear-gradient(135deg,#E9C9B6,#E8B53C 50%,#971C22);
 }
 .event-modal__cover::after{
   content:'COVER PHOTO';
@@ -1019,6 +959,7 @@ Office hours · Mon–Fri, 9 AM – 5 PM</div>
   font-size:10px;letter-spacing:.22em;
   color:rgba(250,247,241,.8);font-weight:600;
 }
+.event-modal__cover.has-img::after{display:none}
 .event-modal__meta-grid{
   display:grid;grid-template-columns:1fr 1fr;gap:20px;
   margin:0 0 28px;padding:20px 0;
@@ -1094,102 +1035,213 @@ Office hours · Mon–Fri, 9 AM – 5 PM</div>
 </div>
 
 <script>
-window.AJNC_EVENTS = {
-  'pentecost-2026': {
-    category: 'Featured · Pentecost',
-    title: 'One Spirit. <em>One family.</em>',
-    when: 'Sunday 24 May 2026 · 8 AM to 8 PM',
-    where: 'AJNC Cebu, 2nd floor Un Heng Building, Casuntingan, Mandaue',
-    body: [
-      'An all-day Pentecost gathering, on the fortieth anniversary year of AJNC Cebu. Sunrise prayer at 5:30 AM, the 8 AM service, baptisms at Mactan in the afternoon, family dinner at the church, closing service at 5 PM.',
-      'Open to every AJNC family in the Philippines and to anyone considering the next step. Bring a friend. Bring the kids. Bring an appetite.'
-    ],
-    highlights: ['Sunrise prayer', 'Baptisms at Mactan', 'Family dinner', 'All welcome'],
-    calendarUrl: 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pentecost+2026+at+AJNC+Cebu&dates=20260524T080000/20260524T200000&details=Sunrise+prayer,+two+services,+baptisms+at+Mactan,+family+dinner.&location=Un+Heng+Building,+Casuntingan,+Mandaue+City'
-  },
-  'youth-night-burn': {
-    category: 'Youth',
-    title: 'Youth Night <em>· Burn.</em>',
-    when: 'Saturday 7 June 2026 · 7 PM',
-    where: 'AJNC Cebu, 2nd floor Un Heng Building, Casuntingan, Mandaue',
-    body: [
-      'Friday-style worship on a Saturday night for the teens and twenties of AJNC Cebu. Worship, the Word, food, and friendship.',
-      'Bring a friend. No fee. Just come.'
-    ],
-    highlights: ['Worship', 'The Word', 'Free food'],
-    calendarUrl: 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Youth+Night+Burn+at+AJNC+Cebu&dates=20260607T190000/20260607T220000&location=Un+Heng+Building,+Casuntingan,+Mandaue+City'
-  },
-  'family-baptism-mactan': {
-    category: 'Baptism',
-    title: 'Family Baptism <em>· Mactan.</em>',
-    when: 'Saturday 21 June 2026 · 5:30 AM',
-    where: 'Mactan shore, Cebu',
-    body: [
-      'The waters are open at Mactan, family. If you have been considering baptism in the name of Jesus Christ, this is the morning.',
-      'Meet at the church at 4:45 AM. Bring a towel and a change of clothes. Breakfast is served at the church after.'
-    ],
-    highlights: ['Baptism in Jesus name', 'Bring a towel', 'Breakfast after'],
-    calendarUrl: 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Family+Baptism+at+Mactan&dates=20260621T053000/20260621T090000&location=Mactan+Shore,+Cebu'
-  },
-  'ph-pastors-gathering': {
-    category: 'PH Family',
-    title: 'PH Pastors\' <em>Gathering.</em>',
-    when: 'Saturday 12 July 2026 · 9 AM to 5 PM',
-    where: 'AJNC Manila',
-    body: [
-      'Pastors and elders from across the AJNC PH family meet in Manila for a day of prayer, the Word, and counsel. Hosted by the AJNC Manila family.',
-      'For ordained ministers and church board members. RSVP through your local pastor.'
-    ],
-    highlights: ['Prayer and the Word', 'For pastors and elders', 'RSVP required'],
-    calendarUrl: 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=PH+Pastors+Gathering+at+AJNC+Manila&dates=20260712T090000/20260712T170000&location=AJNC+Manila'
-  }
-};
-
+/* Local church calendar — featured event + paginated upcoming events.
+   Placeholder art is CSS gradient + line icon per category; swap for photos
+   later by giving an event an `img` and pointing .ev-img background at it. */
 (function () {
-  var modal = document.getElementById('event-modal');
-  if (!modal) return;
-  var closeBtn = modal.querySelector('.event-modal__close');
-  var lastFocus = null;
+  var CAL = 'https://calendar.google.com/calendar/render?action=TEMPLATE';
+  function calUrl(name, s, e, loc) {
+    var u = CAL + '&text=' + encodeURIComponent(name) + '&dates=' + s + '/' + e;
+    if (loc) u += '&location=' + encodeURIComponent(loc);
+    return u;
+  }
+  function strip(h) { return h.replace(/<[^>]+>/g, ''); }
 
-  function populate(data) {
-    modal.querySelector('#event-modal-tag').textContent = data.category;
-    modal.querySelector('#event-modal-title').innerHTML = data.title;
-    var values = modal.querySelectorAll('.event-modal__meta-value');
-    values[0].textContent = data.when;
-    values[1].textContent = data.where;
-    modal.querySelector('.event-modal__body').innerHTML = (data.body || []).map(function(p){return '<p>'+p+'</p>'}).join('');
-    modal.querySelector('.event-modal__highlights').innerHTML = (data.highlights || []).map(function(h){return '<span class="event-modal__highlight">'+h+'</span>'}).join('');
-    var cta = modal.querySelector('[data-cta="calendar"]');
-    if (cta) { cta.href = data.calendarUrl || '#'; cta.target = '_blank'; cta.rel = 'noopener'; }
+  var ICONS = {
+    conference: 'M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2 M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8 M23 21v-2a4 4 0 0 0-3-3.87 M16 3.13a4 4 0 0 1 0 7.75',
+    men: 'M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2 M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8',
+    retreat: 'm2 20 7-13 4 7 3-4 6 10z',
+    teach: 'M4 19.5A2.5 2.5 0 0 1 6.5 17H20 M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z',
+    kids: 'M2 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H2z M22 4h-7a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h8z',
+    sya: 'M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2 M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8 M22 21v-2a4 4 0 0 0-3-3.87',
+    youth: 'M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.3 1-3a2.5 2.5 0 0 0 2.5 2.5z',
+    prayer: 'M12 3l1.9 5.8H20l-4.9 3.6 1.9 5.8L12 14.6 7.1 18.2l1.9-5.8L4 8.8h6.1z',
+    mission: 'M22 2 11 13 M22 2 15 22 11 13 2 9 22 2z',
+    word: 'M4 19.5A2.5 2.5 0 0 1 6.5 17H20 M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z M12 6.5v6 M9 9.5h6',
+    thanks: 'M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z'
+  };
+
+  var FEATURED = {
+    id: 'iconnect-2026', theme: 'conference', scope: 'district', img: 'assets/01-pentecost-hero.png', day: '27', mon: 'Nov',
+    title: 'iConnect <em>Conference</em>', label: 'Featured · District Conference',
+    dateline: 'November 27 to 29, 2026', venue: 'Iloilo',
+    desc: 'Our three-day district conference returns. Three days of worship, the Word, workshops, and fellowship with the AJNC family across the district. Open to every member, and a friend you bring along.',
+    when: 'Friday to Sunday, 27 to 29 November 2026', where: 'Iloilo',
+    body: ['iConnect gathers the AJNC family across the district for three full days in Iloilo: morning prayer, teaching sessions, workshops by ministry, evening rallies, and a lot of fellowship between the local churches.', 'Registration details and the venue address will be shared through your local church. Mark the dates and plan to come for all three days.'],
+    highlights: ['Three days', 'Worship and the Word', 'Workshops by ministry', 'Whole district'],
+    s: '20261127', e: '20261130', loc: 'Iloilo'
+  };
+
+  var LIST = [
+    { id: 'men-fellowship', img: 'assets/event-01-mens-fellowship.png', scope: 'district', theme: 'men', day: '12', mon: 'Jun', title: 'Men&rsquo;s <em>Fellowship</em>', dept: 'Men', dateline: 'June 12, 2026', venue: 'Iloilo', desc: 'Brotherhood, the Word, and a charge to lead well at home and in the church.', when: 'Friday 12 June 2026', where: 'Iloilo', body: ['A gathering for the men of the family: brotherhood, the Word, and a charge to lead well at home and in the church.'], highlights: ['For the men', 'Fellowship'], s: '20260612', e: '20260613', loc: 'Iloilo' },
+    { id: 'sya-retreat', img: 'assets/event-02-sya-retreat.png', scope: 'district', theme: 'sya', day: '12', mon: 'Jun', title: 'Singles & Young <em>Adults Retreat</em>', dept: 'SYA', dateline: 'June 12, 2026', venue: 'Aklan', desc: 'Rest, worship, and honest conversation, time set apart with God and the family.', when: 'Friday 12 June 2026', where: 'Aklan', body: ['A retreat for singles and young adults: rest, worship, honest conversation, and time set apart with God and the family.'], highlights: ['Singles & young adults', 'Time away'], s: '20260612', e: '20260613', loc: 'Aklan' },
+    { id: 'ss-echo', img: 'assets/event-03-ss-echo-seminar.png', scope: 'local', theme: 'kids', day: '13', mon: 'Jun', title: 'Sunday School <em>Echo Seminar</em>', dept: 'Sunday School', dateline: 'June 13, 2026', venue: 'AJNC Cebu', desc: 'Our teachers echo the district seminar so every class is ready for the season.', when: 'Saturday 13 June 2026', where: 'AJNC Cebu, Mandaue', body: ['Our Sunday School teachers echo what they received at the district seminar, so every class is ready for the season ahead.'], highlights: ['For teachers', 'Sunday School'], s: '20260613', e: '20260614', loc: 'AJNC Cebu, Mandaue' },
+    { id: 'yp-culmination', img: 'assets/event-04-yp-culmination.png', scope: 'local', theme: 'youth', day: '20', mon: 'Jun', title: 'Young People <em>Culmination</em>', dept: 'Young People', dateline: 'June 20, 2026', venue: '', desc: 'Worship, testimonies, and a celebration of all God has done this season.', when: 'Saturday 20 June 2026', where: 'Venue announced through your local church', body: ['The young people close the season together: worship, testimonies, and a celebration of all God has done this term.'], highlights: ['Young people', 'Worship night'], s: '20260620', e: '20260621', loc: '' },
+    { id: 'ss-teachers', img: 'assets/event-05-ss-teachers-retreat.png', scope: 'district', theme: 'kids', day: '20', mon: 'Aug', title: 'Sunday School <em>Teachers Retreat</em>', dept: 'Sunday School', dateline: 'August 20 to 22, 2026', venue: '', desc: 'Three days of training and rest for the teachers of our children.', when: '20 to 22 August 2026', where: 'Venue announced through your local church', body: ['Three days set apart for our Sunday School teachers: training, rest, and preparation for the children God sends us.'], highlights: ['For teachers', 'Three days'], s: '20260820', e: '20260823', loc: '' },
+    { id: 'yp-prayer-aug', img: 'assets/event-06-yp-prayer-night.png', scope: 'local', theme: 'youth', day: '21', mon: 'Aug', title: 'YP <em>Prayer Night</em>', dept: 'Young People', dateline: 'August 21, 2026', venue: 'AJNC Cebu', desc: 'An evening of prayer and worship for the young people. Come expectant.', when: 'Friday 21 August 2026', where: 'AJNC Cebu, Mandaue', body: ['An evening of prayer and worship for the young people. Come hungry, come expectant.'], highlights: ['Young people', 'Prayer & worship'], s: '20260821', e: '20260822', loc: 'AJNC Cebu, Mandaue' },
+    { id: 'yp-mission-aug', img: 'assets/event-07-yp-mission-day.png', scope: 'local', theme: 'youth', day: '22', mon: 'Aug', title: 'YP <em>Mission Day</em>', dept: 'Young People', dateline: 'August 22, 2026', venue: '', desc: 'The young people take the gospel to the streets: outreach and serving the community.', when: 'Saturday 22 August 2026', where: 'Venue announced through your local church', body: ['The young people take the gospel to the streets: outreach, friendship evangelism, and serving the community.'], highlights: ['Young people', 'Outreach'], s: '20260822', e: '20260823', loc: '' },
+    { id: 'contending', img: 'assets/event-08-contending-faith.png', scope: 'national', theme: 'word', day: '09', mon: 'Sep', title: 'Contending for <em>the Faith</em>', dept: 'Whole church', dateline: 'September 9 to 11, 2026', venue: '', desc: 'Three days in the Word, grounding the whole family in the apostolic faith.', when: '9 to 11 September 2026', where: 'Venue announced through your local church', body: ['Three days in the Word, grounding the whole family in the apostolic faith once delivered to the saints.'], highlights: ['Whole church', 'Three days', 'The Word'], s: '20260909', e: '20260912', loc: '' },
+    { id: 'yp-prayer-nov', img: 'assets/event-06-yp-prayer-night.png', scope: 'local', theme: 'youth', day: '20', mon: 'Nov', title: 'YP <em>Prayer Night</em>', dept: 'Young People', dateline: 'November 20, 2026', venue: 'AJNC Cebu', desc: 'Prayer and worship for the young people as the year draws to a close.', when: 'Friday 20 November 2026', where: 'AJNC Cebu, Mandaue', body: ['Another evening of prayer and worship for the young people as the year draws to a close.'], highlights: ['Young people', 'Prayer & worship'], s: '20261120', e: '20261121', loc: 'AJNC Cebu, Mandaue' },
+    { id: 'yp-mission-nov', img: 'assets/event-07-yp-mission-day.png', scope: 'local', theme: 'youth', day: '21', mon: 'Nov', title: 'YP <em>Mission Day</em>', dept: 'Young People', dateline: 'November 21, 2026', venue: '', desc: 'Outreach and service before the year ends, carrying the gospel out once more.', when: 'Saturday 21 November 2026', where: 'Venue announced through your local church', body: ['The young people carry the gospel out once more: outreach and service before the year ends.'], highlights: ['Young people', 'Outreach'], s: '20261121', e: '20261122', loc: '' },
+    { id: 'thanksgiving', img: 'assets/event-09-thanksgiving-day.png', scope: 'local', theme: 'thanks', day: '20', mon: 'Dec', title: 'Thanksgiving <em>Day</em>', dept: 'Whole church', dateline: 'December 20, 2026', venue: '', desc: 'Testimonies, worship, and a table shared by the whole family in thanks.', when: 'Sunday 20 December 2026', where: 'Venue announced through your local church', body: ['The whole family gathers to give thanks for the year: testimonies, worship, and a table shared together.'], highlights: ['Whole church', 'Give thanks'], s: '20261220', e: '20261221', loc: '' }
+  ];
+
+  function evCal(ev) { return calUrl(strip(ev.title) + ' · AJNC', ev.s, ev.e, ev.loc); }
+
+  function bgStyle(ev) {
+    return ev.img ? ' style="background-image:url(\'' + ev.img + '\');background-size:cover;background-position:center"' : '';
   }
 
-  function open(data, trigger) {
-    lastFocus = trigger || document.activeElement;
-    if (data) populate(data);
-    modal.dataset.open = 'true';
-    document.body.style.overflow = 'hidden';
-    setTimeout(function(){ closeBtn.focus(); }, 50);
-  }
-  function close() {
-    modal.dataset.open = 'false';
-    document.body.style.overflow = '';
-    if (lastFocus) lastFocus.focus();
+  function cardHTML(ev) {
+    return '<article class="event-card">' +
+      '<div class="ev-img ev-img--' + ev.theme + '"' + bgStyle(ev) + ' role="img" aria-label="' + strip(ev.title) + '">' +
+        (ev.img ? '' : '<svg class="ev-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="' + ICONS[ev.theme] + '"/></svg>') +
+        '<span class="ev-dept">' + ev.dept + '</span>' +
+        '<div class="date-tag"><div class="day">' + ev.day + '</div><div class="month">' + ev.mon + '</div></div>' +
+      '</div>' +
+      '<div class="ev-body">' +
+        '<h4>' + ev.title + '</h4>' +
+        '<div class="meta">' + ev.dateline + (ev.venue ? ' &middot; ' + ev.venue : '') + '</div>' +
+        (ev.desc ? '<p class="desc">' + ev.desc + '</p>' : '') +
+        '<div class="actions">' +
+          '<button class="btn btn-red" type="button" data-ev="' + ev.id + '" style="padding:9px 14px;font-size:13px">Details</button>' +
+          '<a class="btn btn-ghost" href="' + evCal(ev) + '" target="_blank" rel="noopener" style="padding:9px 14px;font-size:13px">Add to calendar</a>' +
+        '</div>' +
+      '</div>' +
+    '</article>';
   }
 
-  document.querySelectorAll('[data-event-trigger]').forEach(function(btn){
-    btn.addEventListener('click', function(e){
-      e.preventDefault();
-      var id = btn.getAttribute('data-event-trigger');
-      var data = window.AJNC_EVENTS && window.AJNC_EVENTS[id];
-      if (data) open(data, btn);
+  function featuredHTML(ev) {
+    return '<article class="event-hero">' +
+      '<div class="image"' + bgStyle(ev) + ' role="img" aria-label="' + strip(ev.title) + '">' +
+        (ev.img ? '' : '<svg class="ev-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="' + ICONS[ev.theme] + '"/></svg>') +
+        '<div class="date-badge"><div class="day">' + ev.day + '</div><div class="month">' + ev.mon + '</div></div>' +
+      '</div>' +
+      '<div class="copy">' +
+        '<div class="label">' + ev.label + '</div>' +
+        '<h3>' + ev.title + '</h3>' +
+        '<p>' + ev.desc + '</p>' +
+        '<div class="meta"><span>' + ev.dateline + '</span><span>' + ev.venue + '</span></div>' +
+        '<div class="actions">' +
+          '<a href="' + evCal(ev) + '" target="_blank" rel="noopener" class="btn btn-red">Add to calendar &rarr;</a>' +
+          '<button type="button" data-ev="' + ev.id + '" class="btn btn-ghost">Event details</button>' +
+        '</div>' +
+      '</div>' +
+    '</article>';
+  }
+
+  /* ---- render: featured + paginated grid (2 rows = 6 per page) ---- */
+  var featuredEl = document.getElementById('events-featured');
+  var grid = document.getElementById('events-grid');
+  var pager = document.getElementById('events-pager');
+  var statusEl = document.getElementById('events-page-status');
+  if (!grid) return;
+
+  var PAGE = 3, page = 0, scope = 'all';
+  function filtered() { return scope === 'all' ? LIST : LIST.filter(function (ev) { return ev.scope === scope; }); }
+  if (featuredEl) featuredEl.innerHTML = featuredHTML(FEATURED);
+
+  function renderPage() {
+    var list = filtered();
+    var pages = Math.max(1, Math.ceil(list.length / PAGE));
+    if (page > pages - 1) page = pages - 1;
+    var start = page * PAGE;
+    grid.innerHTML = list.slice(start, start + PAGE).map(cardHTML).join('');
+    var empty = document.querySelector('#events .event-empty');
+    if (empty) empty.hidden = list.length !== 0;
+    if (pager) {
+      pager.hidden = pages <= 1;
+      if (statusEl) statusEl.textContent = (page + 1) + ' / ' + pages;
+      var prev = pager.querySelector('[data-page="prev"]');
+      var next = pager.querySelector('[data-page="next"]');
+      if (prev) prev.disabled = page === 0;
+      if (next) next.disabled = page === pages - 1;
+    }
+  }
+  renderPage();
+
+  // scope filter chips (featured iConnect always stays visible)
+  document.querySelectorAll('#events .event-chip').forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      document.querySelectorAll('#events .event-chip').forEach(function (c) { c.setAttribute('aria-pressed', String(c === chip)); });
+      scope = chip.getAttribute('data-scope');
+      page = 0;
+      renderPage();
     });
   });
 
-  closeBtn.addEventListener('click', close);
-  modal.addEventListener('click', function(e){ if (e.target === modal) close(); });
-  document.addEventListener('keydown', function(e){
-    if (modal.dataset.open === 'true' && e.key === 'Escape') close();
+  if (pager) {
+    pager.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-page]');
+      if (!b || b.disabled) return;
+      var pages = Math.max(1, Math.ceil(filtered().length / PAGE));
+      if (b.getAttribute('data-page') === 'next' && page < pages - 1) page++;
+      else if (b.getAttribute('data-page') === 'prev' && page > 0) page--;
+      renderPage();
+      document.getElementById('events').scrollIntoView({ block: 'start', behavior: 'smooth' });
+    });
+  }
+
+  /* ---- details modal ---- */
+  var byId = {};
+  [FEATURED].concat(LIST).forEach(function (ev) {
+    byId[ev.id] = {
+      category: ev.dept || 'District Conference', theme: ev.theme, img: ev.img,
+      title: ev.title, when: ev.when, where: ev.where,
+      body: ev.body, highlights: ev.highlights, calendarUrl: evCal(ev)
+    };
   });
+
+  var modal = document.getElementById('event-modal');
+  if (modal) {
+    var closeBtn = modal.querySelector('.event-modal__close');
+    var lastFocus = null;
+
+    function populate(data) {
+      modal.querySelector('#event-modal-tag').textContent = data.category;
+      modal.querySelector('#event-modal-title').innerHTML = data.title;
+      var cover = modal.querySelector('.event-modal__cover');
+      if (cover) {
+        cover.className = 'event-modal__cover' + (data.theme ? ' ev-img--' + data.theme : '') + (data.img ? ' has-img' : '');
+        cover.style.backgroundImage = data.img ? "url('" + data.img + "')" : '';
+      }
+      var values = modal.querySelectorAll('.event-modal__meta-value');
+      values[0].textContent = data.when;
+      values[1].textContent = data.where;
+      modal.querySelector('.event-modal__body').innerHTML = (data.body || []).map(function (p) { return '<p>' + p + '</p>'; }).join('');
+      modal.querySelector('.event-modal__highlights').innerHTML = (data.highlights || []).map(function (h) { return '<span class="event-modal__highlight">' + h + '</span>'; }).join('');
+      var cta = modal.querySelector('[data-cta="calendar"]');
+      if (cta) {
+        if (data.calendarUrl) { cta.href = data.calendarUrl; cta.target = '_blank'; cta.rel = 'noopener'; cta.classList.remove('u-hidden'); }
+        else { cta.classList.add('u-hidden'); }
+      }
+    }
+    function openModal(data, trigger) {
+      lastFocus = trigger || document.activeElement;
+      if (data) populate(data);
+      modal.dataset.open = 'true';
+      document.body.style.overflow = 'hidden';
+      setTimeout(function () { closeBtn.focus(); }, 50);
+    }
+    function closeModal() {
+      modal.dataset.open = 'false';
+      document.body.style.overflow = '';
+      if (lastFocus) lastFocus.focus();
+    }
+
+    document.addEventListener('click', function (e) {
+      var t = e.target.closest('[data-ev]');
+      if (!t) return;
+      e.preventDefault();
+      var d = byId[t.getAttribute('data-ev')];
+      if (d) openModal(d, t);
+    });
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', function (e) {
+      if (modal.dataset.open === 'true' && e.key === 'Escape') closeModal();
+    });
+  }
 })();
 </script>
 
@@ -1198,9 +1250,9 @@ window.AJNC_EVENTS = {
   <div class="footer-halo" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
   <div class="container footer-grid">
     <div class="footer-brand">
-      <img src="assets/logo-white-tagline.png" alt="AJNC Philippines logo" />
+      <img src="assets/ajnc-seal-white.png" alt="Apostolic Jesus Name Church seal" />
       <div class="name">Apostolic Jesus<br/>Name Church · Cebu</div>
-      <div class="tagline">Together <span class="gold">we carry</span> the gospel to the whole world.</div>
+      <div class="tagline">Together we carry the gospel to <span class="gold">the whole world</span>.</div>
       <p>Located at 2nd Floor Un Heng Bldg. Casuntingan, Mandaue City, Cebu 6014. A family of Oneness Pentecostal churches across the Philippines.</p>
     </div>
     <div class="footer-col">
@@ -1235,25 +1287,85 @@ window.AJNC_EVENTS = {
   <div class="container footer-bot">
     <div class="left">
       <span>© 2026 Apostolic Jesus Name Church Philippines</span>
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-      <a href="#">Part of the AJNC worldwide family →</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="https://upci.org/" target="_blank" rel="noopener">Part of the apostolic family →</a>
     </div>
     <span class="gold">Salamat. Magkahiusa.</span>
   </div>
 </footer>
 
+<!-- ============================ CHAT WITH GRACE ============================ -->
+<div class="ajnc-chat" id="ajnc-chat" data-open="false" data-lang="en">
+  <button class="ajnc-chat__launcher" id="ajnc-chat-launcher" aria-label="Chat with Grace" aria-expanded="false" aria-controls="ajnc-chat-panel">
+    <span class="ajnc-ava ajnc-ava--launch" aria-hidden="true"><img src="assets/grace.png" onerror="this.onerror=null;this.src='https://d8j0ntlcm91z4.cloudfront.net/user_3DTwqZssIRx70D3hHHRLuz51j6y/hf_20260531_172212_cd54f939-3122-4755-8913-920e3e5ca35f.png'" alt="Grace" loading="lazy" /></span>
+    <span class="ajnc-chat__launcher-label">Chat with Grace</span>
+    <svg class="ajnc-chat__launcher-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+  </button>
+
+  <section class="ajnc-chat__panel" id="ajnc-chat-panel" role="dialog" aria-modal="false" aria-label="Chat with Grace" hidden>
+    <header class="ajnc-chat__head">
+      <span class="ajnc-ava" aria-hidden="true"><img src="assets/grace.png" onerror="this.onerror=null;this.src='https://d8j0ntlcm91z4.cloudfront.net/user_3DTwqZssIRx70D3hHHRLuz51j6y/hf_20260531_172212_cd54f939-3122-4755-8913-920e3e5ca35f.png'" alt="Grace" loading="lazy" /></span>
+      <div class="ajnc-chat__head-text">
+        <strong><i class="ajnc-chat__online" aria-hidden="true"></i> Grace</strong>
+      </div>
+      <div class="ajnc-chat__langs" role="group" aria-label="Language">
+        <button type="button" data-lang="en" class="is-active">ENG</button>
+        <button type="button" data-lang="tl">TAG</button>
+        <button type="button" data-lang="ceb">CEB</button>
+      </div>
+      <button class="ajnc-chat__min" id="ajnc-chat-min" aria-label="Minimize chat" title="Minimize">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <button class="ajnc-chat__min" id="ajnc-chat-close" aria-label="Close chat" title="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+      </button>
+    </header>
+
+    <div class="ajnc-chat__log" id="ajnc-chat-log" role="log" aria-live="polite">
+      <div class="ajnc-msg ajnc-msg--bot">
+        <p data-greeting>Hi, I'm Grace from AJNC. Ask me anything about our church, what we believe, baptism, or planning your first visit.</p>
+      </div>
+    </div>
+
+    <div class="ajnc-chat__suggestions" id="ajnc-chat-suggestions">
+      <button type="button" class="ajnc-chip">Why baptize in Jesus' name?</button>
+      <button type="button" class="ajnc-chip">What is the Holy Ghost?</button>
+      <button type="button" class="ajnc-chip">When are your services?</button>
+    </div>
+
+    <form class="ajnc-chat__form" id="ajnc-chat-form">
+      <input id="ajnc-chat-input" type="text" autocomplete="off" placeholder="Type your message" aria-label="Type your message" />
+      <button type="submit" aria-label="Send">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </form>
+    <p class="ajnc-chat__disclaimer">For pastoral care, <a href="#prayer">send a prayer request</a> or <a href="#contact">contact us</a>.</p>
+  </section>
+</div>
+
 <!-- ============================ SCRIPTS ============================ -->
-<!-- Three.js for hero halo (lazy — skipped on mobile / no-WebGL) -->
-<script src="https://unpkg.com/three@0.160.0/build/three.min.js" defer></script>
+<!-- Three.js for hero halo (lazy, skipped on mobile / no-WebGL) -->
+<script src="assets/vendor/three.min.js" defer></script>
 <script src="assets/halo3d.js" defer></script>
+<script src="assets/globe-points.js" defer></script>
+<script src="assets/globe3d.js" defer></script>
+<script src="assets/wow.js" defer></script>
 
 <!-- Leaflet for Find a Church map -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+<script src="assets/vendor/leaflet.js" defer></script>
+
+<!-- Shared data (Supabase: church locations + microsite placeholders) -->
+<script src="assets/config.js" defer></script>
+<script src="assets/maps.js" defer></script>
+<script src="assets/churches.fallback.js" defer></script>
+<script src="assets/data.js" defer></script>
 
 <!-- Site interactions -->
 <script src="assets/site.js" defer></script>
-<script src="assets/timeline.js" defer></script>
+
+<!-- AI church assistant (UPCI-grounded) -->
+<script src="assets/chat.js" defer></script>
 
 </body>
 </html>

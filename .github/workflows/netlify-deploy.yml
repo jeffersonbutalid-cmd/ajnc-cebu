@@ -1,0 +1,46 @@
+name: Deploy to Netlify
+
+# Auto-deploys the site (static files + the Grace chat function) on every push.
+# It stays green and simply skips deploying until you add two repo secrets:
+#   Settings → Secrets and variables → Actions →
+#     NETLIFY_AUTH_TOKEN  (Netlify → User settings → Applications → New access token)
+#     NETLIFY_SITE_ID     (Netlify → Site configuration → Site details → Site ID)
+
+on:
+  push:
+    branches:
+      - main
+      - claude/eloquent-ride-Je5iK
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check for Netlify secrets
+        id: gate
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          if [ -n "$NETLIFY_AUTH_TOKEN" ] && [ -n "$NETLIFY_SITE_ID" ]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Netlify secrets not set yet — skipping deploy (this is expected until you add them)."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Set up Node
+        if: steps.gate.outputs.ready == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Deploy to Netlify (production)
+        if: steps.gate.outputs.ready == 'true'
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          npx --yes netlify-cli@17 deploy --prod --dir=. --message "CI: ${{ github.sha }}"

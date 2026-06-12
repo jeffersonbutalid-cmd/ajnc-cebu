@@ -26,10 +26,13 @@
     return;
   }
 
+  // WebGL halo is live: let CSS swap the SVG fallback for the canvas.
+  document.body.classList.add('webgl-halo');
+
   const THREE = window.THREE;
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 200);
-  camera.position.set(0, 0, 18);
+  camera.position.set(0, 0, 22);
 
   const renderer = new THREE.WebGLRenderer({ alpha:true, antialias:true });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
@@ -127,13 +130,19 @@
     targetY = (e.clientY / window.innerHeight - 0.5) * 0.2;
   });
 
-  // Animation loop
+  // Animation loop: render only while the tab is visible AND the hero is on
+  // screen (no point spinning rings nobody can see).
   const start = performance.now();
-  let visible = true;
+  let visible = true, onScreen = true;
   document.addEventListener('visibilitychange', () => { visible = !document.hidden; });
+  if ('IntersectionObserver' in window){
+    new IntersectionObserver(entries => {
+      entries.forEach(e => { onScreen = e.isIntersecting; });
+    }, { rootMargin: '100px' }).observe(mountEl);
+  }
 
   function tick(){
-    if (visible){
+    if (visible && onScreen){
       const t = (performance.now() - start) * 0.001;
 
       rings.forEach((m, i) => {
