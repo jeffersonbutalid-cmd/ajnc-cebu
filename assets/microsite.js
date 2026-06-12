@@ -158,6 +158,18 @@
       addrEl.innerHTML = '<span class="street">' + esc(c.address) + '</span>' +
         '<span class="locality">' + esc((short ? short : '') + (c.province ? ', ' + c.province : '')) + '</span>';
     }
+
+    // Phone is shown only for churches that publish one (e.g. Dipolog).
+    const contacts = $('.find-contacts');
+    if (contacts) {
+      if (c.phone) {
+        const a = contacts.querySelector('.find-phone');
+        if (a) { a.href = 'tel:' + c.phone.replace(/[^\d+]/g, ''); a.querySelector('.num').textContent = c.phone; }
+        contacts.hidden = false;
+      } else {
+        contacts.hidden = true;
+      }
+    }
     // plan card 3 address line
     const planCards = document.querySelectorAll('.plan-grid .plan-card');
     if (planCards.length && c.address) {

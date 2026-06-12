@@ -1302,6 +1302,7 @@ em{font-style:italic;color:var(--red);font-weight:inherit}
         <span class="pill">Sunday 3 PM</span>
         <span class="pill">Thursday 6:30 PM</span>
       </div>
+      <div class="find-contacts" hidden><a class="find-phone" href="tel:"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L7.9 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></svg><span class="num"></span></a></div>
       <a class="btn btn-red" href="https://www.google.com/maps/dir/?api=1&destination=2nd%20Floor%2C%20Un%20Heng%20Building%2C%20Casuntingan%2C%20Mandaue%20City%2C%20Cebu%2C%20Philippines" target="_blank" rel="noopener">Get directions →</a>
     </div>
     <div id="find-map" role="region" aria-label="Map showing AJNC Cebu in Mandaue"></div>
@@ -1335,7 +1336,7 @@ em{font-style:italic;color:var(--red);font-weight:inherit}
       <input type="hidden" name="_subject" value="New prayer request, AJNC Cebu microsite" />
       <div class="row">
         <input name="name" type="text" placeholder="Your name (optional)" autocomplete="name" />
-        <input name="email" type="email" placeholder="Email (optional)" autocomplete="email" />
+        <input name="phone" type="tel" placeholder="Phone (optional)" autocomplete="tel" inputmode="tel" />
       </div>
       <textarea name="message" placeholder="How can we pray for you?" required></textarea>
       <div class="ms-prayer-foot">

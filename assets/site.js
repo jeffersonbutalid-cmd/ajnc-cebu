@@ -213,6 +213,7 @@
           <div class="meta">
             <div class="meta-row">${ICONS.pin}<span>${c.address}</span></div>
             <div class="meta-row">${ICONS.clock}<span>${(c.services || []).join(' · ')}</span></div>
+            ${c.phone ? `<div class="meta-row">${ICONS.phone}<a href="tel:${c.phone.replace(/[^\d+]/g,'')}">${c.phone}</a></div>` : ''}
           </div>
           <div class="actions">
             <a class="finder__btn finder__btn-red" href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent((c.address ? c.address + ', ' : '') + (c.province || c.city || '') + ', Philippines')}" target="_blank" rel="noopener">Get directions →</a>

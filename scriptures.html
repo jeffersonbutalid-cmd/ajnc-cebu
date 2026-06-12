@@ -85,17 +85,15 @@
   </section>
 
   <section class="capture" aria-label="Get your copy">
-    <h2>Where should we send your copy?</h2>
-    <p>We will email you this pack and one short letter of encouragement each week.
-    No spam. Leave anytime.</p>
-    <form id="cap-form" method="POST" action="https://formspree.io/f/xvzynnkd" novalidate>
-      <input type="hidden" name="_subject" value="Scriptures for the Hard Days, please send + weekly letters" />
-      <input type="hidden" name="source" value="scriptures-pack" />
-      <input id="cap-email" type="email" name="email" placeholder="your@email.ph" aria-label="Email address" required />
-      <button type="submit">Send me the verses</button>
+    <h2>Where should we text your copy?</h2>
+    <p>We will text you this pack and a short word of encouragement.
+    No spam. Reply STOP anytime.</p>
+    <form id="cap-form" novalidate>
+      <input id="cap-phone" type="tel" name="phone" inputmode="tel" autocomplete="tel" placeholder="0917 000 0000" aria-label="Mobile number" required />
+      <button type="submit">Text me the verses</button>
     </form>
     <button class="skip" id="skip">I need them now. Let me read them.</button>
-    <p class="privacy">Your email is read by our family only. See our
+    <p class="privacy">Your number is read by our family only, for this and a short word of encouragement. Reply STOP anytime. See our
     <a href="privacy.html">Privacy Policy</a>.</p>
   </section>
 
@@ -194,54 +192,32 @@
 
 <script>
 /* =====================================================================
-   Email signup destination. Configured for BREVO.
+   Scriptures for the Hard Days, SMS signup.
 
-   It currently still uses Formspree (so emails keep coming in) until you
-   paste your Brevo form action below. To go live with the 5-day automation:
-
-     1. Brevo, Contacts, Forms, create a form. Copy its action URL, it looks
-        like  https://sibforms.com/serve/MUIE.....
-     2. Paste that URL into SIGNUP.brevoAction below.
-     3. Change SIGNUP.provider to 'brevo'.
-     4. In Brevo, build an Automation triggered on that list's new contact and
-        add the five letters, one per day. The letters are in
-        content/knowing-jesus-letters.md.
+   The number is posted to a Netlify Function (/.netlify/functions/
+   scriptures-sms) which texts the pack immediately and adds the contact to
+   a Brevo SMS list so the encouragement drip can follow. The verses on this
+   page always reveal on submit, so the visitor is never blocked even if SMS
+   is not configured yet. Setup + env vars are documented in the function.
    ===================================================================== */
-var SIGNUP = {
-  provider: 'brevo',                                                 // change to 'brevo' once brevoAction is set
-  formspree: 'https://formspree.io/f/xvzynnkd',
-  brevoAction: 'https://f4b994ab.sibforms.com/serve/MUIFAJWi8xGe1rXCZMT3XGZOO_wVpe6_V_Rmu2SbhNQlSHK-eV6QiC-TCQMbv26wmlUzlxz-mNfwYpuBbgyzpI5OsgO0LKc_3wTslxOWJM-PQm3aXnWAR3-sEwMhOIHMaz6kjlWYnLFaotwlNCMfTpdD4-yB98xDh_KfY_QZ0DInGekS8-d8bPq1ZnV3D5kI9e0C4Dzp385OKvS9wg==',
-  brevoEmailField: 'EMAIL'
-};
-
 (function(){
   var pack = document.getElementById('pack');
   var form = document.getElementById('cap-form');
   var skip = document.getElementById('skip');
-  var isBrevo = SIGNUP.provider === 'brevo';
-  var action = isBrevo ? SIGNUP.brevoAction : SIGNUP.formspree;
-  var field  = isBrevo ? SIGNUP.brevoEmailField : 'email';
-  if (form) form.setAttribute('action', action); // keep no-JS submit in sync
   function reveal(){ pack.classList.add('show'); pack.scrollIntoView({behavior:'smooth'}); }
   if (skip) skip.addEventListener('click', reveal);
   if (form) form.addEventListener('submit', function(e){
     e.preventDefault();
     var btn = form.querySelector('button[type="submit"]');
-    var email = document.getElementById('cap-email');
-    if (email && !email.checkValidity()){ email.reportValidity(); return; }
+    var phoneEl = document.getElementById('cap-phone');
+    if (phoneEl && !phoneEl.checkValidity()){ phoneEl.reportValidity(); return; }
     btn.textContent = 'Sending…';
-    var data = new FormData();
-    data.append(field, email.value);
-    var opts;
-    if (isBrevo){
-      // Brevo's hosted form is cross-origin; no-cors still delivers the POST.
-      opts = { method:'POST', mode:'no-cors', body:data };
-    } else {
-      data.append('source', 'scriptures-pack');
-      data.append('_subject', 'Scriptures for the Hard Days, please send + weekly letters');
-      opts = { method:'POST', headers:{Accept:'application/json'}, body:data };
-    }
-    fetch(action, opts).then(done).catch(done);
+    fetch('/.netlify/functions/scriptures-sms', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ phone: phoneEl.value })
+    }).then(done).catch(done);
+    // Always reveal the verses; the text is best-effort.
     function done(){ btn.textContent = 'Sent. Here they are.'; reveal(); }
   });
 })();
