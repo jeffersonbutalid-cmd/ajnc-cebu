@@ -62,5 +62,13 @@ window.AJNC_FALLBACK_CHURCHES = [
     pastor: "Bro. Mario G. Doromal",
     services: ["Sunday 10:00 AM", "Sunday 3:00 PM", "Bible Study Thursday 6:30 PM", "Prayer Meeting Tuesday 6:30 PM"],
     website: "/microsite/?church=kabankalan", coords: [9.9889, 122.8131]
+  },
+  {
+    id: "dipolog", slug: "dipolog", name: "AJNC Dipolog",
+    region: "mindanao", province: "Zamboanga del Norte", city: "Dipolog City",
+    address: "H8JV+36R, Katipunan Street, Dipolog City, Zamboanga del Norte",
+    pastor: "Pastor Jude Vasquez",
+    services: ["Sunday 10:00 AM", "Sunday 3:00 PM", "Bible Study Thursday 6:30 PM", "Prayer Meeting Tuesday 6:30 PM"],
+    website: "/microsite/?church=dipolog", coords: [8.5889, 123.3414]
   }
 ];

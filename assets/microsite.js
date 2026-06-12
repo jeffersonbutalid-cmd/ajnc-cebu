@@ -120,6 +120,10 @@
     const h1 = $('.hero h1');
     if (h1) h1.innerHTML = 'Worship with family,<br/>here in <em>' + esc(short) + '.</em>';
 
+    const lead = $('.hero .lead');
+    if (lead) lead.textContent = 'A Oneness Pentecostal church in ' + short +
+      '. We gather every Sunday and midweek to know Jesus together. Come as you are.';
+
     if (services.length) {
       const st = $('.hero .service-times');
       if (st) st.innerHTML = services.map(s => '<span class="row">' + esc(s) + '</span>')
