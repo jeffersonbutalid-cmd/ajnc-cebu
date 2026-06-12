@@ -68,7 +68,7 @@ window.AJNC_FALLBACK_CHURCHES = [
     region: "mindanao", province: "Zamboanga del Norte", city: "Dipolog City",
     address: "Katipunan Street, Dipolog City, Zamboanga del Norte",
     pastor: "Pastor Jude Vasquez",
-    pastorPhoto: "../assets/pastor-jude-vasquez.png",
+    pastorPhoto: "../assets/pastor-jude-avatar-circle@2x.png",
     services: ["Sunday 10:00 AM", "Sunday 3:00 PM", "Bible Study Thursday 6:30 PM", "Prayer Meeting Tuesday 6:30 PM"],
     phone: "0915 358 7827",
     website: "/microsite/?church=dipolog", coords: [8.5889, 123.3414]
